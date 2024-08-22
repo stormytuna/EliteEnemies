@@ -17,13 +17,11 @@ public class TinyElite : EliteVariation
 
     public override float LootMultiplier => 1.3f;
 
-    public override bool CanApply(NPC npc)
-    {
+    public override bool CanApply(NPC npc) {
         return npc.HasNotEliteVariation<HugeElite>();
     }
 
-    public override void OnSpawn(NPC npc, IEntitySource source)
-    {
+    public override void OnSpawn(NPC npc, IEntitySource source) {
         base.OnSpawn(npc, source);
 
         if (ApplyEliteVariation) {
@@ -31,8 +29,7 @@ public class TinyElite : EliteVariation
         }
     }
 
-    public override void OnApply(NPC npc)
-    {
+    public override void OnApply(NPC npc) {
         if (ApplyEliteVariation) {
             npc.scale /= 1.5f * _strength;
             npc.width = (int)(npc.width * npc.scale);
@@ -40,8 +37,7 @@ public class TinyElite : EliteVariation
         }
     }
 
-    public override bool PreAI(NPC npc)
-    {
+    public override bool PreAI(NPC npc) {
         if (ApplyEliteVariation) {
             npc.velocity *= 1 / (1.3f * _strength);
         }
@@ -49,28 +45,24 @@ public class TinyElite : EliteVariation
         return base.PreAI(npc);
     }
 
-    public override void PostAI(NPC npc)
-    {
+    public override void PostAI(NPC npc) {
         if (ApplyEliteVariation) {
             npc.velocity *= 1.3f * _strength;
         }
     }
 
-    public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers)
-    {
+    public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
         if (ApplyEliteVariation) {
             modifiers.Knockback *= 1.5f * _strength;
         }
     }
 
-    public override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter)
-    {
+    public override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) {
         binaryWriter.Write(_strength);
         base.SendExtraAI(npc, bitWriter, binaryWriter);
     }
 
-    public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader)
-    {
+    public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
         _strength = binaryReader.ReadSingle();
         base.ReceiveExtraAI(npc, bitReader, binaryReader);
     }

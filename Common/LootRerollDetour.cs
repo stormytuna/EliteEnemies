@@ -5,8 +5,7 @@ namespace EliteEnemies.Common;
 
 public class LootRerollDetour : ILoadable
 {
-    public void Load(Mod mod)
-    {
+    public void Load(Mod mod) {
         On_NPC.NPCLoot_DropItems += static (orig, self, closestPlayer) => {
             orig(self, closestPlayer);
 

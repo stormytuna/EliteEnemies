@@ -2,7 +2,6 @@ using EliteEnemies.Common;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -16,14 +15,13 @@ public class ImmovableElite : EliteVariation
 
     public override float LootMultiplier => 1.8f;
 
-    public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers)
-    {
+    public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
         if (ApplyEliteVariation) {
             modifiers.DisableKnockback();
 
             SoundEngine.PlaySound(SoundID.Item37 with { PitchVariance = 0.3f, Pitch = 0.3f }, npc.Center);
             int numDust = Main.rand.Next(2, 4);
-            for (int i = 0; i < numDust; i ++) {
+            for (int i = 0; i < numDust; i++) {
                 Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<ImmovableEliteDust>());
             }
         }
@@ -32,8 +30,7 @@ public class ImmovableElite : EliteVariation
 
 public class ImmovableEliteDust : ModDust
 {
-    public override void OnSpawn(Dust dust)
-    {
+    public override void OnSpawn(Dust dust) {
         dust.noGravity = true;
         dust.frame = new Rectangle(0, Main.rand.Next(3), 16, 16);
 
@@ -41,8 +38,7 @@ public class ImmovableEliteDust : ModDust
         dust.scale = Main.rand.NextFloat(1.2f, 1.5f);
     }
 
-    public override bool Update(Dust dust)
-    {
+    public override bool Update(Dust dust) {
         dust.position += dust.velocity;
         dust.velocity *= 0.94f;
         dust.scale -= 0.015f;

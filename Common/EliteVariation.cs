@@ -49,18 +49,15 @@ public abstract class EliteVariation : GlobalNPC
 
     public sealed override bool InstancePerEntity => true;
 
-    public sealed override bool AppliesToEntity(NPC entity, bool lateInstantiation)
-    {
+    public sealed override bool AppliesToEntity(NPC entity, bool lateInstantiation) {
         return /* entity.CanBeChasedBy() && */ !lateInstantiation;
     }
 
-    public override void OnSpawn(NPC npc, IEntitySource source)
-    {
+    public override void OnSpawn(NPC npc, IEntitySource source) {
         ApplyEliteVariation = CanApply(npc) && Main.rand.NextFloat() < SpawnChance;
     }
 
-    public override bool PreAI(NPC npc)
-    {
+    public override bool PreAI(NPC npc) {
         if (_firstFrame && ApplyEliteVariation) {
             _firstFrame = false;
 
@@ -71,8 +68,7 @@ public abstract class EliteVariation : GlobalNPC
         return base.PreAI(npc);
     }
 
-    public override void ModifyTypeName(NPC npc, ref string typeName)
-    {
+    public override void ModifyTypeName(NPC npc, ref string typeName) {
         if (!ApplyEliteVariation) {
             return;
         }
@@ -80,13 +76,11 @@ public abstract class EliteVariation : GlobalNPC
         typeName = $"{Name} {typeName}";
     }
 
-    public override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter)
-    {
+    public override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) {
         bitWriter.WriteBit(ApplyEliteVariation);
     }
 
-    public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader)
-    {
+    public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
         ApplyEliteVariation = bitReader.ReadBit();
     }
 }
