@@ -2,4 +2,5 @@ EliteVariations: {
 	HugeElite: Huge
 	TinyElite: Tiny
 	ImmovableElite: Immovable
+	DiscordantElite: Discordant
 }
