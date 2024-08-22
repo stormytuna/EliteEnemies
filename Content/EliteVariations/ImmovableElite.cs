@@ -9,7 +9,7 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class ImmovableElite : EliteVariation
 {
-    public override float SpawnChance => 0.5f;
+    public override float SpawnChance => 0.1f;
 
     public override float ValueMultiplier => 3f;
 
