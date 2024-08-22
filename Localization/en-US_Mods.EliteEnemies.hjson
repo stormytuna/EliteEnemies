@@ -1,0 +1,5 @@
+EliteVariations: {
+	HugeElite: Huge
+	TinyElite: Tiny
+	ImmovableElite: Immovable
+}

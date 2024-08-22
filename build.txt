@@ -1,0 +1,3 @@
+displayName = Elite Enemies
+author = stormytuna
+version = 0.1
