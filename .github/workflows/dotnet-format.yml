@@ -1,0 +1,42 @@
+name: formatting
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: setting up .net
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0.x
+        
+    - name: running dotnet restore
+      run: dotnet restore
+      
+    - name: pulling tml
+      run: |
+        cd ..
+        mkdir ./tmod
+        touch tModLoader.targets
+        
+        echo '<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+            <Import Project=".\tmod\tMLMod.targets" />
+        </Project>' > tModLoader.targets
+        
+        cd ./tmod
+        wget https://github.com/tModLoader/tModLoader/releases/latest/download/tModLoader.zip
+        unzip tModLoader.zip
+        cd ..
+        cd ./EliteEnemies
+        
+      
+    - name: linting
+      run: dotnet format style EliteEnemies.csproj --verify-no-changes
