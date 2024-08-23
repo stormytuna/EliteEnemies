@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using System.Buffers;
 using Terraria.ModLoader.IO;
 
 namespace EliteEnemies.Common;

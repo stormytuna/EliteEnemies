@@ -3,4 +3,5 @@ EliteVariations: {
 	TinyElite: Tiny
 	ImmovableElite: Immovable
 	DiscordantElite: Discordant
+	VolatileElite: Volatile
 }

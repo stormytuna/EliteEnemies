@@ -17,6 +17,8 @@ dotnet_diagnostic.IDE0040.severity = none
 dotnet_diagnostic.CS1591.severity = none 
 # Non-constant fields should not be visible
 dotnet_diagnostic.CA2211.severity = none
+# Remove unused usings
+dotnet_diagnostic.IDE0005.severity = warning
 
 #### Core EditorConfig Options ####
 
@@ -27,8 +29,8 @@ dotnet_diagnostic.CA2211.severity = none
 
 # New line preferences
 	end_of_line = crlf
-	insert_final_newline = false
-	trim_trailing_whitespace = true
+	insert_final_newline = true
+	trim_trailing_whitespace = false
 
 #### .NET Coding Conventions ####
 
