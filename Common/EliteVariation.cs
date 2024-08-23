@@ -20,22 +20,49 @@ public abstract class EliteVariation : GlobalNPC
 	public bool ApplyEliteVariation { get; private set; } = false;
 
 	/// <summary>
-	/// The chance of this variation appearing, as a decimal
-	/// Defaults to 0.05f
+	/// The rarity of this elite, influences spawn chance, value multiplier and loot multiplier.
+	/// Defaults to Common
 	/// </summary>
-	public virtual float SpawnChance => 0.05f;
+	public virtual EliteVariationRarity Rarity => EliteVariationRarity.Common;
+
+	/// <summary>
+	/// The chance of this variation appearing, as a decimal.
+	/// Influenced by Rarity by default.
+	/// </summary>
+	public virtual float SpawnChance => Rarity switch {
+		EliteVariationRarity.Common => 0.1f,
+		EliteVariationRarity.Uncommon => 0.05f,
+		EliteVariationRarity.Rare => 0.025f,
+		EliteVariationRarity.SuperRare => 0.0125f,
+		EliteVariationRarity.Legendary => 0.002f,
+		_ => 0f,
+	};
 
 	/// <summary>
 	/// Multiplier to coins dropped.
-	/// Defaults to 1f
+	/// Influenced by Rarity by default.
 	/// </summary>
-	public virtual float ValueMultiplier => 1f;
+	public virtual float ValueMultiplier => Rarity switch {
+		EliteVariationRarity.Common => 1.5f,
+		EliteVariationRarity.Uncommon => 2f,
+		EliteVariationRarity.Rare => 3f,
+		EliteVariationRarity.SuperRare => 4f,
+		EliteVariationRarity.Legendary => 5f,
+		_ => 0f,
+	};
 
 	/// <summary>
 	/// Multiplier to loot drops, 1f would be standard amount, 2f would drop twice as much loot, 1.5f would drop twice as much loot half of the time.
-	/// Defaults to 1f
+	/// Influenced by Rarity by default.
 	/// </summary>
-	public virtual float LootMultiplier => 1f;
+	public virtual float LootMultiplier => Rarity switch {
+		EliteVariationRarity.Common => 1.2f,
+		EliteVariationRarity.Uncommon => 1.4f,
+		EliteVariationRarity.Rare => 1.6f,
+		EliteVariationRarity.SuperRare => 1.8f,
+		EliteVariationRarity.Legendary => 2f,
+		_ => 0f,
+	};
 
 	/// <summary>
 	/// Whether to allow an enemy with this variation to have more variations
@@ -46,6 +73,7 @@ public abstract class EliteVariation : GlobalNPC
 	public virtual bool CanApply(NPC npc) => true;
 
 	public virtual void OnApply(NPC npc) { }
+
 
 	public sealed override bool InstancePerEntity => true;
 
@@ -83,4 +111,9 @@ public abstract class EliteVariation : GlobalNPC
 	public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
 		ApplyEliteVariation = bitReader.ReadBit();
 	}
+}
+
+public enum EliteVariationRarity : byte
+{
+	Common, Uncommon, Rare, SuperRare, UltraRare, Legendary
 }

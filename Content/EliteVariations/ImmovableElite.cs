@@ -9,11 +9,7 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class ImmovableElite : EliteVariation
 {
-	public override float SpawnChance => 0.1f;
-
-	public override float ValueMultiplier => 3f;
-
-	public override float LootMultiplier => 1.8f;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
 
 	public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
 		if (ApplyEliteVariation) {

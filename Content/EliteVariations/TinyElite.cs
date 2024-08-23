@@ -11,11 +11,7 @@ public class TinyElite : EliteVariation
 {
 	private float _strength = 1f;
 
-	public override float SpawnChance => 0.1f;
-
-	public override float ValueMultiplier => 2f;
-
-	public override float LootMultiplier => 1.3f;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
 
 	public override bool CanApply(NPC npc) {
 		return npc.HasNotEliteVariation<HugeElite>();

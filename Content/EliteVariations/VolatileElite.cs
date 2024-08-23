@@ -12,11 +12,7 @@ public class VolatileElite : EliteVariation
 {
 	private float _strength = 1f;
 
-	public override float SpawnChance => 1f;
-
-	public override float ValueMultiplier => 2f;
-
-	public override float LootMultiplier => 1.2f;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
 	public override void OnSpawn(NPC npc, IEntitySource source) {
 		base.OnSpawn(npc, source);

@@ -17,11 +17,7 @@ public class DiscordantElite : EliteVariation
 	private Queue<Vector2> _afterImagePositions = new(5);
 	private Queue<float> _afterImageRotations = new(5);
 
-	public override float SpawnChance => 0.05f;
-
-	public override float ValueMultiplier => 2f;
-
-	public override float LootMultiplier => 1.3f;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
 	public override void AI(NPC npc) {
 		if (!ApplyEliteVariation) {
