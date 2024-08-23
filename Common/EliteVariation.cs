@@ -1,6 +1,8 @@
 using System.IO;
+using EliteEnemies.Core;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -30,11 +32,11 @@ public abstract class EliteVariation : GlobalNPC
 	/// Influenced by Rarity by default.
 	/// </summary>
 	public virtual float SpawnChance => Rarity switch {
-		EliteVariationRarity.Common => 0.1f,
-		EliteVariationRarity.Uncommon => 0.05f,
-		EliteVariationRarity.Rare => 0.025f,
-		EliteVariationRarity.SuperRare => 0.0125f,
-		EliteVariationRarity.Legendary => 0.002f,
+		EliteVariationRarity.Common => ServerConfig.Instance.CommonSpawnChance,
+		EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonSpawnChance,
+		EliteVariationRarity.Rare => ServerConfig.Instance.RareSpawnChance,
+		EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareSpawnChance,
+		EliteVariationRarity.Legendary => ServerConfig.Instance.LegendarySpawnChance,
 		_ => 0f,
 	};
 
@@ -43,11 +45,11 @@ public abstract class EliteVariation : GlobalNPC
 	/// Influenced by Rarity by default.
 	/// </summary>
 	public virtual float ValueMultiplier => Rarity switch {
-		EliteVariationRarity.Common => 1.5f,
-		EliteVariationRarity.Uncommon => 2f,
-		EliteVariationRarity.Rare => 3f,
-		EliteVariationRarity.SuperRare => 4f,
-		EliteVariationRarity.Legendary => 5f,
+		EliteVariationRarity.Common => ServerConfig.Instance.CommonValueMultiplier,
+		EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonValueMultiplier,
+		EliteVariationRarity.Rare => ServerConfig.Instance.RareValueMultiplier,
+		EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareValueMultiplier,
+		EliteVariationRarity.Legendary => ServerConfig.Instance.LegendaryValueMultiplier,
 		_ => 0f,
 	};
 
@@ -56,11 +58,11 @@ public abstract class EliteVariation : GlobalNPC
 	/// Influenced by Rarity by default.
 	/// </summary>
 	public virtual float LootMultiplier => Rarity switch {
-		EliteVariationRarity.Common => 1.2f,
-		EliteVariationRarity.Uncommon => 1.4f,
-		EliteVariationRarity.Rare => 1.6f,
-		EliteVariationRarity.SuperRare => 1.8f,
-		EliteVariationRarity.Legendary => 2f,
+		EliteVariationRarity.Common => ServerConfig.Instance.CommonLootMultiplier,
+		EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonLootMultiplier,
+		EliteVariationRarity.Rare => ServerConfig.Instance.RareLootMultiplier,
+		EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareLootMultiplier,
+		EliteVariationRarity.Legendary => ServerConfig.Instance.LegendaryLootMultiplier,
 		_ => 0f,
 	};
 
@@ -82,7 +84,13 @@ public abstract class EliteVariation : GlobalNPC
 	}
 
 	public override void OnSpawn(NPC npc, IEntitySource source) {
-		ApplyEliteVariation = CanApply(npc) && Main.rand.NextFloat() < SpawnChance;
+		bool careAboutCritter = ServerConfig.Instance.ApplyToCritters || !npc.CountsAsACritter;
+		bool careAboutBoss = ServerConfig.Instance.ApplyToBosses || (!npc.boss && (npc.type is not NPCID.EaterofWorldsHead or NPCID.EaterofWorldsBody or NPCID.EaterofWorldsTail));
+		bool underMaxVariationsLimit = npc.NumActiveEliteVariations() < ServerConfig.Instance.MaxSimultaneousVariations;
+		ApplyEliteVariation = CanApply(npc) && Main.rand.NextFloat() < SpawnChance && careAboutCritter && careAboutBoss && underMaxVariationsLimit;
+		if (ApplyEliteVariation) {
+			Main.NewText(Name);
+		}
 	}
 
 	public override bool PreAI(NPC npc) {

@@ -5,3 +5,106 @@ EliteVariations: {
 	DiscordantElite: Discordant
 	VolatileElite: Volatile
 }
+
+Configs: {
+	ServerConfig: {
+		DisplayName: Server Config
+
+		Headers: {
+			SpawnChance: Spawn Chance
+			ValueMultiplier: Value Multiplier
+			LootMultiplier: Loot Multiplier
+			Misc: Misc
+		}
+
+		CommonSpawnChance: {
+			Label: Common Spawn Chance
+			Tooltip: ""
+		}
+
+		UncommonSpawnChance: {
+			Label: Uncommon Spawn Chance
+			Tooltip: ""
+		}
+
+		RareSpawnChance: {
+			Label: Rare Spawn Chance
+			Tooltip: ""
+		}
+
+		SuperRareSpawnChance: {
+			Label: Super Rare Spawn Chance
+			Tooltip: ""
+		}
+
+		LegendarySpawnChance: {
+			Label: Legendary Spawn Chance
+			Tooltip: ""
+		}
+
+		CommonValueMultiplier: {
+			Label: Common Value Multiplier
+			Tooltip: ""
+		}
+
+		UncommonValueMultiplier: {
+			Label: Uncommon Value Multiplier
+			Tooltip: ""
+		}
+
+		RareValueMultiplier: {
+			Label: Rare Value Multiplier
+			Tooltip: ""
+		}
+
+		SuperRareValueMultiplier: {
+			Label: Super Rare Value Multiplier
+			Tooltip: ""
+		}
+
+		LegendaryValueMultiplier: {
+			Label: Legendary Value Multiplier
+			Tooltip: ""
+		}
+
+		CommonLootMultiplier: {
+			Label: Common Loot Multiplier
+			Tooltip: ""
+		}
+
+		UncommonLootMultiplier: {
+			Label: Uncommon Loot Multiplier
+			Tooltip: ""
+		}
+
+		RareLootMultiplier: {
+			Label: Rare Loot Multiplier
+			Tooltip: ""
+		}
+
+		SuperRareLootMultiplier: {
+			Label: Super Rare Loot Multiplier
+			Tooltip: ""
+		}
+
+		LegendaryLootMultiplier: {
+			Label: Legendary Loot Multiplier
+			Tooltip: ""
+		}
+
+		ApplyToCritters: {
+			Label: Apply To Critters
+			Tooltip: ""
+		}
+
+		ApplyToBosses: {
+			Label: Apply To Bosses
+			Tooltip: ""
+		}
+
+		MaxSimultaneousVariations: {
+			Tooltip: ""
+			Label: Max Simultaneous Variations
+		}
+	}
+}
