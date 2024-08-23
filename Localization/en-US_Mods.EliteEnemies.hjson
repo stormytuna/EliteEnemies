@@ -4,6 +4,15 @@ EliteVariations: {
 	ImmovableElite: Immovable
 	DiscordantElite: Discordant
 	VolatileElite: Volatile
+	JackedElite: Jacked
+	MedicatedElite: Medicated
+
+	ThiefElite: {
+		$parentVal: Thief
+		Stolen: "{0} stolen!"
+	}
+
+	LuckyElite: Lucky
 }
 
 Configs: {

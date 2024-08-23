@@ -17,6 +17,8 @@ dotnet_diagnostic.IDE0040.severity = none
 dotnet_diagnostic.CS1591.severity = none 
 # Non-constant fields should not be visible
 dotnet_diagnostic.CA2211.severity = none
+# Use collection initialisers or expressions
+dotnet_diagnostic.IDE0028.severity = none
 # Remove unused usings
 dotnet_diagnostic.IDE0005.severity = warning
 

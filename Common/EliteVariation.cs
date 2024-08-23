@@ -15,6 +15,10 @@ public abstract class EliteVariation : GlobalNPC
 
 	public new LocalizedText Name => Language.GetOrRegister($"Mods.{nameof(EliteEnemies)}.EliteVariations.{GetType().Name}");
 
+	public sealed override void Load() {
+		_ = Name; // GetOrRegister will only register if we call it during mod load
+	}
+
 	/// <summary>
 	/// Whether to apply the elite variation.
 	/// Defaults to false.
@@ -110,6 +114,14 @@ public abstract class EliteVariation : GlobalNPC
 
 	public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
 		ApplyEliteVariation = bitReader.ReadBit();
+	}
+
+	public override void SaveData(NPC npc, TagCompound tag) {
+		tag["applyEliteVariation"] = ApplyEliteVariation;
+	}
+
+	public override void LoadData(NPC npc, TagCompound tag) {
+		ApplyEliteVariation = tag.GetBool("applyEliteVariation");
 	}
 }
 
