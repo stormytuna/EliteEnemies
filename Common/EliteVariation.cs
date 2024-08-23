@@ -66,22 +66,14 @@ public abstract class EliteVariation : GlobalNPC
 		_ => 0f,
 	};
 
-	/// <summary>
-	/// Whether to allow an enemy with this variation to have more variations
-	/// Defaults to true
-	/// </summary>
-	public virtual bool AllowOtherEliteVariations => true;
-
 	public virtual bool CanApply(NPC npc) => true;
 
+	/// <summary>
+	/// Called just before the first frame of the NPCs AI. Use this method to apply deterministic changes to an NPC's default fields. For non-deterministic changes, use OnSpawn
+	/// </summary>
 	public virtual void OnApply(NPC npc) { }
 
-
 	public sealed override bool InstancePerEntity => true;
-
-	public sealed override bool AppliesToEntity(NPC entity, bool lateInstantiation) {
-		return /* entity.CanBeChasedBy() && */ !lateInstantiation;
-	}
 
 	public override void OnSpawn(NPC npc, IEntitySource source) {
 		bool careAboutCritter = ServerConfig.Instance.ApplyToCritters || !npc.CountsAsACritter;
