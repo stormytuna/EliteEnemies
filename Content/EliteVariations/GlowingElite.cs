@@ -13,8 +13,6 @@ public class GlowingElite : EliteVariation
 
 	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
-	public override float SpawnChance => 1f;
-
 	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
 			_lightColor = new Color(Main.rand.NextFloat(), Main.rand.NextFloat(), Main.rand.NextFloat()) * Main.rand.NextFloat(0.5f, 2f);
