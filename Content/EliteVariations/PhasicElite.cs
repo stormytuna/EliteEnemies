@@ -18,8 +18,6 @@ public class PhasicElite : EliteVariation
 
 	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
 
-	public override float SpawnChance => 1f;
-
 	public override void SafeLoad() {
 		On_Main.DrawNPCDirect += static (orig, self, spriteBatch, npc, behindTiles, screenPos) => {
 			if (npc.GetGlobalNPC<PhasicElite>().ApplyEliteVariation && !npc.GetGlobalNPC<PhasicElite>()._canInteract) {

@@ -18,6 +18,7 @@ EliteVariations: {
 	SpelunkerElite: Spelunker
 	SneakyElite: Sneaky
 	PhasicElite: Phasic
+	MotherElite: Mother
 }
 
 Configs: {
