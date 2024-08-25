@@ -1,1 +1,7 @@
-Modify this file with a description of your mod.
+Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
+
+- Adds 19 variations that can apply to any NPC
+- Variations range from stat increases to unique effects
+- Variations have rarities, which influence how often they appear and how much loot they drop
+- Multiplayer is supported
+- Currently only supports English, see below if you'd like to contribute another translation
