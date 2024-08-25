@@ -9,7 +9,7 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class ImmovableElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
 	public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
 		if (ApplyEliteVariation) {

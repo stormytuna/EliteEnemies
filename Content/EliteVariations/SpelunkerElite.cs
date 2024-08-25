@@ -5,7 +5,7 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class SpelunkerElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
 
 	public override void AI(NPC npc) {
 		if (!ApplyEliteVariation) {

@@ -150,5 +150,5 @@ public abstract class EliteVariation : GlobalNPC
 
 public enum EliteVariationRarity : byte
 {
-	Common, Uncommon, Rare, SuperRare, UltraRare, Legendary
+	Common, Uncommon, Rare, SuperRare, Legendary
 }

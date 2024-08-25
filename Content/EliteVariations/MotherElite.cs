@@ -5,7 +5,7 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class MotherElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
 	public override void OnKill(NPC npc) {
 		if (!ApplyEliteVariation) {

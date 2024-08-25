@@ -7,7 +7,7 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class GlacialElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
 
 	public override bool CanApply(NPC npc) {
 		return !Main.hardMode;

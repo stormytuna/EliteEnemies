@@ -6,7 +6,7 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class SneakyElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
 	public override void DrawEffects(NPC npc, ref Color drawColor) {
 		if (!ApplyEliteVariation) {

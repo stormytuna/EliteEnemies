@@ -5,7 +5,7 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class LuckyElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Uncommon;
 
 	public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
 		if (ApplyEliteVariation) {

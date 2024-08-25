@@ -7,7 +7,7 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class MedicatedElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Uncommon;
 
 	public override void OnApply(NPC npc) {
 		if (!ApplyEliteVariation) {

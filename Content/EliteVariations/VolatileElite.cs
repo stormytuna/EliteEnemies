@@ -14,7 +14,7 @@ public class VolatileElite : EliteVariation
 {
 	private float _strength = 1f;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
 
 	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {

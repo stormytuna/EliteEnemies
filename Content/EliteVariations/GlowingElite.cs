@@ -11,7 +11,7 @@ public class GlowingElite : EliteVariation
 {
 	private Color _lightColor = Color.Transparent;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
 
 	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {

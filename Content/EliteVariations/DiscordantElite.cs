@@ -17,7 +17,11 @@ public class DiscordantElite : EliteVariation
 	private Queue<Vector2> _afterImagePositions = new(5);
 	private Queue<float> _afterImageRotations = new(5);
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Legendary;
+
+	public override bool CanApply(NPC npc) {
+		return Main.hardMode;
+	}
 
 	public override void AI(NPC npc) {
 		if (!ApplyEliteVariation) {

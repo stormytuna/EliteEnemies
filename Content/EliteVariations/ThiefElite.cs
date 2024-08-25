@@ -11,7 +11,7 @@ public class ThiefElite : EliteVariation
 {
 	private List<Item> _items = new();
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
 	public override bool CanApply(NPC npc) {
 		return !NPCID.Sets.CantTakeLunchMoney[npc.type];

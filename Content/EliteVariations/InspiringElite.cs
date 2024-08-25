@@ -16,7 +16,11 @@ public class InspiringElite : EliteVariation
 
 	private float _strength = 0f;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
+
+	public override bool CanApply(NPC npc) {
+		return NPC.downedBoss2;
+	}
 
 	public override void SafeLoad() {
 		_auraTexture = Mod.Assets.Request<Texture2D>("Content/EliteVariations/InspiringEliteAura");

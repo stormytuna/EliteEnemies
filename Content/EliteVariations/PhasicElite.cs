@@ -16,7 +16,11 @@ public class PhasicElite : EliteVariation
 
 	private int _phasicTimerMax = 60;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Legendary;
+
+	public override bool CanApply(NPC npc) {
+		return NPC.downedBoss3;
+	}
 
 	public override void SafeLoad() {
 		On_Main.DrawNPCDirect += static (orig, self, spriteBatch, npc, behindTiles, screenPos) => {

@@ -8,7 +8,7 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class CursedElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.Uncommon;
 
 	public override bool CanApply(NPC npc) {
 		return Main.hardMode && !WorldGen.crimson;
