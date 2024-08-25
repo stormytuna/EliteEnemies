@@ -15,6 +15,7 @@ EliteVariations: {
 	LuckyElite: Lucky
 	InspiringElite: Inspiring
 	GlowingElite: Glowing
+	SpelunkerElite: Spelunker
 }
 
 Configs: {
