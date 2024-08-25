@@ -22,7 +22,7 @@ EliteVariations: {
 	BlazingElite: Blazing
 	IchorElite: Ichor
 	CursedElite: Cursed
-	GlacialElite: Mods.EliteEnemies.EliteVariations.GlacialElite
+	GlacialElite: Glacial
 }
 
 Configs: {
