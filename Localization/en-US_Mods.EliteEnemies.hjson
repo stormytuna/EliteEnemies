@@ -17,6 +17,7 @@ EliteVariations: {
 	GlowingElite: Glowing
 	SpelunkerElite: Spelunker
 	SneakyElite: Sneaky
+	PhasicElite: Phasic
 }
 
 Configs: {
