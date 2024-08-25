@@ -28,7 +28,7 @@ public class ServerConfig : ModConfig
 	public float SuperRareSpawnChance { get; set; }
 
 	[Range(0f, 1f)]
-	[DefaultValue(0.002f)]
+	[DefaultValue(0.005f)]
 	public float LegendarySpawnChance { get; set; }
 
 	[Header("ValueMultiplier")]
