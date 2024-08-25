@@ -7,8 +7,6 @@ public class LuckyElite : EliteVariation
 {
 	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
 
-	public override float SpawnChance => 1f;
-
 	public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
 		if (ApplyEliteVariation) {
 			modifiers.DamageVariationScale *= 0f;
