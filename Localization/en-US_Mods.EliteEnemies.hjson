@@ -19,6 +19,10 @@ EliteVariations: {
 	SneakyElite: Sneaky
 	PhasicElite: Phasic
 	MotherElite: Mother
+	BlazingElite: Blazing
+	IchorElite: Ichor
+	CursedElite: Cursed
+	GlacialElite: Mods.EliteEnemies.EliteVariations.GlacialElite
 }
 
 Configs: {
