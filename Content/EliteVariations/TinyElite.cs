@@ -17,9 +17,7 @@ public class TinyElite : EliteVariation
 		return npc.HasNotEliteVariation<HugeElite>();
 	}
 
-	public override void OnSpawn(NPC npc, IEntitySource source) {
-		base.OnSpawn(npc, source);
-
+	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
 			_strength = Main.rand.NextFloat(1f, 2f);
 		}
@@ -33,12 +31,12 @@ public class TinyElite : EliteVariation
 		}
 	}
 
-	public override bool PreAI(NPC npc) {
+	public override bool SafePreAI(NPC npc) {
 		if (ApplyEliteVariation) {
 			npc.velocity *= 1 / (1.3f * _strength);
 		}
 
-		return base.PreAI(npc);
+		return true;
 	}
 
 	public override void PostAI(NPC npc) {
@@ -53,13 +51,11 @@ public class TinyElite : EliteVariation
 		}
 	}
 
-	public override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) {
+	public override void SafeSendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) {
 		binaryWriter.Write(_strength);
-		base.SendExtraAI(npc, bitWriter, binaryWriter);
 	}
 
-	public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
+	public override void SafeReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
 		_strength = binaryReader.ReadSingle();
-		base.ReceiveExtraAI(npc, bitReader, binaryReader);
 	}
 }

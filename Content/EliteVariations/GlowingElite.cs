@@ -1,39 +1,39 @@
 using System.IO;
 using EliteEnemies.Common;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader.IO;
 
 namespace EliteEnemies.Content.EliteVariations;
 
-public class JackedElite : EliteVariation
+public class GlowingElite : EliteVariation
 {
-	private float _strength = 1f;
+	private Color _lightColor = Color.Transparent;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
+
+	public override float SpawnChance => 1f;
 
 	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
-			_strength = Main.rand.NextFloat(1.5f, 2f);
+			_lightColor = new Color(Main.rand.NextFloat(), Main.rand.NextFloat(), Main.rand.NextFloat()) * Main.rand.NextFloat(0.5f, 2f);
 		}
 	}
 
-	public override void OnApply(NPC npc) {
+	public override void AI(NPC npc) {
 		if (!ApplyEliteVariation) {
 			return;
 		}
 
-		npc.damage = (int)(npc.damage * _strength);
-		npc.defense = (int)(npc.defense * _strength);
-		npc.lifeMax = (int)(npc.lifeMax * _strength);
-		npc.life = npc.lifeMax;
+		Lighting.AddLight(npc.Center, _lightColor.ToVector3());
 	}
 
 	public override void SafeSendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) {
-		binaryWriter.Write(_strength);
+		binaryWriter.WriteRGB(_lightColor);
 	}
 
 	public override void SafeReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
-		_strength = binaryReader.ReadSingle();
+		_lightColor = binaryReader.ReadRGB();
 	}
 }

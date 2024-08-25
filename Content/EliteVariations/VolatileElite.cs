@@ -1,3 +1,4 @@
+using System.IO;
 using EliteEnemies.Common;
 using EliteEnemies.Core;
 using Microsoft.Xna.Framework;
@@ -5,6 +6,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.ModLoader.IO;
 
 namespace EliteEnemies.Content.EliteVariations;
 
@@ -14,9 +16,7 @@ public class VolatileElite : EliteVariation
 
 	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
-	public override void OnSpawn(NPC npc, IEntitySource source) {
-		base.OnSpawn(npc, source);
-
+	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
 			_strength = Main.rand.NextFloat(1f, 2f);
 		}
@@ -73,5 +73,13 @@ public class VolatileElite : EliteVariation
 		if (ApplyEliteVariation) {
 			drawColor = NPC.buffColor(drawColor, 1f, 1 - 0.4f, 1 - 0.5f, 1f);
 		}
+	}
+
+	public override void SafeSendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) {
+		binaryWriter.Write(_strength);
+	}
+
+	public override void SafeReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
+		_strength = binaryReader.ReadSingle();
 	}
 }

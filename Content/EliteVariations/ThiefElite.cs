@@ -48,17 +48,13 @@ public class ThiefElite : EliteVariation
 		return _items.Count > 0 && ApplyEliteVariation;
 	}
 
-	public override void SaveData(NPC npc, TagCompound tag) {
-		base.SaveData(npc, tag);
-
+	public override void SafeSaveData(NPC npc, TagCompound tag) {
 		if (_items.Count > 0 && ApplyEliteVariation) {
 			tag["Items"] = _items;
 		}
 	}
 
-	public override void LoadData(NPC npc, TagCompound tag) {
-		base.LoadData(npc, tag);
-
+	public override void SafeLoadData(NPC npc, TagCompound tag) {
 		_items = tag.Get<List<Item>>("Items");
 	}
 }

@@ -18,14 +18,11 @@ public class InspiringElite : EliteVariation
 
 	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
 
-	public override void Load() {
-		base.Load();
+	public override void SafeLoad() {
 		_auraTexture = Mod.Assets.Request<Texture2D>("Content/EliteVariations/InspiringEliteAura");
 	}
 
-	public override void OnSpawn(NPC npc, IEntitySource source) {
-		base.OnSpawn(npc, source);
-
+	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
 			_strength = Main.rand.NextFloat();
 		}
@@ -86,15 +83,11 @@ public class InspiringElite : EliteVariation
 		return base.PreDraw(npc, spriteBatch, screenPos, drawColor);
 	}
 
-	public override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) {
-		base.SendExtraAI(npc, bitWriter, binaryWriter);
-
+	public override void SafeSendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) {
 		binaryWriter.Write(_strength);
 	}
 
-	public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
-		base.ReceiveExtraAI(npc, bitReader, binaryReader);
-
+	public override void SafeReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
 		_strength = binaryReader.ReadSingle();
 	}
 }

@@ -16,6 +16,7 @@ public abstract class EliteVariation : GlobalNPC
 	public new LocalizedText Name => Language.GetOrRegister($"Mods.{nameof(EliteEnemies)}.EliteVariations.{GetType().Name}");
 
 	public sealed override void Load() {
+		SafeLoad();
 		_ = Name; // GetOrRegister will only register if we call it during mod load
 	}
 
@@ -72,14 +73,28 @@ public abstract class EliteVariation : GlobalNPC
 
 	public virtual bool CanApply(NPC npc) => true;
 
+	public virtual void SafeLoad() { }
+
+	public virtual void SafeOnSpawn(NPC npc, IEntitySource source) { }
+
+	public virtual bool SafePreAI(NPC npc) => true;
+
+	public virtual void SafeSendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) { }
+
+	public virtual void SafeReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) { }
+
+	public virtual void SafeSaveData(NPC npc, TagCompound tag) { }
+	public virtual void SafeLoadData(NPC npc, TagCompound tag) { }
+
+
 	/// <summary>
-	/// Called just before the first frame of the NPCs AI. Use this method to apply deterministic changes to an NPC's default fields. For non-deterministic changes, use OnSpawn
+	/// Called just before the first frame of the NPCs AI. Use this method to apply deterministic changes to an NPC's default fields. For non-deterministic changes, use SafeOnSpawn
 	/// </summary>
 	public virtual void OnApply(NPC npc) { }
 
 	public sealed override bool InstancePerEntity => true;
 
-	public override void OnSpawn(NPC npc, IEntitySource source) {
+	public sealed override void OnSpawn(NPC npc, IEntitySource source) {
 		bool careAboutCritter = ServerConfig.Instance.ApplyToCritters || !npc.CountsAsACritter;
 		bool careAboutBoss = ServerConfig.Instance.ApplyToBosses || (!npc.boss && (npc.type is not NPCID.EaterofWorldsHead or NPCID.EaterofWorldsBody or NPCID.EaterofWorldsTail));
 		bool underMaxVariationsLimit = npc.NumActiveEliteVariations() < ServerConfig.Instance.MaxSimultaneousVariations;
@@ -87,9 +102,13 @@ public abstract class EliteVariation : GlobalNPC
 		if (ApplyEliteVariation) {
 			Main.NewText(Name);
 		}
+
+		SafeOnSpawn(npc, source);
 	}
 
-	public override bool PreAI(NPC npc) {
+	public sealed override bool PreAI(NPC npc) {
+		bool ret = SafePreAI(npc);
+
 		if (_firstFrame && ApplyEliteVariation) {
 			_firstFrame = false;
 
@@ -97,10 +116,10 @@ public abstract class EliteVariation : GlobalNPC
 			npc.value = (int)(npc.value * ValueMultiplier);
 		}
 
-		return base.PreAI(npc);
+		return ret;
 	}
 
-	public override void ModifyTypeName(NPC npc, ref string typeName) {
+	public sealed override void ModifyTypeName(NPC npc, ref string typeName) {
 		if (!ApplyEliteVariation) {
 			return;
 		}
@@ -108,19 +127,23 @@ public abstract class EliteVariation : GlobalNPC
 		typeName = $"{Name} {typeName}";
 	}
 
-	public override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) {
+	public sealed override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) {
+		SafeSendExtraAI(npc, bitWriter, binaryWriter);
 		bitWriter.WriteBit(ApplyEliteVariation);
 	}
 
-	public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
+	public sealed override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader binaryReader) {
+		SafeReceiveExtraAI(npc, bitReader, binaryReader);
 		ApplyEliteVariation = bitReader.ReadBit();
 	}
 
-	public override void SaveData(NPC npc, TagCompound tag) {
+	public sealed override void SaveData(NPC npc, TagCompound tag) {
+		SafeSaveData(npc, tag);
 		tag["applyEliteVariation"] = ApplyEliteVariation;
 	}
 
-	public override void LoadData(NPC npc, TagCompound tag) {
+	public sealed override void LoadData(NPC npc, TagCompound tag) {
+		SafeLoadData(npc, tag);
 		ApplyEliteVariation = tag.GetBool("applyEliteVariation");
 	}
 }
