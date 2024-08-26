@@ -6,7 +6,7 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
 - Variations range from stat increases to unique effects
 - Variations have rarities, which influence how often they appear and how much loot they drop
 - Multiplayer is supported
-- Currently only supports English, see below if you'd like to contribute another translation
+- Currently supports English, see below if you'd like to contribute another translation
 
 [hr][/hr]
 
@@ -191,4 +191,4 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
 
 Source code: https://github.com/stormytuna/EliteEnemies
 
-If you're able to contribute translations it would be very appreciated! Please open an issue with the translations, or create a PR with the new .hjson localisation file
+If you're able to contribute translations it would be very appreciated! Currently, people are working on Polish and Portugese. Please open an issue with the translations, or create a PR with the new .hjson localisation file
