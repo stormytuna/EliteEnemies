@@ -1,0 +1,129 @@
+EliteVariations: {
+	HugeElite: Wielki
+	TinyElite: Malutki
+	ImmovableElite: Immovable
+	DiscordantElite: Chaotyczny
+	VolatileElite: Niestabilny
+	JackedElite: Siłacz
+	MedicatedElite: Zdrowy
+
+	ThiefElite: {
+		$parentVal: Złodziej
+		Stolen: "{0} skradzione!"
+	}
+
+	LuckyElite: Fortunny
+	InspiringElite: Inspirujący
+	GlowingElite: Świecący
+	SpelunkerElite: Grotołaz
+	SneakyElite: Skradający
+	PhasicElite: Fazujący
+	MotherElite: Matka
+	BlazingElite: Płonący
+	IchorElite: Ichorowy
+	CursedElite: Przeklęty
+	GlacialElite: Lodowaty
+}
+
+Configs: {
+	ServerConfig: {
+		DisplayName: Konfiguracja serwera
+
+		Headers: {
+			SpawnChance: Szansa pojawienia się
+			ValueMultiplier: Mnożnik wartości
+			LootMultiplier: Mnożnik łupu
+			Misc: Różne
+		}
+
+		CommonSpawnChance: {
+			Label: Szansa na pospolite
+			Tooltip: ""
+		}
+
+		UncommonSpawnChance: {
+			Label: Szansa na niepospolite
+			Tooltip: ""
+		}
+
+		RareSpawnChance: {
+			Label: Szansa na rzadkie
+			Tooltip: ""
+		}
+
+		SuperRareSpawnChance: {
+			Label: Szansa na super rzadkie
+			Tooltip: ""
+		}
+
+		LegendarySpawnChance: {
+			Label: Szansa na legendarne
+			Tooltip: ""
+		}
+
+		CommonValueMultiplier: {
+			Label: Mnożnik wartości pospolitych wrogów
+			Tooltip: ""
+		}
+
+		UncommonValueMultiplier: {
+			Label: Mnożnik wartości niepospolitych wrogów
+			Tooltip: ""
+		}
+
+		RareValueMultiplier: {
+			Label: Mnożnik wartości rzadkich wrogów
+			Tooltip: ""
+		}
+
+		SuperRareValueMultiplier: {
+			Label: Mnożnik wartości super rzadkich wrogów
+			Tooltip: ""
+		}
+
+		LegendaryValueMultiplier: {
+			Label: Mnożnik wartości legendarnych wrogów
+			Tooltip: ""
+		}
+
+		CommonLootMultiplier: {
+			Label: Mnożnik łupu z pospolitych wrogów
+			Tooltip: ""
+		}
+
+		UncommonLootMultiplier: {
+			Label: Mnożnik łupu z niepospolitych wrogów
+			Tooltip: ""
+		}
+
+		RareLootMultiplier: {
+			Label: Mnożnik łupu z rzadkich wrogów
+			Tooltip: ""
+		}
+
+		SuperRareLootMultiplier: {
+			Label: Mnożnik łupu z super rzadkich wrogów
+			Tooltip: ""
+		}
+
+		LegendaryLootMultiplier: {
+			Label: Mnożnik łupu z legendarnych wrogów
+			Tooltip: ""
+		}
+
+		ApplyToCritters: {
+			Label: Nakładanie efektów na zwierzęta
+			Tooltip: ""
+		}
+
+		ApplyToBosses: {
+			Label: Nakładanie efektów na bossów
+			Tooltip: ""
+		}
+
+		MaxSimultaneousVariations: {
+			Tooltip: ""
+			Label: Maksymalna ilość wariantów na raz
+		}
+	}
+}
