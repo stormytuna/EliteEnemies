@@ -1,3 +1,4 @@
-V1.0.1
+V1.0.2
 
-- Added Polish translation, thanks to Roton
+- Removed constant chat spam, alarm fatigue moment
+- Prevented town NPCs from having variations applied
