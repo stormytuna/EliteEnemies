@@ -48,7 +48,6 @@ public class HugeElite : EliteVariation
 
 	public override void ModifyHitPlayer(NPC npc, Player target, ref Player.HurtModifiers modifiers) {
 		if (ApplyEliteVariation) {
-			Main.NewText(_strength);
 			modifiers.FinalDamage *= 1.2f * _strength;
 		}
 	}

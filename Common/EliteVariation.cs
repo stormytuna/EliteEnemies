@@ -98,10 +98,7 @@ public abstract class EliteVariation : GlobalNPC
 		bool careAboutCritter = ServerConfig.Instance.ApplyToCritters || !npc.CountsAsACritter;
 		bool careAboutBoss = ServerConfig.Instance.ApplyToBosses || (!npc.boss && (npc.type is not NPCID.EaterofWorldsHead or NPCID.EaterofWorldsBody or NPCID.EaterofWorldsTail));
 		bool underMaxVariationsLimit = npc.NumActiveEliteVariations() < ServerConfig.Instance.MaxSimultaneousVariations;
-		ApplyEliteVariation = CanApply(npc) && Main.rand.NextFloat() < SpawnChance && careAboutCritter && careAboutBoss && underMaxVariationsLimit;
-		if (ApplyEliteVariation) {
-			Main.NewText(Name);
-		}
+		ApplyEliteVariation = CanApply(npc) && Main.rand.NextFloat() < SpawnChance && careAboutCritter && careAboutBoss && underMaxVariationsLimit && !npc.townNPC;
 
 		SafeOnSpawn(npc, source);
 	}

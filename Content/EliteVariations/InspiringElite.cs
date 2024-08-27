@@ -50,7 +50,6 @@ public class InspiringElite : EliteVariation
 			return;
 		}
 
-		Main.NewText(strength);
 		modifiers.Defense += float.Lerp(0.2f, 0.6f, strength);
 	}
 
@@ -126,7 +125,6 @@ public class InspiringEliteGlobalProjectile : GlobalProjectile
 			return;
 		}
 
-		Main.NewText(_strength);
 		modifiers.FinalDamage += float.Lerp(0.2f, 0.6f, _strength);
 	}
 }
