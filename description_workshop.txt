@@ -6,7 +6,7 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
 - Variations range from stat increases to unique effects
 - Variations have rarities, which influence how often they appear and how much loot they drop
 - Multiplayer is supported
-- Currently supports English and Polish, see below if you'd like to contribute another translation
+- Currently supports English and (partially) Polish, see below if you'd like to contribute another translation
 
 [hr][/hr]
 
@@ -23,13 +23,13 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
         [th]Huge[/th]
         [th]Increases scale and damage, reduces knockback and speed[/th]
         [th]Common[/th]
-        [th]Mutually exclusive with Tiny[/th]
+        [th]Cannot apply to worms, Mutually exclusive with Tiny[/th]
     [/tr]
     [tr]
         [th]Tiny[/th]
         [th]Decreases scale, increases knockback and speed[/th]
         [th]Common[/th]
-        [th]Mutually exclusive with Huge[/th]
+        [th]Cannot apply to worms, Mutually exclusive with Huge[/th]
     [/tr]
     [tr]
         [th]Jacked[/th]
@@ -119,19 +119,19 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
         [th]Mother[/th]
         [th]Spawns 1-3 smaller, weaker children on death[/th]
         [th]Super Rare[/th]
-        [th][/th]
+        [th]Cannot apply to worms[/th]
     [/tr]
     [tr]
         [th]Discordant[/th]
         [th]Teleports around randomly[/th]
         [th]Legendary[/th]
-        [th]Only applies during hardmode[/th]
+        [th]Cannot apply to worms, only applies during hardmode[/th]
     [/tr]
     [tr]
         [th]Phasic[/th]
         [th]Phases in and out of reality periodically[/th]
         [th]Legendary[/th]
-        [th]Only applies after killing Skeletron[/th]
+        [th]Cannot apply to worms, only applies after killing Skeletron[/th]
     [/tr]
 [/table]
 
@@ -182,10 +182,14 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
 
 [h2]Configuration[/h2]
 
+- Toggle for each variation
 - Spawn chance of each rarity [0..1]
 - Max simultaneous variations [0..20]
+- Whether to apply NPC scale changes
+- Whether to apply NPC velocity changes
 - Whether to apply to critters
 - Whether to apply to bosses
+- Whether to apply to modded NPCs
 
 [hr][/hr]
 

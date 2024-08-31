@@ -1,4 +1,8 @@
-V1.0.2
+V1.0.3
 
-- Removed constant chat spam, alarm fatigue moment
-- Prevented town NPCs from having variations applied
+- Many more config options
+    - Whether to apply scale changes
+    - Whether to apply velocity changes
+    - Whether to apply to modded NPCs
+    - Toggle for enabling each elite individually
+- Made some elites unable to apply to worms
