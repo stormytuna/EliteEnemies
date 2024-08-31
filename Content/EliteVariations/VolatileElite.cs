@@ -16,6 +16,10 @@ public class VolatileElite : EliteVariation
 
 	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
 
+	public override bool CanApply(NPC npc) {
+		return ServerConfig.Instance.EnableVolatile;
+	}
+
 	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
 			_strength = Main.rand.NextFloat(1f, 2f);

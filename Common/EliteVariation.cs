@@ -2,7 +2,6 @@ using System.IO;
 using EliteEnemies.Core;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -96,9 +95,10 @@ public abstract class EliteVariation : GlobalNPC
 
 	public sealed override void OnSpawn(NPC npc, IEntitySource source) {
 		bool careAboutCritter = ServerConfig.Instance.ApplyToCritters || !npc.CountsAsACritter;
-		bool careAboutBoss = ServerConfig.Instance.ApplyToBosses || (!npc.boss && (npc.type is not NPCID.EaterofWorldsHead or NPCID.EaterofWorldsBody or NPCID.EaterofWorldsTail));
+		bool careAboutBoss = ServerConfig.Instance.ApplyToBosses || !npc.IsBoss();
+		bool careAboutModded = ServerConfig.Instance.ApplyToModdedNPCs || npc.ModNPC is null;
 		bool underMaxVariationsLimit = npc.NumActiveEliteVariations() < ServerConfig.Instance.MaxSimultaneousVariations;
-		ApplyEliteVariation = CanApply(npc) && Main.rand.NextFloat() < SpawnChance && careAboutCritter && careAboutBoss && underMaxVariationsLimit && !npc.townNPC;
+		ApplyEliteVariation = CanApply(npc) && Main.rand.NextFloat() < SpawnChance && !npc.friendly && careAboutCritter && careAboutBoss && underMaxVariationsLimit && careAboutModded;
 
 		SafeOnSpawn(npc, source);
 	}

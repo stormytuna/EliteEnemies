@@ -14,7 +14,7 @@ public class TinyElite : EliteVariation
 	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
 
 	public override bool CanApply(NPC npc) {
-		return npc.HasNotEliteVariation<HugeElite>();
+		return npc.HasNotEliteVariation<HugeElite>() && !npc.IsWorm() && ServerConfig.Instance.EnableTiny;
 	}
 
 	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
@@ -25,14 +25,17 @@ public class TinyElite : EliteVariation
 
 	public override void OnApply(NPC npc) {
 		if (ApplyEliteVariation) {
-			npc.scale /= 1.5f * _strength;
-			npc.width = (int)(npc.width * npc.scale);
-			npc.height = (int)(npc.height * npc.scale);
+			if (ServerConfig.Instance.ApplyScaleChanges) {
+				npc.scale /= 1.5f * _strength;
+			}
+
+			npc.width = (int)(npc.width * 1.5f * _strength);
+			npc.height = (int)(npc.height * 1.5f * _strength);
 		}
 	}
 
 	public override bool SafePreAI(NPC npc) {
-		if (ApplyEliteVariation) {
+		if (ApplyEliteVariation && ServerConfig.Instance.ApplyVelocityChanges) {
 			npc.velocity *= 1 / (1.3f * _strength);
 		}
 
@@ -40,7 +43,7 @@ public class TinyElite : EliteVariation
 	}
 
 	public override void PostAI(NPC npc) {
-		if (ApplyEliteVariation) {
+		if (ApplyEliteVariation && ServerConfig.Instance.ApplyVelocityChanges) {
 			npc.velocity *= 1.3f * _strength;
 		}
 	}

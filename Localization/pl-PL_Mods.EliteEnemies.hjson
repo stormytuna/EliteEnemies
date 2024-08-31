@@ -34,6 +34,7 @@ Configs: {
 			ValueMultiplier: Mnożnik wartości
 			LootMultiplier: Mnożnik łupu
 			Misc: Różne
+			// Variations: Variations
 		}
 
 		CommonSpawnChance: {
@@ -124,6 +125,116 @@ Configs: {
 		MaxSimultaneousVariations: {
 			Tooltip: ""
 			Label: Maksymalna ilość wariantów na raz
+		}
+
+		EnableBlazing: {
+			// Tooltip: ""
+			// Label: Enable Blazing
+		}
+
+		EnableCursed: {
+			// Label: Enable Cursed
+			// Tooltip: ""
+		}
+
+		EnableDiscordant: {
+			// Label: Enable Discordant
+			// Tooltip: ""
+		}
+
+		EnableGlacial: {
+			// Label: Enable Glacial
+			// Tooltip: ""
+		}
+
+		EnableGlowing: {
+			// Label: Enable Glowing
+			// Tooltip: ""
+		}
+
+		EnableHuge: {
+			// Label: Enable Huge
+			// Tooltip: ""
+		}
+
+		EnableIchor: {
+			// Label: Enable Ichor
+			// Tooltip: ""
+		}
+
+		EnableImmovable: {
+			// Label: Enable Immovable
+			// Tooltip: ""
+		}
+
+		EnableInspiring: {
+			// Label: Enable Inspiring
+			// Tooltip: ""
+		}
+
+		EnableJacked: {
+			// Label: Enable Jacked
+			// Tooltip: ""
+		}
+
+		EnableLucky: {
+			// Label: Enable Lucky
+			// Tooltip: ""
+		}
+
+		EnableMedicated: {
+			// Label: Enable Medicated
+			// Tooltip: ""
+		}
+
+		EnableMother: {
+			// Label: Enable Mother
+			// Tooltip: ""
+		}
+
+		EnablePhasic: {
+			// Label: Enable Phasic
+			// Tooltip: ""
+		}
+
+		EnableSneaky: {
+			// Label: Enable Sneaky
+			// Tooltip: ""
+		}
+
+		EnableSpelunker: {
+			// Label: Enable Spelunker
+			// Tooltip: ""
+		}
+
+		EnableThief: {
+			// Label: Enable Thief
+			// Tooltip: ""
+		}
+
+		EnableTiny: {
+			// Label: Enable Tiny
+			// Tooltip: ""
+		}
+
+		EnableVolatile: {
+			// Label: Enable Volatile
+			// Tooltip: ""
+		}
+
+		ApplyScaleChanges: {
+			// Label: Apply Scale Changes
+			// Tooltip: ""
+		}
+
+		ApplyVelocityChanges: {
+			// Label: Apply Velocity Changes
+			// Tooltip: ""
+		}
+
+		ApplyToModdedNPCs: {
+			// Label: Apply To Modded NPCs
+			// Tooltip: ""
 		}
 	}
 }

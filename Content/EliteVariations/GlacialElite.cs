@@ -10,7 +10,7 @@ public class GlacialElite : EliteVariation
 	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
 
 	public override bool CanApply(NPC npc) {
-		return !Main.hardMode;
+		return !Main.hardMode && ServerConfig.Instance.EnableGlacial;
 	}
 
 	public override void OnApply(NPC npc) {

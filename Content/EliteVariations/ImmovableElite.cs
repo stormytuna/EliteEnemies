@@ -11,6 +11,10 @@ public class ImmovableElite : EliteVariation
 {
 	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
+	public override bool CanApply(NPC npc) {
+		return ServerConfig.Instance.EnableImmovable;
+	}
+
 	public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
 		if (ApplyEliteVariation) {
 			modifiers.DisableKnockback();

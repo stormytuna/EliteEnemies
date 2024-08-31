@@ -10,7 +10,7 @@ public class IchorElite : EliteVariation
 	public override EliteVariationRarity Rarity => EliteVariationRarity.Uncommon;
 
 	public override bool CanApply(NPC npc) {
-		return Main.hardMode && WorldGen.crimson;
+		return Main.hardMode && WorldGen.crimson && ServerConfig.Instance.EnableIchor;
 	}
 
 	public override void OnApply(NPC npc) {

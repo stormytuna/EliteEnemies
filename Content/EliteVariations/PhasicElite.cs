@@ -1,5 +1,6 @@
 using System.IO;
 using EliteEnemies.Common;
+using EliteEnemies.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -19,7 +20,7 @@ public class PhasicElite : EliteVariation
 	public override EliteVariationRarity Rarity => EliteVariationRarity.Legendary;
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedBoss3;
+		return NPC.downedBoss3 && !npc.IsWorm() && ServerConfig.Instance.EnablePhasic;
 	}
 
 	public override void SafeLoad() {

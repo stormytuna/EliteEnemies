@@ -14,7 +14,7 @@ public class ThiefElite : EliteVariation
 	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
 	public override bool CanApply(NPC npc) {
-		return !NPCID.Sets.CantTakeLunchMoney[npc.type];
+		return !NPCID.Sets.CantTakeLunchMoney[npc.type] && ServerConfig.Instance.EnableThief;
 	}
 
 	public override void PostAI(NPC npc) {

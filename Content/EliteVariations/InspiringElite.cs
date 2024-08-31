@@ -19,7 +19,7 @@ public class InspiringElite : EliteVariation
 	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedBoss2;
+		return NPC.downedBoss2 && ServerConfig.Instance.EnableInspiring;
 	}
 
 	public override void SafeLoad() {

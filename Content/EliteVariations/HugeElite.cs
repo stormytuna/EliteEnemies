@@ -14,7 +14,7 @@ public class HugeElite : EliteVariation
 	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
 
 	public override bool CanApply(NPC npc) {
-		return npc.HasNotEliteVariation<TinyElite>();
+		return npc.HasNotEliteVariation<TinyElite>() && !npc.IsWorm() && ServerConfig.Instance.EnableHuge;
 	}
 
 	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
@@ -25,15 +25,18 @@ public class HugeElite : EliteVariation
 
 	public override void OnApply(NPC npc) {
 		if (ApplyEliteVariation) {
-			npc.scale *= 1.5f * _strength;
-			npc.width = (int)(npc.width * npc.scale);
-			npc.height = (int)(npc.height * npc.scale);
+			if (ServerConfig.Instance.ApplyScaleChanges) {
+				npc.scale *= 1.5f * _strength;
+			}
+
+			npc.width = (int)(npc.width * 1.5f * _strength);
+			npc.height = (int)(npc.height * 1.5f * _strength);
 			npc.position.Y -= npc.width / 2; // Fixes npcs getting stuck in ground sometimes
 		}
 	}
 
 	public override bool SafePreAI(NPC npc) {
-		if (ApplyEliteVariation) {
+		if (ApplyEliteVariation && ServerConfig.Instance.ApplyVelocityChanges) {
 			npc.velocity *= 1.3f * _strength;
 		}
 
@@ -41,7 +44,7 @@ public class HugeElite : EliteVariation
 	}
 
 	public override void PostAI(NPC npc) {
-		if (ApplyEliteVariation) {
+		if (ApplyEliteVariation && ServerConfig.Instance.ApplyVelocityChanges) {
 			npc.velocity *= 1 / (1.3f * _strength);
 		}
 	}

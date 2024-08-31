@@ -11,7 +11,7 @@ public class CursedElite : EliteVariation
 	public override EliteVariationRarity Rarity => EliteVariationRarity.Uncommon;
 
 	public override bool CanApply(NPC npc) {
-		return Main.hardMode && !WorldGen.crimson;
+		return Main.hardMode && !WorldGen.crimson && ServerConfig.Instance.EnableCursed;
 	}
 
 	public override void OnApply(NPC npc) {
