@@ -94,11 +94,12 @@ public abstract class EliteVariation : GlobalNPC
 	public sealed override bool InstancePerEntity => true;
 
 	public sealed override void OnSpawn(NPC npc, IEntitySource source) {
-		bool careAboutCritter = ServerConfig.Instance.ApplyToCritters || !npc.CountsAsACritter;
+		bool isEnemy = !npc.friendly && npc.damage > 0 && !npc.immortal;
+		bool applyToEnemyOrCritter = isEnemy || (ServerConfig.Instance.ApplyToCritters && npc.CountsAsACritter);
 		bool careAboutBoss = ServerConfig.Instance.ApplyToBosses || !npc.IsBoss();
 		bool careAboutModded = ServerConfig.Instance.ApplyToModdedNPCs || npc.ModNPC is null;
 		bool underMaxVariationsLimit = npc.NumActiveEliteVariations() < ServerConfig.Instance.MaxSimultaneousVariations;
-		ApplyEliteVariation = CanApply(npc) && Main.rand.NextFloat() < SpawnChance && !npc.friendly && careAboutCritter && careAboutBoss && underMaxVariationsLimit && careAboutModded;
+		ApplyEliteVariation = CanApply(npc) && Main.rand.NextFloat() < SpawnChance && applyToEnemyOrCritter && careAboutBoss && underMaxVariationsLimit && careAboutModded;
 
 		SafeOnSpawn(npc, source);
 	}
