@@ -1,8 +1,5 @@
 V1.0.3
 
-- Many more config options
-    - Whether to apply scale changes
-    - Whether to apply velocity changes
-    - Whether to apply to modded NPCs
-    - Toggle for enabling each elite individually
-- Made some elites unable to apply to worms
+- Slightly tweaked how elite variations are applied
+    - Should no longer apply to pillars, dummies, or similar non-hostile, strikeable npcs
+- Updated Polish translation (Thanks Roton!)
