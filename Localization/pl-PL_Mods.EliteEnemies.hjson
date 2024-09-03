@@ -1,7 +1,7 @@
 EliteVariations: {
 	HugeElite: Wielki
 	TinyElite: Malutki
-	ImmovableElite: Immovable
+	ImmovableElite: Niedźwigalny
 	DiscordantElite: Chaotyczny
 	VolatileElite: Niestabilny
 	JackedElite: Siłacz
@@ -34,7 +34,7 @@ Configs: {
 			ValueMultiplier: Mnożnik wartości
 			LootMultiplier: Mnożnik łupu
 			Misc: Różne
-			// Variations: Variations
+			Variations: Warianty
 		}
 
 		CommonSpawnChance: {
@@ -128,113 +128,113 @@ Configs: {
 		}
 
 		EnableBlazing: {
-			// Tooltip: ""
-			// Label: Enable Blazing
+			Tooltip: ""
+			Label: Zezwól na płonących wrogów
 		}
 
 		EnableCursed: {
-			// Label: Enable Cursed
-			// Tooltip: ""
+			Label: Zezwól na przeklętych wrogów
+			Tooltip: ""
 		}
 
 		EnableDiscordant: {
-			// Label: Enable Discordant
-			// Tooltip: ""
+			Label: Zezwól na chaotycznych wrogów
+			Tooltip: ""
 		}
 
 		EnableGlacial: {
-			// Label: Enable Glacial
-			// Tooltip: ""
+			Label: Zezwól na lodowatych wrogów
+			Tooltip: ""
 		}
 
 		EnableGlowing: {
-			// Label: Enable Glowing
-			// Tooltip: ""
+			Label: Zezwól na świecących wrogów
+			Tooltip: ""
 		}
 
 		EnableHuge: {
-			// Label: Enable Huge
-			// Tooltip: ""
+			Label: Zezwól na wielkich wrogów
+			Tooltip: ""
 		}
 
 		EnableIchor: {
-			// Label: Enable Ichor
-			// Tooltip: ""
+			Label: Zezwól na ichorowych wrogów
+			Tooltip: ""
 		}
 
 		EnableImmovable: {
-			// Label: Enable Immovable
-			// Tooltip: ""
+			Label: Zezwól na niedźwigalnych wrogów
+			Tooltip: ""
 		}
 
 		EnableInspiring: {
-			// Label: Enable Inspiring
-			// Tooltip: ""
+			Label: Zezwól na inspirujących wrogów
+			Tooltip: ""
 		}
 
 		EnableJacked: {
-			// Label: Enable Jacked
-			// Tooltip: ""
+			Label: Zezwól na wrogów siłaczy
+			Tooltip: ""
 		}
 
 		EnableLucky: {
-			// Label: Enable Lucky
-			// Tooltip: ""
+			Label: Zezwól na fortunnych wrogów
+			Tooltip: ""
 		}
 
 		EnableMedicated: {
-			// Label: Enable Medicated
-			// Tooltip: ""
+			Label: Zezwól na zdrowych wrogów
+			Tooltip: ""
 		}
 
 		EnableMother: {
-			// Label: Enable Mother
-			// Tooltip: ""
+			Label: Zezwól na wrogów matki
+			Tooltip: ""
 		}
 
 		EnablePhasic: {
-			// Label: Enable Phasic
-			// Tooltip: ""
+			Label: Zezwól na fazujących wrogów
+			Tooltip: ""
 		}
 
 		EnableSneaky: {
-			// Label: Enable Sneaky
-			// Tooltip: ""
+			Label: Zezwól na skradających wrogów
+			Tooltip: ""
 		}
 
 		EnableSpelunker: {
-			// Label: Enable Spelunker
-			// Tooltip: ""
+			Label: Zezwól na wrogów grotołazów
+			Tooltip: ""
 		}
 
 		EnableThief: {
-			// Label: Enable Thief
-			// Tooltip: ""
+			Label: Zezwól na wrogów złodziei
+			Tooltip: ""
 		}
 
 		EnableTiny: {
-			// Label: Enable Tiny
-			// Tooltip: ""
+			Label: Zezwól na malutkich wrogów
+			Tooltip: ""
 		}
 
 		EnableVolatile: {
-			// Label: Enable Volatile
-			// Tooltip: ""
+			Label: Zezwól na niestabilnych wrogów
+			Tooltip: ""
 		}
 
 		ApplyScaleChanges: {
-			// Label: Apply Scale Changes
-			// Tooltip: ""
+			Label: Zastosuj zmiany skali
+			Tooltip: ""
 		}
 
 		ApplyVelocityChanges: {
-			// Label: Apply Velocity Changes
-			// Tooltip: ""
+			Label: Zastosuj zmiany prędkości
+			Tooltip: ""
 		}
 
 		ApplyToModdedNPCs: {
-			// Label: Apply To Modded NPCs
-			// Tooltip: ""
+			Label: Zastosuj zmiany na wrogach z modów
+			Tooltip: ""
 		}
 	}
 }
