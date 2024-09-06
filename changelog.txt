@@ -1,5 +1,3 @@
 V1.0.3
 
-- Slightly tweaked how elite variations are applied
-    - Should no longer apply to pillars, dummies, or similar non-hostile, strikeable npcs
-- Updated Polish translation (Thanks Roton!)
+- Add Spanish localisation (Thank you fmartingr!)

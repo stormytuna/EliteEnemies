@@ -9,7 +9,7 @@ EliteVariations: {
 
 	ThiefElite: {
 		$parentVal: Ladrón
-		Stolen: "¡{0} fué robado!"
+		Stolen: ¡{0} fué robado!
 	}
 
 	LuckyElite: Suertudo
@@ -123,13 +123,13 @@ Configs: {
 		}
 
 		MaxSimultaneousVariations: {
-			Label: Máximo de variaciones simultáneas
 			Tooltip: ""
+			Label: Máximo de variaciones simultáneas
 		}
 
 		EnableBlazing: {
-			Label: Habilitar Ardiente
 			Tooltip: ""
+			Label: Habilitar Ardiente
 		}
 
 		EnableCursed: {
@@ -158,7 +158,7 @@ Configs: {
 		}
 
 		EnableIchor: {
- 			Label: Habilitar Icoroso
+			Label: Habilitar Icoroso
 			Tooltip: ""
 		}
 
