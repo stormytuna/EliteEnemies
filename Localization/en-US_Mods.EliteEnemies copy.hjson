@@ -1,0 +1,240 @@
+EliteVariations: {
+	HugeElite: Enorme
+	TinyElite: Enano
+	ImmovableElite: Inamovible
+	DiscordantElite: Discordante
+	VolatileElite: Volátil
+	JackedElite: Musculoso
+	MedicatedElite: Medicado
+
+	ThiefElite: {
+		$parentVal: Ladrón
+		Stolen: "¡{0} fué robado!"
+	}
+
+	LuckyElite: Suertudo
+	InspiringElite: Inspirador
+	GlowingElite: Brillante
+	SpelunkerElite: Espeleólogo
+	SneakyElite: Sigiloso
+	PhasicElite: Fásico
+	MotherElite: Madre
+	BlazingElite: Ardiente
+	IchorElite: Icoroso
+	CursedElite: Maldito
+	GlacialElite: Glacial
+}
+
+Configs: {
+	ServerConfig: {
+		DisplayName: Configuración del Servidor
+
+		Headers: {
+			SpawnChance: Probabilidad de aparición
+			ValueMultiplier: Multiplicador de valor
+			LootMultiplier: Multiplicador de botín
+			Misc: Misceláneas
+			Variations: Variaciones
+		}
+
+		CommonSpawnChance: {
+			Label: Probabilidad de aparición común
+			Tooltip: ""
+		}
+
+		UncommonSpawnChance: {
+			Label: Probabilidad de aparición poco común
+			Tooltip: ""
+		}
+
+		RareSpawnChance: {
+			Label: Probabilidad de aparición rara
+			Tooltip: ""
+		}
+
+		SuperRareSpawnChance: {
+			Label: Probabilidad de aparición super rara
+			Tooltip: ""
+		}
+
+		LegendarySpawnChance: {
+			Label: Probabilidad de aparición legendaria
+			Tooltip: ""
+		}
+
+		CommonValueMultiplier: {
+			Label: Multiplicador de valor común
+			Tooltip: ""
+		}
+
+		UncommonValueMultiplier: {
+			Label: Multiplicador de valor poco común
+			Tooltip: ""
+		}
+
+		RareValueMultiplier: {
+			Label: Multiplicador de valor raro
+			Tooltip: ""
+		}
+
+		SuperRareValueMultiplier: {
+			Label: Multiplicador de valor super raro
+			Tooltip: ""
+		}
+
+		LegendaryValueMultiplier: {
+			Label: Multiplicador de valor legendario
+			Tooltip: ""
+		}
+
+		CommonLootMultiplier: {
+			Label: Multiplicador de botín común
+			Tooltip: ""
+		}
+
+		UncommonLootMultiplier: {
+			Label: Multiplicador de botín poco común
+			Tooltip: ""
+		}
+
+		RareLootMultiplier: {
+			Label: Multiplicador de botín raro
+			Tooltip: ""
+		}
+
+		SuperRareLootMultiplier: {
+			Label: Multiplicador de botín super raro
+			Tooltip: ""
+		}
+
+		LegendaryLootMultiplier: {
+			Label: Multiplicador de botín legendario
+			Tooltip: ""
+		}
+
+		ApplyToCritters: {
+			Label: Aplicar a criaturas
+			Tooltip: ""
+		}
+
+		ApplyToBosses: {
+			Label: Aplicar a jefes
+			Tooltip: ""
+		}
+
+		MaxSimultaneousVariations: {
+			Label: Máximo de variaciones simultáneas
+			Tooltip: ""
+		}
+
+		EnableBlazing: {
+			Label: Habilitar Ardiente
+			Tooltip: ""
+		}
+
+		EnableCursed: {
+			Label: Habilitar Maldito
+			Tooltip: ""
+		}
+
+		EnableDiscordant: {
+			Label: Habilitar Discordante
+			Tooltip: ""
+		}
+
+		EnableGlacial: {
+			Label: Habilitar Glacial
+			Tooltip: ""
+		}
+
+		EnableGlowing: {
+			Label: Habilitar Brillante
+			Tooltip: ""
+		}
+
+		EnableHuge: {
+			Label: Habilitar Enorme
+			Tooltip: ""
+		}
+
+		EnableIchor: {
+ 			Label: Habilitar Icoroso
+			Tooltip: ""
+		}
+
+		EnableImmovable: {
+			Label: Habilitar Inamovible
+			Tooltip: ""
+		}
+
+		EnableInspiring: {
+			Label: Habilitar Inspirador
+			Tooltip: ""
+		}
+
+		EnableJacked: {
+			Label: Habilitar Musculoso
+			Tooltip: ""
+		}
+
+		EnableLucky: {
+			Label: Habilitar Suertudo
+			Tooltip: ""
+		}
+
+		EnableMedicated: {
+			Label: Habilitar Medicado
+			Tooltip: ""
+		}
+
+		EnableMother: {
+			Label: Habilitar Madre
+			Tooltip: ""
+		}
+
+		EnablePhasic: {
+			Label: Habilitar Fásico
+			Tooltip: ""
+		}
+
+		EnableSneaky: {
+			Label: Habilitar Sigiloso
+			Tooltip: ""
+		}
+
+		EnableSpelunker: {
+			Label: Habilitar Espeleólogo
+			Tooltip: ""
+		}
+
+		EnableThief: {
+			Label: Habilitar Ladrón
+			Tooltip: ""
+		}
+
+		EnableTiny: {
+			Label: Habilitar Enano
+			Tooltip: ""
+		}
+
+		EnableVolatile: {
+			Label: Habilitar Volátil
+			Tooltip: ""
+		}
+
+		ApplyScaleChanges: {
+			Label: Aplicar cambios de escala
+			Tooltip: ""
+		}
+
+		ApplyVelocityChanges: {
+			Label: Aplicar cambios de velocidad
+			Tooltip: ""
+		}
+
+		ApplyToModdedNPCs: {
+			Label: Aplicar a NPCs personalizados
+			Tooltip: ""
+		}
+	}
+}
