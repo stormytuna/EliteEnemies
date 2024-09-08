@@ -1,4 +1,4 @@
 displayName = Elite Enemies
 author = stormytuna
-version = 1.0.5
+version = 1.0.7
 homepage = https://github.com/stormytuna/EliteEnemies

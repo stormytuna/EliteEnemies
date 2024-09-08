@@ -236,5 +236,10 @@ Configs: {
 			Label: Apply To Modded NPCs
 			Tooltip: ""
 		}
+
+		NPCBlacklist: {
+			Tooltip: ""
+			Label: NPC Blacklist
+		}
 	}
 }

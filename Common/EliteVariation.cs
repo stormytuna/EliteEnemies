@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.ModLoader.Config;
 using Terraria.ModLoader.IO;
 
 namespace EliteEnemies.Common;
@@ -94,8 +95,8 @@ public abstract class EliteVariation : GlobalNPC
 	public sealed override bool InstancePerEntity => true;
 
 	public sealed override void OnSpawn(NPC npc, IEntitySource source) {
-		bool isEnemy = !npc.friendly && npc.damage > 0 && !npc.immortal;
-		bool applyToEnemyOrCritter = isEnemy || (ServerConfig.Instance.ApplyToCritters && npc.CountsAsACritter);
+		bool isAffectableEnemy = !npc.friendly && npc.damage > 0 && !npc.immortal && !npc.dontTakeDamage && !ServerConfig.Instance.NPCBlacklist.Contains(new NPCDefinition(npc.type));
+		bool applyToEnemyOrCritter = isAffectableEnemy || (ServerConfig.Instance.ApplyToCritters && npc.CountsAsACritter);
 		bool careAboutBoss = ServerConfig.Instance.ApplyToBosses || !npc.IsBoss();
 		bool careAboutModded = ServerConfig.Instance.ApplyToModdedNPCs || npc.ModNPC is null;
 		bool underMaxVariationsLimit = npc.NumActiveEliteVariations() < ServerConfig.Instance.MaxSimultaneousVariations;

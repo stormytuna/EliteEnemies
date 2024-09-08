@@ -6,7 +6,7 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
 - Variations range from stat increases to unique effects
 - Variations have rarities, which influence how often they appear and how much loot they drop
 - Multiplayer is supported
-- Currently supports English, Polish and Spanish, see below if you'd like to contribute another translation
+- Currently supports English, Polish and (partial) Spanish, see below if you'd like to contribute another translation
 
 [hr][/hr]
 
@@ -185,6 +185,7 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
 - Toggle for each variation
 - Spawn chance of each rarity [0..1]
 - Max simultaneous variations [0..20]
+- An NPC blacklist
 - Whether to apply NPC scale changes
 - Whether to apply NPC velocity changes
 - Whether to apply to critters

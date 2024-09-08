@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
@@ -137,6 +138,8 @@ public class ServerConfig : ModConfig
 	[DefaultValue(4)]
 	[Range(0, 20)]
 	public int MaxSimultaneousVariations { get; set; }
+
+	public HashSet<NPCDefinition> NPCBlacklist { get; set; } = new();
 
 	[DefaultValue(true)]
 	public bool ApplyScaleChanges { get; set; }

@@ -236,5 +236,10 @@ Configs: {
 			Label: Aplicar a NPCs personalizados
 			Tooltip: ""
 		}
+
+		NPCBlacklist: {
+			// Tooltip: ""
+			// Label: NPC Blacklist
+		}
 	}
 }
