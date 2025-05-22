@@ -1,15 +1,22 @@
 using System.Collections.Generic;
 using System.ComponentModel;
-using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 
 namespace EliteEnemies.Common;
 
 public class ServerConfig : ModConfig
 {
-	public static ServerConfig Instance => ModContent.GetInstance<ServerConfig>();
+	public static ServerConfig Instance {
+		get {
+			return ModContent.GetInstance<ServerConfig>();
+		}
+	}
 
-	public override ConfigScope Mode => ConfigScope.ServerSide;
+	public override ConfigScope Mode {
+		get {
+			return ConfigScope.ServerSide;
+		}
+	}
 
 	[Header("Variations")]
 	[DefaultValue(true)]
@@ -20,7 +27,7 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableDiscordant { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableElectric { get; set; }
 
@@ -72,7 +79,7 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableVolatile { get; set; }
-	
+
 
 	[Header("SpawnChance")]
 	[Range(0f, 1f)]

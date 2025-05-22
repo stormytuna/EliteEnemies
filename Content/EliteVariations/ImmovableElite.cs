@@ -1,15 +1,15 @@
 using EliteEnemies.Common;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace EliteEnemies.Content.EliteVariations;
 
 public class ImmovableElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.SuperRare;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return ServerConfig.Instance.EnableImmovable;

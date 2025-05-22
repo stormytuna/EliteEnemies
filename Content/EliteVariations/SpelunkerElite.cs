@@ -1,11 +1,14 @@
 using EliteEnemies.Common;
-using Terraria;
 
 namespace EliteEnemies.Content.EliteVariations;
 
 public class SpelunkerElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Rare;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return ServerConfig.Instance.EnableSpelunker;

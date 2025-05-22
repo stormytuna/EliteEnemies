@@ -1,7 +1,5 @@
 using System.IO;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
 namespace EliteEnemies.Common;
@@ -13,8 +11,11 @@ public abstract class ShotByEliteVariationGlobalProjectile<TElite> : GlobalProje
 
 	protected NPC Parent { get; private set; }
 
-	public override bool InstancePerEntity => true;
-
+	public override bool InstancePerEntity {
+		get {
+			return true;
+		}
+	}
 
 	public virtual void SafeOnSpawn(Projectile projectile, IEntitySource source) { }
 

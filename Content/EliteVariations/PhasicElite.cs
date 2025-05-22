@@ -1,10 +1,7 @@
 using System.IO;
 using EliteEnemies.Common;
 using EliteEnemies.Helpers;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader.IO;
 
 namespace EliteEnemies.Content.EliteVariations;
@@ -17,7 +14,11 @@ public class PhasicElite : EliteVariation
 
 	private int _phasicTimerMax = 60;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Legendary;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Legendary;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return NPC.downedBoss3 && !npc.IsWorm() && ServerConfig.Instance.EnablePhasic;

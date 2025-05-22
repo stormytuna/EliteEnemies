@@ -1,13 +1,14 @@
 using EliteEnemies.Common;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
 
 namespace EliteEnemies.Content.EliteVariations;
 
 public class BlazingElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Rare;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return !Main.hardMode && ServerConfig.Instance.EnableBlazing;

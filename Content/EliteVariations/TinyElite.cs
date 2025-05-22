@@ -1,7 +1,6 @@
 using System.IO;
 using EliteEnemies.Common;
 using EliteEnemies.Helpers;
-using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader.IO;
 
@@ -11,7 +10,11 @@ public class TinyElite : EliteVariation
 {
 	private float _strength = 1f;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Common;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return npc.HasNotEliteVariation<HugeElite>() && !npc.IsWorm() && ServerConfig.Instance.EnableTiny;

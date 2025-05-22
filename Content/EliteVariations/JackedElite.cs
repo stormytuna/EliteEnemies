@@ -1,6 +1,5 @@
 using System.IO;
 using EliteEnemies.Common;
-using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader.IO;
 
@@ -10,7 +9,11 @@ public class JackedElite : EliteVariation
 {
 	private float _strength = 1f;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Common;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return ServerConfig.Instance.EnableJacked;

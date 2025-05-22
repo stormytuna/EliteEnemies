@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using Terraria.Utilities;
 
 namespace EliteEnemies.Helpers;

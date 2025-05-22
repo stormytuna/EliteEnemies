@@ -1,8 +1,5 @@
 using System.Collections.Generic;
 using EliteEnemies.Common;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader.IO;
 
 namespace EliteEnemies.Content.EliteVariations;
@@ -11,7 +8,11 @@ public class ThiefElite : EliteVariation
 {
 	private List<Item> _items = new();
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.SuperRare;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return !NPCID.Sets.CantTakeLunchMoney[npc.type] && ServerConfig.Instance.EnableThief;
@@ -22,7 +23,7 @@ public class ThiefElite : EliteVariation
 			return;
 		}
 
-		foreach (var item in Main.ActiveItems) {
+		foreach (Item item in Main.ActiveItems) {
 			if (npc.Hitbox.Intersects(item.Hitbox) && !item.beingGrabbed) {
 				_items.Add(item.Clone());
 				item.active = false;
@@ -39,7 +40,7 @@ public class ThiefElite : EliteVariation
 			return;
 		}
 
-		foreach (var item in _items) {
+		foreach (Item item in _items) {
 			Item.NewItem(npc.GetSource_Death(), npc.Hitbox, item);
 		}
 	}

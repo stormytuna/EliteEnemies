@@ -1,11 +1,7 @@
 using System.IO;
 using EliteEnemies.Common;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
-using Terraria;
 using Terraria.DataStructures;
-using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
 namespace EliteEnemies.Content.EliteVariations;
@@ -16,7 +12,11 @@ public class InspiringElite : EliteVariation
 
 	private float _strength = 0f;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.SuperRare;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return NPC.downedBoss2 && ServerConfig.Instance.EnableInspiring;
@@ -100,7 +100,11 @@ public class InspiringEliteGlobalProjectile : GlobalProjectile
 	private bool _apply = false;
 	private float _strength = 0f;
 
-	public override bool InstancePerEntity => true;
+	public override bool InstancePerEntity {
+		get {
+			return true;
+		}
+	}
 
 	public override void OnSpawn(Projectile projectile, IEntitySource source) {
 		if (source is EntitySource_Parent { Entity: NPC npc }) {

@@ -1,13 +1,11 @@
 using EliteEnemies.Common;
-using Terraria;
-using Terraria.ID;
 
 namespace EliteEnemies.Helpers;
 
 public static class NPCHelpers
 {
 	public static bool HasEliteVariation<TVariation>(this NPC npc) where TVariation : EliteVariation {
-		foreach (var global in npc.Globals) {
+		foreach (GlobalNPC global in npc.Globals) {
 			if (global is TVariation t && t.ApplyEliteVariation) {
 				return true;
 			}
@@ -23,7 +21,7 @@ public static class NPCHelpers
 	public static int NumActiveEliteVariations(this NPC npc) {
 		int count = 0;
 
-		foreach (var global in npc.Globals) {
+		foreach (GlobalNPC global in npc.Globals) {
 			if (global is EliteVariation variation && variation.ApplyEliteVariation) {
 				count++;
 			}

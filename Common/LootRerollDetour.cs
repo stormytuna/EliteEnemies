@@ -1,6 +1,3 @@
-using Terraria;
-using Terraria.ModLoader;
-
 namespace EliteEnemies.Common;
 
 public class LootRerollDetour : ILoadable
@@ -9,7 +6,7 @@ public class LootRerollDetour : ILoadable
 		On_NPC.NPCLoot_DropItems += static (orig, self, closestPlayer) => {
 			orig(self, closestPlayer);
 
-			foreach (var global in self.Globals) {
+			foreach (GlobalNPC global in self.Globals) {
 				if (global is not EliteVariation eliteVariation || !eliteVariation.ApplyEliteVariation) {
 					continue;
 				}

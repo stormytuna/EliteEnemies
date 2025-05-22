@@ -1,14 +1,15 @@
 
 using EliteEnemies.Common;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
 
 namespace EliteEnemies.Content.EliteVariations;
 
 public class CursedElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Uncommon;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Uncommon;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return Main.hardMode && !WorldGen.crimson && ServerConfig.Instance.EnableCursed;

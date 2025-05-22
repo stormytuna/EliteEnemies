@@ -1,7 +1,5 @@
 using System.IO;
 using EliteEnemies.Common;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader.IO;
 
@@ -11,7 +9,11 @@ public class GlowingElite : EliteVariation
 {
 	private Color _lightColor = Color.Transparent;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Rare;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return ServerConfig.Instance.EnableGlowing;

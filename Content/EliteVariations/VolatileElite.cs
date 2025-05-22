@@ -1,11 +1,8 @@
 using System.IO;
 using EliteEnemies.Common;
 using EliteEnemies.Helpers;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader.IO;
 
 namespace EliteEnemies.Content.EliteVariations;
@@ -14,7 +11,11 @@ public class VolatileElite : EliteVariation
 {
 	private float _strength = 1f;
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Rare;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Rare;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return ServerConfig.Instance.EnableVolatile;
@@ -40,7 +41,7 @@ public class VolatileElite : EliteVariation
 		}
 
 		Rectangle hurtBox = GetHurtBox(npc);
-		foreach (var player in Main.ActivePlayers) {
+		foreach (Player player in Main.ActivePlayers) {
 			if (hurtBox.Intersects(player.Hitbox)) {
 				player.Hurt(PlayerDeathReason.ByNPC(npc.whoAmI), (int)(npc.damage * _strength), int.Sign((int)(player.Center.X - npc.Center.X)));
 			}

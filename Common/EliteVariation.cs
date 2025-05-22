@@ -1,9 +1,7 @@
 using System.IO;
 using EliteEnemies.Helpers;
-using Terraria;
 using Terraria.DataStructures;
 using Terraria.Localization;
-using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using Terraria.ModLoader.IO;
 
@@ -13,7 +11,11 @@ public abstract class EliteVariation : GlobalNPC
 {
 	private bool _firstFrame = true;
 
-	public new LocalizedText Name => Language.GetOrRegister($"Mods.{nameof(EliteEnemies)}.EliteVariations.{GetType().Name}");
+	public new LocalizedText Name {
+		get {
+			return Language.GetOrRegister($"Mods.{nameof(EliteEnemies)}.EliteVariations.{GetType().Name}");
+		}
+	}
 
 	public sealed override void Load() {
 		SafeLoad();
@@ -30,54 +32,74 @@ public abstract class EliteVariation : GlobalNPC
 	/// The rarity of this elite, influences spawn chance, value multiplier and loot multiplier.
 	/// Defaults to Common
 	/// </summary>
-	public virtual EliteVariationRarity Rarity => EliteVariationRarity.Common;
+	public virtual EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Common;
+		}
+	}
 
 	/// <summary>
 	/// The chance of this variation appearing, as a decimal.
 	/// Influenced by Rarity by default.
 	/// </summary>
-	public virtual float SpawnChance => Rarity switch {
-		EliteVariationRarity.Common => ServerConfig.Instance.CommonSpawnChance,
-		EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonSpawnChance,
-		EliteVariationRarity.Rare => ServerConfig.Instance.RareSpawnChance,
-		EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareSpawnChance,
-		EliteVariationRarity.Legendary => ServerConfig.Instance.LegendarySpawnChance,
-		_ => 0f,
-	};
+	public virtual float SpawnChance {
+		get {
+			return Rarity switch {
+				EliteVariationRarity.Common => ServerConfig.Instance.CommonSpawnChance,
+				EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonSpawnChance,
+				EliteVariationRarity.Rare => ServerConfig.Instance.RareSpawnChance,
+				EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareSpawnChance,
+				EliteVariationRarity.Legendary => ServerConfig.Instance.LegendarySpawnChance,
+				_ => 0f,
+			};
+		}
+	}
 
 	/// <summary>
 	/// Multiplier to coins dropped.
 	/// Influenced by Rarity by default.
 	/// </summary>
-	public virtual float ValueMultiplier => Rarity switch {
-		EliteVariationRarity.Common => ServerConfig.Instance.CommonValueMultiplier,
-		EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonValueMultiplier,
-		EliteVariationRarity.Rare => ServerConfig.Instance.RareValueMultiplier,
-		EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareValueMultiplier,
-		EliteVariationRarity.Legendary => ServerConfig.Instance.LegendaryValueMultiplier,
-		_ => 0f,
-	};
+	public virtual float ValueMultiplier {
+		get {
+			return Rarity switch {
+				EliteVariationRarity.Common => ServerConfig.Instance.CommonValueMultiplier,
+				EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonValueMultiplier,
+				EliteVariationRarity.Rare => ServerConfig.Instance.RareValueMultiplier,
+				EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareValueMultiplier,
+				EliteVariationRarity.Legendary => ServerConfig.Instance.LegendaryValueMultiplier,
+				_ => 0f,
+			};
+		}
+	}
 
 	/// <summary>
 	/// Multiplier to loot drops, 1f would be standard amount, 2f would drop twice as much loot, 1.5f would drop twice as much loot half of the time.
 	/// Influenced by Rarity by default.
 	/// </summary>
-	public virtual float LootMultiplier => Rarity switch {
-		EliteVariationRarity.Common => ServerConfig.Instance.CommonLootMultiplier,
-		EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonLootMultiplier,
-		EliteVariationRarity.Rare => ServerConfig.Instance.RareLootMultiplier,
-		EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareLootMultiplier,
-		EliteVariationRarity.Legendary => ServerConfig.Instance.LegendaryLootMultiplier,
-		_ => 0f,
-	};
+	public virtual float LootMultiplier {
+		get {
+			return Rarity switch {
+				EliteVariationRarity.Common => ServerConfig.Instance.CommonLootMultiplier,
+				EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonLootMultiplier,
+				EliteVariationRarity.Rare => ServerConfig.Instance.RareLootMultiplier,
+				EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareLootMultiplier,
+				EliteVariationRarity.Legendary => ServerConfig.Instance.LegendaryLootMultiplier,
+				_ => 0f,
+			};
+		}
+	}
 
-	public virtual bool CanApply(NPC npc) => true;
+	public virtual bool CanApply(NPC npc) {
+		return true;
+	}
 
 	public virtual void SafeLoad() { }
 
 	public virtual void SafeOnSpawn(NPC npc, IEntitySource source) { }
 
-	public virtual bool SafePreAI(NPC npc) => true;
+	public virtual bool SafePreAI(NPC npc) {
+		return true;
+	}
 
 	public virtual void SafeSendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter binaryWriter) { }
 
@@ -92,7 +114,11 @@ public abstract class EliteVariation : GlobalNPC
 	/// </summary>
 	public virtual void OnApply(NPC npc) { }
 
-	public sealed override bool InstancePerEntity => true;
+	public sealed override bool InstancePerEntity {
+		get {
+			return true;
+		}
+	}
 
 	public sealed override void OnSpawn(NPC npc, IEntitySource source) {
 		bool isAffectableEnemy = !npc.friendly && npc.damage > 0 && !npc.immortal && !npc.dontTakeDamage && !ServerConfig.Instance.NPCBlacklist.Contains(new NPCDefinition(npc.type));

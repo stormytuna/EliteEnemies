@@ -1,11 +1,14 @@
 using EliteEnemies.Common;
-using Terraria;
 
 namespace EliteEnemies.Content.EliteVariations;
 
 public class LuckyElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Uncommon;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Uncommon;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return ServerConfig.Instance.EnableLucky;

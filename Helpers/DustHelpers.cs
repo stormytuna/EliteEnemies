@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 
 namespace EliteEnemies.Helpers;
 
@@ -20,16 +19,16 @@ public class DustHelpers
 	public static void MakeLightningDust(Vector2 source, Vector2 dest, int dustId, float scale, float sway = 80f,
 		float jagednessNumerator = 1f) {
 		List<Vector2> dustPoints = CreateLightningBolt(source, dest, sway, jagednessNumerator);
-    
+
 		for (int i = 1; i < dustPoints.Count; i++) {
 			Vector2 start = dustPoints[i - 1];
 			Vector2 end = dustPoints[i];
 			float numDust = (end - start).Length() * 0.4f;
-    
+
 			for (int j = 0; j < numDust; j++) {
 				float lerp = j / numDust;
 				Vector2 dustPosition = Vector2.Lerp(start, end, lerp);
-    
+
 				Dust d = Dust.NewDustPerfect(dustPosition, dustId, Scale: scale);
 				d.noGravity = true;
 				d.velocity = Main.rand.NextVector2Circular(0.3f, 0.3f);

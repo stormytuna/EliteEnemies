@@ -2,11 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using EliteEnemies.Common;
 using EliteEnemies.Helpers;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
 using Terraria.GameContent;
-using Terraria.ID;
 
 namespace EliteEnemies.Content.EliteVariations;
 
@@ -15,10 +11,14 @@ public class DiscordantElite : EliteVariation
 	private int _teleportTimer = 0;
 	private int _nextTeleportTime = 6 * 60;
 
-	private Queue<Vector2> _afterImagePositions = new(5);
-	private Queue<float> _afterImageRotations = new(5);
+	private readonly Queue<Vector2> _afterImagePositions = new(5);
+	private readonly Queue<float> _afterImageRotations = new(5);
 
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Legendary;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Legendary;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return Main.hardMode && !npc.IsWorm() && ServerConfig.Instance.EnableDiscordant;

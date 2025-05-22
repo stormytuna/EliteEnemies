@@ -1,12 +1,15 @@
 using EliteEnemies.Common;
 using EliteEnemies.Helpers;
-using Terraria;
 
 namespace EliteEnemies.Content.EliteVariations;
 
 public class MotherElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.SuperRare;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.SuperRare;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return !npc.IsWorm() && ServerConfig.Instance.EnableMother;

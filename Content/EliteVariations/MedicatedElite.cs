@@ -1,13 +1,14 @@
 using EliteEnemies.Common;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace EliteEnemies.Content.EliteVariations;
 
 public class MedicatedElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity => EliteVariationRarity.Uncommon;
+	public override EliteVariationRarity Rarity {
+		get {
+			return EliteVariationRarity.Uncommon;
+		}
+	}
 
 	public override bool CanApply(NPC npc) {
 		return ServerConfig.Instance.EnableMedicated;
