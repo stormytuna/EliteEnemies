@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria.Utilities;
 
-namespace EliteEnemies.Core;
+namespace EliteEnemies.Helpers;
 
 public static class RandomHelpers
 {

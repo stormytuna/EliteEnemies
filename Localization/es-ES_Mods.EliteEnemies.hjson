@@ -23,6 +23,7 @@ EliteVariations: {
 	IchorElite: Icoroso
 	CursedElite: Maldito
 	GlacialElite: Glacial
+	// ElectricElite: Electric
 }
 
 Configs: {
@@ -240,6 +241,11 @@ Configs: {
 		NPCBlacklist: {
 			// Tooltip: ""
 			// Label: NPC Blacklist
+		}
+
+		EnableElectric: {
+			// Label: Enable Electric
+			// Tooltip: ""
 		}
 	}
 }

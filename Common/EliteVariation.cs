@@ -1,5 +1,5 @@
 using System.IO;
-using EliteEnemies.Core;
+using EliteEnemies.Helpers;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.Localization;

@@ -2,7 +2,7 @@ using EliteEnemies.Common;
 using Terraria;
 using Terraria.ID;
 
-namespace EliteEnemies.Core;
+namespace EliteEnemies.Helpers;
 
 public static class NPCHelpers
 {

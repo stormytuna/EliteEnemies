@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using EliteEnemies.Common;
-using EliteEnemies.Core;
+using EliteEnemies.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

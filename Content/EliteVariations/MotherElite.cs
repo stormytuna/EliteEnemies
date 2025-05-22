@@ -1,5 +1,5 @@
 using EliteEnemies.Common;
-using EliteEnemies.Core;
+using EliteEnemies.Helpers;
 using Terraria;
 
 namespace EliteEnemies.Content.EliteVariations;

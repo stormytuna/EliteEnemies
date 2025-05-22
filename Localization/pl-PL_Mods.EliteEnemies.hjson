@@ -23,6 +23,7 @@ EliteVariations: {
 	IchorElite: Ichorowy
 	CursedElite: Przeklęty
 	GlacialElite: Lodowaty
+	// ElectricElite: Electric
 }
 
 Configs: {
@@ -240,6 +241,11 @@ Configs: {
 		NPCBlacklist: {
 			Tooltip: ""
 			Label: Czarna lista NPC
+		}
+
+		EnableElectric: {
+			// Label: Enable Electric
+			// Tooltip: ""
 		}
 	}
 }

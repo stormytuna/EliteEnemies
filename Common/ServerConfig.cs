@@ -20,6 +20,9 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableDiscordant { get; set; }
+	
+	[DefaultValue(true)]
+	public bool EnableElectric { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableGlacial { get; set; }
@@ -67,9 +70,9 @@ public class ServerConfig : ModConfig
 	[DefaultValue(true)]
 	public bool EnableTiny { get; set; }
 
-
 	[DefaultValue(true)]
 	public bool EnableVolatile { get; set; }
+	
 
 	[Header("SpawnChance")]
 	[Range(0f, 1f)]

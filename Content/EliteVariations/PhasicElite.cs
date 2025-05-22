@@ -1,6 +1,6 @@
 using System.IO;
 using EliteEnemies.Common;
-using EliteEnemies.Core;
+using EliteEnemies.Helpers;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
