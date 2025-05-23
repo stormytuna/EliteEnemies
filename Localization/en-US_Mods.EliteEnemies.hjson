@@ -24,6 +24,7 @@ EliteVariations: {
 	CursedElite: Cursed
 	GlacialElite: Glacial
 	ElectricElite: Electric
+	MoltenElite: Molten
 }
 
 Configs: {
@@ -245,6 +246,11 @@ Configs: {
 
 		EnableElectric: {
 			Label: Enable Electric
+			Tooltip: ""
+		}
+
+		EnableMolten: {
+			Label: Enable Molten
 			Tooltip: ""
 		}
 	}

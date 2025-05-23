@@ -12,9 +12,7 @@ public abstract class ShotByEliteVariationGlobalProjectile<TElite> : GlobalProje
 	protected NPC Parent { get; private set; }
 
 	public override bool InstancePerEntity {
-		get {
-			return true;
-		}
+		get => true;
 	}
 
 	public virtual void SafeOnSpawn(Projectile projectile, IEntitySource source) { }

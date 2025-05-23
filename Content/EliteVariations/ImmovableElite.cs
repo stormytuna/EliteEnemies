@@ -6,9 +6,7 @@ namespace EliteEnemies.Content.EliteVariations;
 public class ImmovableElite : EliteVariation
 {
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.SuperRare;
-		}
+		get => EliteVariationRarity.SuperRare;
 	}
 
 	public override bool CanApply(NPC npc) {

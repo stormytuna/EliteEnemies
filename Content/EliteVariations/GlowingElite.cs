@@ -10,9 +10,7 @@ public class GlowingElite : EliteVariation
 	private Color _lightColor = Color.Transparent;
 
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.Rare;
-		}
+		get => EliteVariationRarity.Rare;
 	}
 
 	public override bool CanApply(NPC npc) {

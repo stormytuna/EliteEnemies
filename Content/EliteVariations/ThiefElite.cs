@@ -9,9 +9,7 @@ public class ThiefElite : EliteVariation
 	private List<Item> _items = new();
 
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.SuperRare;
-		}
+		get => EliteVariationRarity.SuperRare;
 	}
 
 	public override bool CanApply(NPC npc) {

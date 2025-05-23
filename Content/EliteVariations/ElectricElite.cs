@@ -9,15 +9,7 @@ public class ElectricElite : EliteVariation
 	private int _lightningCooldown = 0;
 
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.SuperRare;
-		}
-	}
-
-	public override float SpawnChance {
-		get {
-			return 1f;
-		}
+		get => EliteVariationRarity.SuperRare;
 	}
 
 	public override bool CanApply(NPC npc) {

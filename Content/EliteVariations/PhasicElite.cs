@@ -15,9 +15,7 @@ public class PhasicElite : EliteVariation
 	private int _phasicTimerMax = 60;
 
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.Legendary;
-		}
+		get => EliteVariationRarity.Legendary;
 	}
 
 	public override bool CanApply(NPC npc) {

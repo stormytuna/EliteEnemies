@@ -5,9 +5,7 @@ namespace EliteEnemies.Content.EliteVariations;
 public class GlacialElite : EliteVariation
 {
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.Rare;
-		}
+		get => EliteVariationRarity.Rare;
 	}
 
 	public override bool CanApply(NPC npc) {

@@ -7,15 +7,11 @@ namespace EliteEnemies.Common;
 public class ServerConfig : ModConfig
 {
 	public static ServerConfig Instance {
-		get {
-			return ModContent.GetInstance<ServerConfig>();
-		}
+		get => ModContent.GetInstance<ServerConfig>();
 	}
 
 	public override ConfigScope Mode {
-		get {
-			return ConfigScope.ServerSide;
-		}
+		get => ConfigScope.ServerSide;
 	}
 
 	[Header("Variations")]
@@ -60,6 +56,9 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableMother { get; set; }
+
+	[DefaultValue(true)]
+	public bool EnableMolten { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnablePhasic { get; set; }

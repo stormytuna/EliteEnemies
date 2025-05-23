@@ -5,9 +5,7 @@ namespace EliteEnemies.Content.EliteVariations;
 public class LuckyElite : EliteVariation
 {
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.Uncommon;
-		}
+		get => EliteVariationRarity.Uncommon;
 	}
 
 	public override bool CanApply(NPC npc) {

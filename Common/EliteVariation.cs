@@ -12,9 +12,7 @@ public abstract class EliteVariation : GlobalNPC
 	private bool _firstFrame = true;
 
 	public new LocalizedText Name {
-		get {
-			return Language.GetOrRegister($"Mods.{nameof(EliteEnemies)}.EliteVariations.{GetType().Name}");
-		}
+		get => Language.GetOrRegister($"Mods.{nameof(EliteEnemies)}.EliteVariations.{GetType().Name}");
 	}
 
 	public sealed override void Load() {
@@ -33,9 +31,7 @@ public abstract class EliteVariation : GlobalNPC
 	/// Defaults to Common
 	/// </summary>
 	public virtual EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.Common;
-		}
+		get => EliteVariationRarity.Common;
 	}
 
 	/// <summary>
@@ -115,9 +111,7 @@ public abstract class EliteVariation : GlobalNPC
 	public virtual void OnApply(NPC npc) { }
 
 	public sealed override bool InstancePerEntity {
-		get {
-			return true;
-		}
+		get => true;
 	}
 
 	public sealed override void OnSpawn(NPC npc, IEntitySource source) {

@@ -12,9 +12,7 @@ public class VolatileElite : EliteVariation
 	private float _strength = 1f;
 
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.Rare;
-		}
+		get => EliteVariationRarity.Rare;
 	}
 
 	public override bool CanApply(NPC npc) {

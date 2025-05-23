@@ -10,9 +10,7 @@ public class JackedElite : EliteVariation
 	private float _strength = 1f;
 
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.Common;
-		}
+		get => EliteVariationRarity.Common;
 	}
 
 	public override bool CanApply(NPC npc) {

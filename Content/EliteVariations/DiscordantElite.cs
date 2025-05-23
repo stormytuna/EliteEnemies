@@ -15,9 +15,7 @@ public class DiscordantElite : EliteVariation
 	private readonly Queue<float> _afterImageRotations = new(5);
 
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.Legendary;
-		}
+		get => EliteVariationRarity.Legendary;
 	}
 
 	public override bool CanApply(NPC npc) {

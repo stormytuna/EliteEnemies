@@ -13,9 +13,7 @@ public class InspiringElite : EliteVariation
 	private float _strength = 0f;
 
 	public override EliteVariationRarity Rarity {
-		get {
-			return EliteVariationRarity.SuperRare;
-		}
+		get => EliteVariationRarity.SuperRare;
 	}
 
 	public override bool CanApply(NPC npc) {
@@ -101,9 +99,7 @@ public class InspiringEliteGlobalProjectile : GlobalProjectile
 	private float _strength = 0f;
 
 	public override bool InstancePerEntity {
-		get {
-			return true;
-		}
+		get => true;
 	}
 
 	public override void OnSpawn(Projectile projectile, IEntitySource source) {
