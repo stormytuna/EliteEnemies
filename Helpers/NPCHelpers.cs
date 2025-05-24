@@ -83,4 +83,16 @@ public static class NPCHelpers
 			_ => false,
 		};
 	}
+
+	public static int ScaleDamageForDifficulty(int damage) {
+		if (Main.masterMode) {
+			return damage * 3;
+		}
+		
+		if (Main.expertMode) {
+			return damage * 2;
+		}
+		
+		return damage;
+	}
 }

@@ -25,6 +25,7 @@ EliteVariations: {
 	GlacialElite: Lodowaty
 	// ElectricElite: Electric
 	// MoltenElite: Molten
+	// SpikeyElite: Mods.EliteEnemies.EliteVariations.SpikeyElite
 }
 
 Configs: {
