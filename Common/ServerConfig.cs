@@ -16,6 +16,9 @@ public class ServerConfig : ModConfig
 
 	[Header("Variations")]
 	[DefaultValue(true)]
+	public bool EnableAdaptive { get; set; }
+
+	[DefaultValue(true)]
 	public bool EnableBlazing { get; set; }
 
 	[DefaultValue(true)]
@@ -69,7 +72,7 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableSpelunker { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableSpikey { get; set; }
 

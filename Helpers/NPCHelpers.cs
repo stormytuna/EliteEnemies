@@ -88,11 +88,11 @@ public static class NPCHelpers
 		if (Main.masterMode) {
 			return damage * 3;
 		}
-		
+
 		if (Main.expertMode) {
 			return damage * 2;
 		}
-		
+
 		return damage;
 	}
 }

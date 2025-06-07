@@ -1,5 +1,4 @@
 using EliteEnemies.Common;
-using EliteEnemies.Helpers;
 
 namespace EliteEnemies.Content.EliteVariations;
 
@@ -17,13 +16,13 @@ public class MoltenElite : EliteVariation
 		}
 
 		if (Main.rand.NextBool(5)) {
-			var dust = Dust.NewDustDirect(npc.position, npc.width, npc.height, DustID.RedTorch);
+			Dust dust = Dust.NewDustDirect(npc.position, npc.width, npc.height, DustID.RedTorch);
 			dust.velocity *= 5f;
 			dust.noGravity = true;
 			dust.noLight = true;
 		}
 	}
-	
+
 	public override void OnKill(NPC npc) {
 		if (!ApplyEliteVariation) {
 			return;

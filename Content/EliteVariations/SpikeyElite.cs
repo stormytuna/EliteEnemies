@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using EliteEnemies.Common;
 using EliteEnemies.Helpers;
 using ReLogic.Content;
@@ -10,7 +9,7 @@ namespace EliteEnemies.Content.EliteVariations;
 public class SpikeyElite : EliteVariation
 {
 	private static Asset<Texture2D> _spikeTexture;
-	
+
 	private List<Vector2> _spikeOffsets;
 
 	public override void SafeLoad() {
@@ -26,7 +25,7 @@ public class SpikeyElite : EliteVariation
 	}
 
 	public override void OnHitByItem(NPC npc, Player player, Item item, NPC.HitInfo hit, int damageDone) {
-		TryHurtAttacker(npc, player);;
+		TryHurtAttacker(npc, player);
 	}
 
 	public override void OnHitByProjectile(NPC npc, Projectile projectile, NPC.HitInfo hit, int damageDone) {
@@ -37,7 +36,7 @@ public class SpikeyElite : EliteVariation
 		if (!ApplyEliteVariation || !player.active) {
 			return;
 		}
-		
+
 		int maxDamage = NPCHelpers.ScaleDamageForDifficulty(50);
 		float distance = npc.Distance(player.Center);
 		if (distance > 3f * 16f) {
@@ -53,7 +52,7 @@ public class SpikeyElite : EliteVariation
 		if (!ApplyEliteVariation) {
 			return;
 		}
-		
+
 		if (_spikeOffsets is null) {
 			int numSpikes = int.Max((npc.width + npc.height) / 20, 2);
 			_spikeOffsets = new List<Vector2>(numSpikes);
@@ -62,9 +61,9 @@ public class SpikeyElite : EliteVariation
 			}
 		}
 
-		foreach (var spikeOffset in _spikeOffsets) {
+		foreach (Vector2 spikeOffset in _spikeOffsets) {
 			Vector2 spikePosition = npc.position + spikeOffset;
-			var drawData = new DrawData {
+			DrawData drawData = new DrawData {
 				texture = _spikeTexture.Value,
 				position = (spikePosition - screenPos).Floor(),
 				sourceRect = _spikeTexture.Frame(),
@@ -74,6 +73,6 @@ public class SpikeyElite : EliteVariation
 				origin = _spikeTexture.Size() / 2f,
 			};
 			drawData.Draw(spriteBatch);
-		}	
+		}
 	}
 }
