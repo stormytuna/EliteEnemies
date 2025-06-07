@@ -12,7 +12,7 @@ public class SpikeyElite : EliteVariation
 	private List<Vector2> _spikeOffsets;
 
 	public override void SafeLoad() {
-		_spikeTexture = Mod.Assets.Request<Texture2D>("Content/EliteVariations/SpikeyEliteSpike");
+		_spikeTexture = Mod.Assets.Request<Texture2D>("Content/EliteVariations/SpikeyEliteThorn");
 	}
 
 	public override EliteVariationRarity Rarity {

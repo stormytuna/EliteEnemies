@@ -7,7 +7,8 @@ public class MoltenElite : EliteVariation
 	public override EliteVariationRarity Rarity { get => EliteVariationRarity.Legendary; }
 
 	public override bool CanApply(NPC npc) {
-		return Main.hardMode && ServerConfig.Instance.EnableMolten;
+		bool underground = npc.Center.Y > (Main.rockLayer * 16f);
+		return underground && Main.hardMode && ServerConfig.Instance.EnableMolten;
 	}
 
 	public override void AI(NPC npc) {
