@@ -1,5 +1,4 @@
 using EliteEnemies.Common;
-using EliteEnemies.Helpers;
 
 namespace EliteEnemies.Content.EliteVariations;
 

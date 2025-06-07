@@ -1,5 +1,4 @@
 using EliteEnemies.Common;
-using EliteEnemies.Helpers;
 using Terraria.DataStructures;
 
 namespace EliteEnemies.Content.EliteVariations;

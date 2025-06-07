@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using EliteEnemies.Common;
-using EliteEnemies.Helpers;
 using Terraria.GameContent;
 
 namespace EliteEnemies.Content.EliteVariations;

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using EliteEnemies.Common;
-using EliteEnemies.Helpers;
 using ReLogic.Content;
 using Terraria.DataStructures;
 

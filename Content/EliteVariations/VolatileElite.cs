@@ -1,6 +1,5 @@
 using System.IO;
 using EliteEnemies.Common;
-using EliteEnemies.Helpers;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ModLoader.IO;
