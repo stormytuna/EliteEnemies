@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using EliteEnemies.Common;
-using ReLogic.Content;
 using Terraria.DataStructures;
 
 namespace EliteEnemies.Content.EliteVariations;
@@ -62,7 +61,7 @@ public class SpikyElite : EliteVariation
 
 		foreach (Vector2 spikeOffset in _spikeOffsets) {
 			Vector2 spikePosition = npc.position + spikeOffset;
-			DrawData drawData = new DrawData {
+			DrawData drawData = new() {
 				texture = _spikeTexture.Value,
 				position = (spikePosition - screenPos).Floor(),
 				sourceRect = _spikeTexture.Frame(),

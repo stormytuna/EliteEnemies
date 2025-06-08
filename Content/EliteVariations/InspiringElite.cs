@@ -1,6 +1,5 @@
 using System.IO;
 using EliteEnemies.Common;
-using ReLogic.Content;
 using Terraria.DataStructures;
 using Terraria.ModLoader.IO;
 

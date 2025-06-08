@@ -29,7 +29,7 @@ public static class EliteEnemiesHelpers
 	public static bool HasNotEliteVariation<TVariation>(this NPC npc) where TVariation : EliteVariation {
 		return !HasEliteVariation<TVariation>(npc);
 	}
-	
+
 	/// <summary>
 	/// Counts the number of Elite Variations currently active on the NPC.
 	/// </summary>
