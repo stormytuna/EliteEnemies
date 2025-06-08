@@ -25,7 +25,8 @@ EliteVariations: {
 	GlacialElite: Glacial
 	ElectricElite: Electric
 	MoltenElite: Molten
-	SpikeyElite: Mods.EliteEnemies.EliteVariations.SpikeyElite
+	SpikyElite: Spiky
+	AdaptiveElite: Adaptive
 }
 
 Configs: {
@@ -252,6 +253,16 @@ Configs: {
 
 		EnableMolten: {
 			Label: Enable Molten
+			Tooltip: ""
+		}
+
+		EnableAdaptive: {
+			Label: Enable Adaptive
+			Tooltip: ""
+		}
+
+		EnableSpiky: {
+			Label: Enable Spiky
 			Tooltip: ""
 		}
 	}

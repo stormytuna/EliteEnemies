@@ -5,3 +5,4 @@ global using Microsoft.Xna.Framework.Graphics;
 global using Terraria;
 global using Terraria.ID;
 global using Terraria.ModLoader;
+global using ReLogic.Content;

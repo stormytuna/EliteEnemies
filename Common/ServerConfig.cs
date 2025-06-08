@@ -74,7 +74,7 @@ public class ServerConfig : ModConfig
 	public bool EnableSpelunker { get; set; }
 
 	[DefaultValue(true)]
-	public bool EnableSpikey { get; set; }
+	public bool EnableSpiky { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableThief { get; set; }

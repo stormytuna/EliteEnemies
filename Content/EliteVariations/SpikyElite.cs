@@ -5,14 +5,14 @@ using Terraria.DataStructures;
 
 namespace EliteEnemies.Content.EliteVariations;
 
-public class SpikeyElite : EliteVariation
+public class SpikyElite : EliteVariation
 {
 	private static Asset<Texture2D> _spikeTexture;
 
 	private List<Vector2> _spikeOffsets;
 
 	public override void SafeLoad() {
-		_spikeTexture = Mod.Assets.Request<Texture2D>("Content/EliteVariations/SpikeyEliteThorn");
+		_spikeTexture = Mod.Assets.Request<Texture2D>("Content/EliteVariations/SpikyEliteThorn");
 	}
 
 	public override EliteVariationRarity Rarity {
@@ -20,7 +20,7 @@ public class SpikeyElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return ServerConfig.Instance.EnableSpikey;
+		return ServerConfig.Instance.EnableSpiky;
 	}
 
 	public override void OnHitByItem(NPC npc, Player player, Item item, NPC.HitInfo hit, int damageDone) {
