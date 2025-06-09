@@ -16,7 +16,7 @@ public class DestroyerElite : EliteVariation
 
 	public override void AI(NPC npc) {
 		if (ApplyEliteVariation && Main.rand.NextBool(5)) {
-			var dust = Dust.NewDustDirect(npc.position, npc.width, npc.height, DustID.YellowTorch);
+			Dust dust = Dust.NewDustDirect(npc.position, npc.width, npc.height, DustID.YellowTorch);
 			dust.velocity *= 0.8f;
 			dust.scale = Main.rand.NextFloat(0.9f, 1.2f);
 			dust.noGravity = true;
@@ -28,12 +28,11 @@ public class DestroyerElite : EliteVariation
 			ApplyCrit(ref modifiers, target);
 		}
 	}
-	
-	internal static void ApplyCrit(ref Player.HurtModifiers modifiers, Player target) 
-	{
+
+	internal static void ApplyCrit(ref Player.HurtModifiers modifiers, Player target) {
 		modifiers.FinalDamage *= 2f;
 		CritifyPlayerCombatText.MakeCritText = true;
-		var sound = SoundID.Item127 with {
+		SoundStyle sound = SoundID.Item127 with {
 			Volume = 2f,
 			PitchRange = (-1f, -0.5f),
 		};
@@ -53,12 +52,12 @@ public class ShotByDestroyerEliteGlobalProjectile : ShotByEliteVariationGlobalPr
 public class CritifyPlayerCombatText : ILoadable
 {
 	public static bool MakeCritText;
-	
+
 	public void Load(Mod mod) {
 		IL_Player.Hurt_HurtInfo_bool += il => {
-			var cursor = new ILCursor(il);
-			
-			cursor.GotoNext(MoveType.Before, 
+			ILCursor cursor = new(il);
+
+			cursor.GotoNext(MoveType.Before,
 				i => i.MatchLdloc(5),
 				i => i.MatchLdcI4(0),
 				i => i.MatchCall<CombatText>(nameof(CombatText.NewText)));

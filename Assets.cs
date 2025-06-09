@@ -4,7 +4,7 @@ public class Assets : ILoadable
 {
 	public void Load(Mod mod) {
 		Textures.Empty = mod.Assets.Request<Texture2D>("Assets/Textures/EmptyTexture");
-		
+
 		Shaders.Outline = mod.Assets.Request<Effect>("Assets/Shaders/OutlineShader");
 	}
 

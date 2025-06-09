@@ -23,7 +23,7 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableCursed { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableDestroyer { get; set; }
 
@@ -53,7 +53,7 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableJacked { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableLeeching { get; set; }
 

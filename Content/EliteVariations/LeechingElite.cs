@@ -1,7 +1,4 @@
-using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using EliteEnemies.Common;
-using Terraria.GameContent.Bestiary;
 
 namespace EliteEnemies.Content.EliteVariations;
 
@@ -17,7 +14,7 @@ public class LeechingElite : EliteVariation
 
 	public override void AI(NPC npc) {
 		if (ApplyEliteVariation && Main.rand.NextBool()) {
-			var dust = Dust.NewDustDirect(npc.position, npc.width, npc.height, DustID.VampireHeal);
+			Dust dust = Dust.NewDustDirect(npc.position, npc.width, npc.height, DustID.VampireHeal);
 			dust.scale = Main.rand.NextFloat(0.9f, 1.2f);
 			dust.alpha = 100;
 			dust.velocity *= 0.5f;
@@ -28,35 +25,35 @@ public class LeechingElite : EliteVariation
 
 	public override void OnHitPlayer(NPC npc, Player target, Player.HurtInfo hurtInfo) {
 		if (ApplyEliteVariation) {
-			BroadcastSpawnLeechingEliteProjectile(npc.whoAmI, target.Center);	
+			BroadcastSpawnLeechingEliteProjectile(npc.whoAmI, target.Center);
 		}
 	}
 
 	public static void HandleSpawnLeechingEliteProjectile(int targetWhoAmI, Vector2 position) {
-		var target = Main.npc[targetWhoAmI];
-		var leechNPC = NPC.NewNPCDirect(target.GetSource_FromThis(), position, ModContent.NPCType<LeechingEliteLeechProjectile>(), ai0: targetWhoAmI);
+		NPC target = Main.npc[targetWhoAmI];
+		NPC leechNPC = NPC.NewNPCDirect(target.GetSource_FromThis(), position, ModContent.NPCType<LeechingEliteLeechProjectile>(), ai0: targetWhoAmI);
 		leechNPC.velocity = Main.rand.NextVector2CircularEdge(10f, 10f);
 	}
 
 	public static void BroadcastSpawnLeechingEliteProjectile(int targetWhoAmI, Vector2 position) {
 		if (Main.netMode == NetmodeID.SinglePlayer) {
-			HandleSpawnLeechingEliteProjectile(targetWhoAmI, position);		
+			HandleSpawnLeechingEliteProjectile(targetWhoAmI, position);
 			return;
 		}
-		
-		var packet = ModContent.GetInstance<EliteEnemies>().GetPacket();
+
+		ModPacket packet = ModContent.GetInstance<EliteEnemies>().GetPacket();
 		packet.Write((byte)EliteEnemies.MessageType.SpawnLeechingEliteProjectile);
 		packet.Write7BitEncodedInt(targetWhoAmI);
 		packet.WriteVector2(position);
 		packet.Send();
 	}
-} 
+}
 
 public class ShotByLeechingEliteGlobalProjectile : ShotByEliteVariationGlobalProjectile<LeechingElite>
 {
 	public override void OnHitPlayer(Projectile projectile, Player target, Player.HurtInfo info) {
 		if (ApplyEliteChanges) {
-			LeechingElite.BroadcastSpawnLeechingEliteProjectile(Parent.whoAmI, target.Center);	
+			LeechingElite.BroadcastSpawnLeechingEliteProjectile(Parent.whoAmI, target.Center);
 		}
 	}
 }
@@ -76,7 +73,7 @@ public class LeechingEliteLeechProjectile : ModNPC
 		NPC.height = 10;
 		NPC.aiStyle = -1;
 		NPC.lifeMax = 1;
-		
+
 		NPC.HitSound = SoundID.NPCHit3;
 		NPC.DeathSound = SoundID.NPCDeath3;
 		NPC.noGravity = true;
@@ -100,17 +97,18 @@ public class LeechingEliteLeechProjectile : ModNPC
 
 			if (NPC.Hitbox.Intersects(_target.Hitbox) && Main.netMode != NetmodeID.MultiplayerClient) {
 				NPC.StrikeInstantKill();
-				
+
 				float healStrength = _target.CountsAsBoss() ? 0.01f : 0.2f;
 				int heal = int.Max((int)(_target.lifeMax * healStrength), 1);
 				_target.life += heal;
 				if (_target.life > _target.lifeMax) {
 					_target.life = _target.lifeMax;
 				}
-				
+
 				_target.HealEffect(heal);
 			}
-		} else {
+		}
+		else {
 			NPC.velocity *= 0.95f;
 		}
 
@@ -123,7 +121,7 @@ public class LeechingEliteLeechProjectile : ModNPC
 		}
 
 		for (int i = 0; i < 2; i++) {
-			var dust = Dust.NewDustPerfect(NPC.Center, DustID.VampireHeal);
+			Dust dust = Dust.NewDustPerfect(NPC.Center, DustID.VampireHeal);
 			dust.scale = Main.rand.NextFloat(0.9f, 1.2f);
 			dust.alpha = 100;
 			dust.velocity *= 0.5f;

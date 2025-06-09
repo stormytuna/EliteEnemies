@@ -11,16 +11,16 @@ public class EliteEnemies : Mod
 	}
 
 	public override void HandlePacket(BinaryReader reader, int whoAmI) {
-		var messageType = (MessageType)reader.ReadByte();
+		MessageType messageType = (MessageType)reader.ReadByte();
 
 		switch (messageType) {
 			case MessageType.SpawnLeechingEliteProjectile:
 				if (Main.netMode != NetmodeID.Server) {
 					return;
 				}
-				
-				var targetWhoAmI = reader.Read7BitEncodedInt();
-				var position = reader.ReadVector2();
+
+				int targetWhoAmI = reader.Read7BitEncodedInt();
+				Vector2 position = reader.ReadVector2();
 				LeechingElite.HandleSpawnLeechingEliteProjectile(targetWhoAmI, position);
 				break;
 		}
