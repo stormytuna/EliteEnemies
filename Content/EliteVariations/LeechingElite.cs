@@ -7,8 +7,6 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class LeechingElite : EliteVariation
 {
-	public override float SpawnChance { get => 1f; }
-
 	public override EliteVariationRarity Rarity {
 		get => EliteVariationRarity.SuperRare;
 	}
