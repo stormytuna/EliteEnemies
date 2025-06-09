@@ -27,7 +27,8 @@ EliteVariations: {
 	// MoltenElite: Molten
 	// SpikyElite: Spiky
 	// AdaptiveElite: Adaptive
-	// LeechingElite: Mods.EliteEnemies.EliteVariations.LeechingElite
+	// LeechingElite: Leeching
+	// DestroyerElite: Destroyer
 }
 
 Configs: {
@@ -270,6 +271,11 @@ Configs: {
 		EnableLeeching: {
 			// Label: Enable Leeching
 			// Tooltip: ""
+		}
+
+		EnableDestroyer: {
+			// Tooltip: ""
+			// Label: Enable Destroyer
 		}
 	}
 }

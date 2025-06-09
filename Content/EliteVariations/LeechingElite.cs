@@ -15,6 +15,17 @@ public class LeechingElite : EliteVariation
 		return NPC.downedBoss3 && ServerConfig.Instance.EnableLeeching;
 	}
 
+	public override void AI(NPC npc) {
+		if (ApplyEliteVariation && Main.rand.NextBool()) {
+			var dust = Dust.NewDustDirect(npc.position, npc.width, npc.height, DustID.VampireHeal);
+			dust.scale = Main.rand.NextFloat(0.9f, 1.2f);
+			dust.alpha = 100;
+			dust.velocity *= 0.5f;
+			dust.position += npc.velocity * Main.rand.NextFloat();
+			dust.noGravity = true;
+		}
+	}
+
 	public override void OnHitPlayer(NPC npc, Player target, Player.HurtInfo hurtInfo) {
 		if (ApplyEliteVariation) {
 			BroadcastSpawnLeechingEliteProjectile(npc.whoAmI, target.Center);	

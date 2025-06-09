@@ -23,6 +23,9 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableCursed { get; set; }
+	
+	[DefaultValue(true)]
+	public bool EnableDestroyer { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableDiscordant { get; set; }
