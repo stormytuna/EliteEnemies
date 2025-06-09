@@ -3,10 +3,20 @@ namespace EliteEnemies;
 public class Assets : ILoadable
 {
 	public void Load(Mod mod) {
-		Shaders.Outline = mod.Assets.Request<Effect>("Assets/OutlineShader");
+		Textures.Empty = mod.Assets.Request<Texture2D>("Assets/Textures/EmptyTexture");
+		
+		Shaders.Outline = mod.Assets.Request<Effect>("Assets/Shaders/OutlineShader");
 	}
 
-	public void Unload() {
+	public void Unload() { }
+
+	public static string EmptyTexturePath {
+		get => $"{nameof(EliteEnemies)}/Assets/Textures/EmptyTexture";
+	}
+
+	public static class Textures
+	{
+		public static Asset<Texture2D> Empty;
 	}
 
 	public static class Shaders

@@ -4,7 +4,9 @@ namespace EliteEnemies.Content.EliteVariations;
 
 public class MoltenElite : EliteVariation
 {
-	public override EliteVariationRarity Rarity { get => EliteVariationRarity.Legendary; }
+	public override EliteVariationRarity Rarity {
+		get => EliteVariationRarity.Legendary;
+	}
 
 	public override bool CanApply(NPC npc) {
 		bool underground = npc.Center.Y > (Main.rockLayer * 16f);

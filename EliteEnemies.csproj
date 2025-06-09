@@ -6,6 +6,9 @@
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
+	<ItemGroup>
+	  <Folder Include="Assets\Textures\" />
+	</ItemGroup>
 
 	<!-- References -->
 

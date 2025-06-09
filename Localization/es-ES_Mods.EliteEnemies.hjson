@@ -27,6 +27,7 @@ EliteVariations: {
 	// MoltenElite: Molten
 	// SpikyElite: Spiky
 	// AdaptiveElite: Adaptive
+	// LeechingElite: Mods.EliteEnemies.EliteVariations.LeechingElite
 }
 
 Configs: {
@@ -265,5 +266,13 @@ Configs: {
 			// Label: Enable Spiky
 			// Tooltip: ""
 		}
+
+		EnableLeeching: {
+			// Label: Enable Leeching
+			// Tooltip: ""
+		}
 	}
 }
+
+// Projectiles.LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile
+// NPCs.LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile

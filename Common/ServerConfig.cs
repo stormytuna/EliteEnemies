@@ -50,6 +50,9 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableJacked { get; set; }
+	
+	[DefaultValue(true)]
+	public bool EnableLeeching { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableLucky { get; set; }
