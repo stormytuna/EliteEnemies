@@ -41,6 +41,8 @@ Configs: {
 			LootMultiplier: Mnożnik łupu
 			Misc: Różne
 			Variations: Warianty
+			// Spawning: Spawning Header
+			// SpawnWeights: Spawn Weights Header
 		}
 
 		CommonSpawnChance: {
@@ -276,6 +278,36 @@ Configs: {
 		EnableDestroyer: {
 			// Tooltip: ""
 			// Label: Enable Destroyer
+		}
+
+		SpawnChance: {
+			// Label: Spawn Chance
+			// Tooltip: ""
+		}
+
+		CommonSpawnWeight: {
+			// Label: Common Spawn Weight
+			// Tooltip: ""
+		}
+
+		UncommonSpawnWeight: {
+			// Label: Uncommon Spawn Weight
+			// Tooltip: ""
+		}
+
+		RareSpawnWeight: {
+			// Label: Rare Spawn Weight
+			// Tooltip: ""
+		}
+
+		SuperRareSpawnWeight: {
+			// Label: Super Rare Spawn Weight
+			// Tooltip: ""
+		}
+
+		LegendarySpawnWeight: {
+			// Label: Legendary Spawn Weight
+			// Tooltip: ""
 		}
 	}
 }

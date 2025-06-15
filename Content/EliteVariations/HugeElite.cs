@@ -17,7 +17,7 @@ public class HugeElite : EliteVariation
 		return npc.HasNotEliteVariation<TinyElite>() && !npc.IsWorm() && ServerConfig.Instance.EnableHuge;
 	}
 
-	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
+	public override void OnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
 			_strength = Main.rand.NextFloat(1f, 2f);
 		}

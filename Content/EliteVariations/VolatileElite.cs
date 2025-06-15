@@ -18,7 +18,7 @@ public class VolatileElite : EliteVariation
 		return ServerConfig.Instance.EnableVolatile;
 	}
 
-	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
+	public override void OnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
 			_strength = Main.rand.NextFloat(1f, 2f);
 		}

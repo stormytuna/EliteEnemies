@@ -41,31 +41,8 @@ Configs: {
 			LootMultiplier: Loot Multiplier
 			Misc: Misc
 			Variations: Variations
-		}
-
-		CommonSpawnChance: {
-			Label: Common Spawn Chance
-			Tooltip: ""
-		}
-
-		UncommonSpawnChance: {
-			Label: Uncommon Spawn Chance
-			Tooltip: ""
-		}
-
-		RareSpawnChance: {
-			Label: Rare Spawn Chance
-			Tooltip: ""
-		}
-
-		SuperRareSpawnChance: {
-			Label: Super Rare Spawn Chance
-			Tooltip: ""
-		}
-
-		LegendarySpawnChance: {
-			Label: Legendary Spawn Chance
-			Tooltip: ""
+			Spawning: Spawning Header
+			SpawnWeights: Spawn Weights Header
 		}
 
 		CommonValueMultiplier: {
@@ -276,6 +253,36 @@ Configs: {
 		EnableDestroyer: {
 			Tooltip: ""
 			Label: Enable Destroyer
+		}
+
+		SpawnChance: {
+			Label: Spawn Chance
+			Tooltip: ""
+		}
+
+		CommonSpawnWeight: {
+			Label: Common Spawn Weight
+			Tooltip: ""
+		}
+
+		UncommonSpawnWeight: {
+			Label: Uncommon Spawn Weight
+			Tooltip: ""
+		}
+
+		RareSpawnWeight: {
+			Label: Rare Spawn Weight
+			Tooltip: ""
+		}
+
+		SuperRareSpawnWeight: {
+			Label: Super Rare Spawn Weight
+			Tooltip: ""
+		}
+
+		LegendarySpawnWeight: {
+			Label: Legendary Spawn Weight
+			Tooltip: ""
 		}
 	}
 }

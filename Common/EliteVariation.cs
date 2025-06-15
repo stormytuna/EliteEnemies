@@ -23,7 +23,7 @@ public abstract class EliteVariation : GlobalNPC
 	/// Whether to apply the elite variation.
 	/// Defaults to false.
 	/// </summary>
-	public bool ApplyEliteVariation { get; private set; } = false;
+	public bool ApplyEliteVariation = false;
 
 	/// <summary>
 	/// The rarity of this elite, influences spawn chance, value multiplier and loot multiplier.
@@ -32,20 +32,20 @@ public abstract class EliteVariation : GlobalNPC
 	public virtual EliteVariationRarity Rarity {
 		get => EliteVariationRarity.Common;
 	}
-
+	
+	// Virtual for testing, in practice this should never be overridden
 	/// <summary>
-	/// The chance of this variation appearing, as a decimal.
-	/// Influenced by Rarity by default.
+	///     The weight that this Elite Variation has in relation to other Elite Variations when randomly determining whether to spawn. Based on the <see cref="Rarity" /> of the Elite Variation by default.
 	/// </summary>
-	public virtual float SpawnChance {
+	public virtual float SpawnWeight {
 		get {
 			return Rarity switch {
-				EliteVariationRarity.Common => ServerConfig.Instance.CommonSpawnChance,
-				EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonSpawnChance,
-				EliteVariationRarity.Rare => ServerConfig.Instance.RareSpawnChance,
-				EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareSpawnChance,
-				EliteVariationRarity.Legendary => ServerConfig.Instance.LegendarySpawnChance,
-				_ => 0f,
+				EliteVariationRarity.Common => ServerConfig.Instance.CommonSpawnWeight,
+				EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonSpawnWeight,
+				EliteVariationRarity.Rare => ServerConfig.Instance.RareSpawnWeight,
+				EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareSpawnWeight,
+				EliteVariationRarity.Legendary => ServerConfig.Instance.LegendarySpawnWeight,
+				_ => 0f
 			};
 		}
 	}
@@ -90,8 +90,6 @@ public abstract class EliteVariation : GlobalNPC
 
 	public virtual void SafeLoad() { }
 
-	public virtual void SafeOnSpawn(NPC npc, IEntitySource source) { }
-
 	public virtual bool SafePreAI(NPC npc) {
 		return true;
 	}
@@ -111,17 +109,6 @@ public abstract class EliteVariation : GlobalNPC
 
 	public sealed override bool InstancePerEntity {
 		get => true;
-	}
-
-	public sealed override void OnSpawn(NPC npc, IEntitySource source) {
-		bool isAffectableEnemy = !npc.friendly && npc.damage > 0 && !npc.immortal && !npc.dontTakeDamage && !ServerConfig.Instance.NPCBlacklist.Contains(new NPCDefinition(npc.type));
-		bool applyToEnemyOrCritter = isAffectableEnemy || (ServerConfig.Instance.ApplyToCritters && npc.CountsAsACritter);
-		bool careAboutBoss = ServerConfig.Instance.ApplyToBosses || !npc.CountsAsBoss();
-		bool careAboutModded = ServerConfig.Instance.ApplyToModdedNPCs || npc.ModNPC is null;
-		bool underMaxVariationsLimit = npc.NumActiveEliteVariations() < ServerConfig.Instance.MaxSimultaneousVariations;
-		ApplyEliteVariation = CanApply(npc) && Main.rand.NextFloat() < SpawnChance && applyToEnemyOrCritter && careAboutBoss && underMaxVariationsLimit && careAboutModded;
-
-		SafeOnSpawn(npc, source);
 	}
 
 	public sealed override bool PreAI(NPC npc) {

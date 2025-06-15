@@ -23,7 +23,7 @@ public class InspiringElite : EliteVariation
 		_auraTexture = Mod.Assets.Request<Texture2D>("Content/EliteVariations/InspiringEliteAura");
 	}
 
-	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
+	public override void OnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
 			_strength = Main.rand.NextFloat();
 		}

@@ -90,28 +90,37 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableVolatile { get; set; }
-
-
-	[Header("SpawnChance")]
-	[Range(0f, 1f)]
+	
+	[Header("Spawning")]
 	[DefaultValue(0.1f)]
-	public float CommonSpawnChance { get; set; }
+	[Range(0.001f, 1f)]
+	public float SpawnChance { get; set; }
+	
+	[DefaultValue(4)]
+	[Range(0, 20)]
+	public int MaxSimultaneousVariations { get; set; }
 
-	[Range(0f, 1f)]
-	[DefaultValue(0.05f)]
-	public float UncommonSpawnChance { get; set; }
 
-	[Range(0f, 1f)]
-	[DefaultValue(0.025f)]
-	public float RareSpawnChance { get; set; }
+	[Header("SpawnWeights")]
+	[Range(0, 100)]
+	[DefaultValue(20)]
+	public int CommonSpawnWeight { get; set; }
 
-	[Range(0f, 1f)]
-	[DefaultValue(0.0125f)]
-	public float SuperRareSpawnChance { get; set; }
+	[Range(0, 100)]
+	[DefaultValue(15)]
+	public int UncommonSpawnWeight { get; set; }
 
-	[Range(0f, 1f)]
-	[DefaultValue(0.005f)]
-	public float LegendarySpawnChance { get; set; }
+	[Range(0, 100)]
+	[DefaultValue(10)]
+	public int RareSpawnWeight { get; set; }
+
+	[Range(0, 100)]
+	[DefaultValue(5)]
+	public int SuperRareSpawnWeight { get; set; }
+
+	[Range(0, 100)]
+	[DefaultValue(2)]
+	public int LegendarySpawnWeight { get; set; }
 
 	[Header("ValueMultiplier")]
 	[Range(1f, 10f)]
@@ -156,10 +165,6 @@ public class ServerConfig : ModConfig
 	public float LegendaryLootMultiplier { get; set; }
 
 	[Header("Misc")]
-	[DefaultValue(4)]
-	[Range(0, 20)]
-	public int MaxSimultaneousVariations { get; set; }
-
 	public HashSet<NPCDefinition> NPCBlacklist { get; set; } = new();
 
 	[DefaultValue(true)]

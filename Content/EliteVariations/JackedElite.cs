@@ -17,7 +17,7 @@ public class JackedElite : EliteVariation
 		return ServerConfig.Instance.EnableJacked;
 	}
 
-	public override void SafeOnSpawn(NPC npc, IEntitySource source) {
+	public override void OnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
 			_strength = Main.rand.NextFloat(1.5f, 2f);
 		}
