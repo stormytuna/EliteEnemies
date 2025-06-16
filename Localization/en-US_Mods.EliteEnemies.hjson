@@ -29,6 +29,7 @@ EliteVariations: {
 	AdaptiveElite: Adaptive
 	LeechingElite: Leeching
 	DestroyerElite: Destroyer
+	StinkyElite: Mods.EliteEnemies.EliteVariations.StinkyElite
 }
 
 Configs: {
@@ -284,8 +285,17 @@ Configs: {
 			Label: Legendary Spawn Weight
 			Tooltip: ""
 		}
+
+		EnableStinky: {
+			Label: Enable Stinky
+			Tooltip: ""
+		}
 	}
 }
 
-Projectiles.LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile
+Projectiles: {
+	LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile
+	StinkyCloud.DisplayName: Stinky Cloud
+}
+
 NPCs.LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile

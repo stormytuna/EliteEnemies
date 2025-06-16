@@ -81,6 +81,9 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableSpiky { get; set; }
+	
+	[DefaultValue(true)]
+	public bool EnableStinky { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableThief { get; set; }

@@ -29,6 +29,7 @@ EliteVariations: {
 	// AdaptiveElite: Adaptive
 	// LeechingElite: Leeching
 	// DestroyerElite: Destroyer
+	// StinkyElite: Mods.EliteEnemies.EliteVariations.StinkyElite
 }
 
 Configs: {
@@ -43,31 +44,6 @@ Configs: {
 			Variations: Variaciones
 			// Spawning: Spawning Header
 			// SpawnWeights: Spawn Weights Header
-		}
-
-		CommonSpawnChance: {
-			Label: Probabilidad de aparición común
-			Tooltip: ""
-		}
-
-		UncommonSpawnChance: {
-			Label: Probabilidad de aparición poco común
-			Tooltip: ""
-		}
-
-		RareSpawnChance: {
-			Label: Probabilidad de aparición rara
-			Tooltip: ""
-		}
-
-		SuperRareSpawnChance: {
-			Label: Probabilidad de aparición super rara
-			Tooltip: ""
-		}
-
-		LegendarySpawnChance: {
-			Label: Probabilidad de aparición legendaria
-			Tooltip: ""
 		}
 
 		CommonValueMultiplier: {
@@ -309,8 +285,17 @@ Configs: {
 			// Label: Legendary Spawn Weight
 			// Tooltip: ""
 		}
+
+		EnableStinky: {
+			// Label: Enable Stinky
+			// Tooltip: ""
+		}
 	}
 }
 
-// Projectiles.LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile
+Projectiles: {
+	// LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile
+	// StinkyCloud.DisplayName: Stinky Cloud
+}
+
 // NPCs.LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile

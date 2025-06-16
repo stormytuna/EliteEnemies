@@ -169,6 +169,12 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
         [th]Rare[/th]
         [th]Only applies after defeating Eater of Worlds or Brain of Cthulhu[/th]
     [/th]
+    [tr]
+        [th]Stinky[/th]
+        [th]Continuously releases toxic clouds[/th]
+        [th]Rare[/th]
+        [th]Only applies after defeating any Mech boss[/th]
+    [/th]
 [/table]
 
 [hr][/hr]
