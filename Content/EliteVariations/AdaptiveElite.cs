@@ -52,9 +52,6 @@ public class AdaptiveElite : EliteVariation
 			if (_damageclassMults[key] >= 1f) {
 				_damageclassMults[key] = 1f;
 			}
-			else {
-				Main.NewText(_damageclassMults[key]);
-			}
 		}
 	}
 

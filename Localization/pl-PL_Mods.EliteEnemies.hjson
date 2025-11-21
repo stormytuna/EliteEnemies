@@ -32,6 +32,7 @@ EliteVariations: {
 	// StinkyElite: Stinky
 	// FruityElite: Fruity
 	// PoliteElite: Polite
+	// UnstableElite: Mods.EliteEnemies.EliteVariations.UnstableElite
 }
 
 Sorries: {
@@ -45,8 +46,8 @@ Sorries: {
 	// 7: My mistake!
 	// 8: Whoopsies!
 	// 9: Did I do that...
-	// 10: Sorrgy, accident.. # Yes the typo is on purpose: https://www.youtube.com/watch?v=9oRnVn4aqpM
-	// 11: Sorry about that!
+	// 10: Sorrgy, accident.. # The typo is on purpose: https://www.youtube.com/watch?v=9oRnVn4aqpM
+	// 11: My bad!
 }
 
 Configs: {
@@ -316,6 +317,11 @@ Configs: {
 		EnablePolite: {
 			// Label: Enable Polite
 			// Tooltip: ""
+		}
+
+		EnableUnstable: {
+			// Tooltip: ""
+			// Label: Enable Unstable
 		}
 	}
 }

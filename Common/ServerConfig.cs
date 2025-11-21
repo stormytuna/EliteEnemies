@@ -96,6 +96,9 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableTiny { get; set; }
+	
+	[DefaultValue(true)]
+	public bool EnableUnstable { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableVolatile { get; set; }
