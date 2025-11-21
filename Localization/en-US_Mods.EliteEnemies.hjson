@@ -29,7 +29,7 @@ EliteVariations: {
 	AdaptiveElite: Adaptive
 	LeechingElite: Leeching
 	DestroyerElite: Destroyer
-	StinkyElite: Mods.EliteEnemies.EliteVariations.StinkyElite
+	StinkyElite: Stinky
 }
 
 Configs: {
