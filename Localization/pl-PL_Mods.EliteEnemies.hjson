@@ -31,6 +31,22 @@ EliteVariations: {
 	// DestroyerElite: Destroyer
 	// StinkyElite: Stinky
 	// FruityElite: Fruity
+	// PoliteElite: Polite
+}
+
+Sorries: {
+	// 0: Sorry!
+	// 1: Sorry mate!
+	// 2: My bad!
+	// 3: Oops!
+	// 4: Whoops!
+	// 5: Didn't see ya there!
+	// 6: My fault!
+	// 7: My mistake!
+	// 8: Whoopsies!
+	// 9: Did I do that...
+	// 10: Sorrgy, accident.. # Yes the typo is on purpose: https://www.youtube.com/watch?v=9oRnVn4aqpM
+	// 11: Sorry about that!
 }
 
 Configs: {
@@ -294,6 +310,11 @@ Configs: {
 
 		EnableFruity: {
 			// Label: Enable Fruity
+			// Tooltip: ""
+		}
+
+		EnablePolite: {
+			// Label: Enable Polite
 			// Tooltip: ""
 		}
 	}

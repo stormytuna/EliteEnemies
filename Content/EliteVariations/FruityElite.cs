@@ -96,3 +96,12 @@ public class FruityElite : EliteVariation
 		target.AddBuff(type, time);
 	}
 }
+
+public class ShotByFruityEliteGlobalProjectile : ShotByEliteVariationGlobalProjectile<FruityElite>
+{
+	public override void OnHitPlayer(Projectile projectile, Player target, Player.HurtInfo info) {
+		if (ApplyEliteChanges) {
+			Parent.GetGlobalNPC<FruityElite>().OnHitPlayer(Parent, target, info);
+		}
+	}
+}

@@ -74,6 +74,9 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnablePhasic { get; set; }
+	
+	[DefaultValue(true)]
+	public bool EnablePolite { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableSneaky { get; set; }
