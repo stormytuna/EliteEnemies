@@ -175,6 +175,12 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
         [th]Rare[/th]
         [th]Only applies after defeating any Mech boss[/th]
     [/th]
+    [tr]
+        [th]Fruity[/th]
+        [th]Can inflict random debuffs[/th]
+        [th]Super Rare[/th]
+        [th]Only applies during hardmode[/th]
+    [/th]
 [/table]
 
 [hr][/hr]

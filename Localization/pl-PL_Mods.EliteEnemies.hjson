@@ -30,6 +30,7 @@ EliteVariations: {
 	// LeechingElite: Leeching
 	// DestroyerElite: Destroyer
 	// StinkyElite: Stinky
+	// FruityElite: Fruity
 }
 
 Configs: {
@@ -288,6 +289,11 @@ Configs: {
 
 		EnableStinky: {
 			// Label: Enable Stinky
+			// Tooltip: ""
+		}
+
+		EnableFruity: {
+			// Label: Enable Fruity
 			// Tooltip: ""
 		}
 	}

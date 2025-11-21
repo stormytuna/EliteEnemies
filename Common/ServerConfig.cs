@@ -32,6 +32,9 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableElectric { get; set; }
+	
+	[DefaultValue(true)]
+	public bool EnableFruity { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableGlacial { get; set; }

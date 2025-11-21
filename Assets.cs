@@ -6,6 +6,7 @@ public class Assets : ILoadable
 		Textures.Empty = mod.Assets.Request<Texture2D>("Assets/Textures/EmptyTexture");
 
 		Shaders.Outline = mod.Assets.Request<Effect>("Assets/Shaders/OutlineShader");
+		Shaders.Rainbow = mod.Assets.Request<Effect>("Assets/Shaders/RainbowShader");
 	}
 
 	public void Unload() { }
@@ -22,5 +23,6 @@ public class Assets : ILoadable
 	public static class Shaders
 	{
 		public static Asset<Effect> Outline;
+		public static Asset<Effect> Rainbow;
 	}
 }
