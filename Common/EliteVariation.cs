@@ -1,7 +1,5 @@
 using System.IO;
-using Terraria.DataStructures;
 using Terraria.Localization;
-using Terraria.ModLoader.Config;
 using Terraria.ModLoader.IO;
 
 namespace EliteEnemies.Common;
@@ -32,7 +30,7 @@ public abstract class EliteVariation : GlobalNPC
 	public virtual EliteVariationRarity Rarity {
 		get => EliteVariationRarity.Common;
 	}
-	
+
 	// Virtual for testing, in practice this should never be overridden
 	/// <summary>
 	///     The weight that this Elite Variation has in relation to other Elite Variations when randomly determining whether to spawn. Based on the <see cref="Rarity" /> of the Elite Variation by default.

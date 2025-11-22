@@ -20,9 +20,9 @@ public class PoliteElite : EliteVariation
 		int sorryOption = Main.rand.Next(12);
 		string sorryText = Mod.GetLocalization($"Sorries.{sorryOption}").Value;
 		var popupText = new AdvancedPopupRequest {
-			Color = Color.LightGray, 
-			Text = sorryText, 
-			Velocity = new Vector2(0f, -6f), 
+			Color = Color.LightGray,
+			Text = sorryText,
+			Velocity = new Vector2(0f, -6f),
 			DurationInFrames = 60,
 		};
 		PopupText.NewText(popupText, npc.Top);

@@ -16,19 +16,19 @@ public class ScramblingElite : EliteVariation
 	public override void OnApply(NPC npc) {
 		NPCRenderRedirectSystem.RegisterRenderAction(npc, (int)RenderPriority.First + 50, static (npc, renderTarget, spriteBatch) => {
 			spriteBatch.TakeSnapshotAndEnd(out var sbParams);
-			
+
 			var glitchEffect = Assets.Shaders.Glitch.Value;
 			ModContent.GetInstance<EliteEnemies>().Logger.Debug(glitchEffect is null);
 			glitchEffect.Parameters["intensity"].SetValue(0.1f);
 			glitchEffect.Parameters["textureSize"].SetValue(renderTarget.Size());
 			glitchEffect.Parameters["time"].SetValue(Main.GlobalTimeWrappedHourly);
-			
+
 			Main.graphics.GraphicsDevice.Textures[1] = Assets.Textures.Noise01.Value;
-			
+
 			spriteBatch.Begin(sbParams with { Effect = glitchEffect });
-			
+
 			spriteBatch.Draw(renderTarget, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), Color.White);
-			
+
 			spriteBatch.Restart(sbParams);
 		});
 	}
@@ -43,7 +43,7 @@ public class ScramblingPlayer : ModPlayer
 		public int MaxMana;
 		public int Mana;
 	}
-	
+
 	public bool Scrambled = false;
 
 	private static ScrambledStats _scrambledStats = new ScrambledStats();
@@ -60,15 +60,14 @@ public class ScramblingPlayer : ModPlayer
 			int oldStatLife = Main.LocalPlayer.statLife;
 			int oldStatManaMax = Main.LocalPlayer.statManaMax2;
 			int oldStatMana = Main.LocalPlayer.statMana;
-			
+
 			if (scramble) {
 				// Scrambling every frame looks terrible
-				if (double.Floor(Main.timeForVisualEffects) % 10 == 0) 
-				{
+				if (double.Floor(Main.timeForVisualEffects) % 10 == 0) {
 					int maxLife = Main.rand.Next(500);
 					int maxMana = Main.rand.Next(400);
 					_scrambledStats = new ScrambledStats {
-						MaxLife = maxLife, 
+						MaxLife = maxLife,
 						Life = Main.rand.Next(maxLife),
 						MaxMana = maxMana,
 						Mana = Main.rand.Next(maxMana),

@@ -20,7 +20,7 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableBlazing { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableBrainy { get; set; }
 
@@ -35,10 +35,10 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableElectric { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableFluxive { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableFruity { get; set; }
 
@@ -77,16 +77,16 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableMolten { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableParty { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnablePhasic { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnablePolite { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableScrambling { get; set; }
 
@@ -98,10 +98,10 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableSpiky { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableStoic { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableStinky { get; set; }
 
@@ -110,18 +110,18 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableTiny { get; set; }
-	
+
 	[DefaultValue(true)]
 	public bool EnableUnstable { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableVolatile { get; set; }
-	
+
 	[Header("Spawning")]
 	[DefaultValue(0.1f)]
 	[Range(0.001f, 1f)]
 	public float SpawnChance { get; set; }
-	
+
 	[DefaultValue(4)]
 	[Range(0, 20)]
 	public int MaxSimultaneousVariations { get; set; }

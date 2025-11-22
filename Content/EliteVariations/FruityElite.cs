@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using EliteEnemies.Common;
 using FishUtils.DataStructures;
 
@@ -7,7 +6,7 @@ namespace EliteEnemies.Content.EliteVariations;
 public class FruityElite : EliteVariation
 {
 	private float _randomColorOffset = Main.rand.NextFloat();
-	
+
 	public override EliteVariationRarity Rarity {
 		get => EliteVariationRarity.SuperRare;
 	}
@@ -20,25 +19,25 @@ public class FruityElite : EliteVariation
 		if (!ApplyEliteVariation) {
 			return;
 		}
-		
+
 		NPCRenderRedirectSystem.RegisterRenderAction(npc, (int)RenderPriority.Middle, static (npc, renderTarget, spriteBatch) => {
 			Main.spriteBatch.TakeSnapshotAndEnd(out SpriteBatchParams sbParams);
 
 			var shader = Assets.Shaders.Rainbow.Value;
-			
+
 			float offset = npc.GetGlobalNPC<FruityElite>()._randomColorOffset;
 			float hue = ((float)Main.timeForVisualEffects / 120) % 1f + offset;
 			var rainbowColor = Main.hslToRgb(hue, 1f, 0.5f);
 			shader.Parameters["rainbow"].SetValue(rainbowColor.ToVector3());
-			
+
 			Main.spriteBatch.Begin(sbParams with { Effect = shader });
-			
+
 			spriteBatch.Draw(renderTarget, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), Color.White);
-			
+
 			Main.spriteBatch.Restart(sbParams);
 		});
 	}
-	
+
 	public override void OnHitPlayer(NPC npc, Player target, Player.HurtInfo hurtInfo) {
 		if (!ApplyEliteVariation || Main.rand.NextBool()) {
 			return;
@@ -92,7 +91,7 @@ public class FruityElite : EliteVariation
 			44 => (BuffID.GelBalloonBuff, 2 * 60 * 60),
 			_ => (BuffID.OnFire, 15 * 60),
 		};
-		
+
 		target.AddBuff(type, time);
 	}
 }

@@ -16,7 +16,7 @@ public class UnstableElite : EliteVariation
 		if (!ApplyEliteVariation) {
 			return;
 		}
-		
+
 		NPCRenderRedirectSystem.RegisterRenderAction(npc, (int)RenderPriority.Last, static (npc, renderTarget, spriteBatch) => {
 			var randomDir = Main.rand.NextVector2Circular(1f, 1f);
 			var randomOffset = (randomDir * npc.Size.Length() * 0.1f).ToPoint();
@@ -25,14 +25,13 @@ public class UnstableElite : EliteVariation
 	}
 
 	private int _projectileTimer;
-	
+
 	public override void AI(NPC npc) {
 		if (!ApplyEliteVariation) {
 			return;
 		}
-		
-		if (Main.netMode != NetmodeID.MultiplayerClient) 
-		{
+
+		if (Main.netMode != NetmodeID.MultiplayerClient) {
 			_projectileTimer++;
 			if (_projectileTimer >= 60) {
 				_projectileTimer = 0;

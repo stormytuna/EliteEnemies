@@ -17,7 +17,7 @@ public class BrainyElite : EliteVariation
 		if (!ApplyEliteVariation) {
 			return;
 		}
-		
+
 		NPCRenderRedirectSystem.RegisterRenderAction(npc, (int)RenderPriority.Last + 50, static (npc, renderTarget, spriteBatch) => {
 			var drawData = new DrawData(renderTarget, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), Color.White);
 			drawData.Draw(spriteBatch);

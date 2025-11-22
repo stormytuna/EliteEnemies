@@ -217,6 +217,12 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
         [th]Super Rare[/th]
         [th]Only applies after defeating any Mech boss[/th]
     [/th]
+    [tr]
+        [th]Scrambling[/th]
+        [th]Scrambles your HUD[/th]
+        [th]Super Rare[/th]
+        [th]Only applies after defeating any Mech boss[/th]
+    [/th]
 [/table]
 
 [hr][/hr]

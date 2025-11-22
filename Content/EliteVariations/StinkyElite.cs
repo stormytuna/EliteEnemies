@@ -7,7 +7,7 @@ namespace EliteEnemies.Content.EliteVariations;
 public class StinkyElite : EliteVariation
 {
 	private int _stinkCloudTimer = 0;
-	
+
 	public override EliteVariationRarity Rarity {
 		get => EliteVariationRarity.Rare;
 	}
@@ -20,14 +20,14 @@ public class StinkyElite : EliteVariation
 		if (!ApplyEliteVariation) {
 			return;
 		}
-		
+
 		npc.AddBuff(BuffID.Stinky, 2, false);
 
 		if (Main.netMode != NetmodeID.MultiplayerClient) {
 			_stinkCloudTimer++;
 			if (_stinkCloudTimer >= 20) {
 				_stinkCloudTimer = 0;
-				
+
 				Vector2 velocity = Main.rand.NextVector2Circular(3f, 3f);
 				Projectile.NewProjectile(npc.GetSource_FromThis(), npc.Center, velocity, ModContent.ProjectileType<StinkyCloud>(), 0, 0f, Main.myPlayer);
 			}
@@ -47,7 +47,7 @@ public class StinkyCloud : ModProjectile
 		Projectile.CloneDefaults(ProjectileID.ToxicCloud);
 		Projectile.hostile = false;
 		Projectile.friendly = false;
-		
+
 		AIType = ProjectileID.ToxicCloud;
 	}
 
@@ -71,12 +71,12 @@ public class StinkyCloud : ModProjectile
 			rotation = Projectile.rotation,
 			scale = new Vector2(Projectile.scale),
 		};
-		
+
 		var cloudData = drawData with {
 			color = drawData.color * 0.25f,
 			scale = drawData.scale * (1f + (Projectile.Opacity * 1.75f)),
 		};
-		
+
 		cloudData.Draw(Main.spriteBatch);
 		drawData.Draw(Main.spriteBatch);
 
@@ -88,14 +88,14 @@ public class StinkyCloudPlayer : ModPlayer
 {
 	public override void UpdateBadLifeRegen() {
 		bool nearStinkyCloud = false;
-		
+
 		foreach (var projectile in Main.ActiveProjectiles) {
 			if (projectile.ModProjectile is StinkyCloud { Active: true } && projectile.Hitbox.Intersects(Player.Hitbox)) {
 				nearStinkyCloud = true;
 				break;
 			}
 		}
-		
+
 		if (!nearStinkyCloud) {
 			return;
 		}
