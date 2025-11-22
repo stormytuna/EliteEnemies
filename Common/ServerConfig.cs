@@ -86,10 +86,12 @@ public class ServerConfig : ModConfig
 	
 	[DefaultValue(true)]
 	public bool EnablePolite { get; set; }
+	
+	[DefaultValue(true)]
+	public bool EnableScrambling { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableSneaky { get; set; }
-
 
 	[DefaultValue(true)]
 	public bool EnableSpelunker { get; set; }

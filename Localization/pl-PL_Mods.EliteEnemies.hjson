@@ -37,6 +37,7 @@ EliteVariations: {
 	// BrainyElite: Brainy
 	// StoicElite: Stoic
 	// FluxiveElite: Fluxive
+	// ScramblingElite: Mods.EliteEnemies.EliteVariations.ScramblingElite
 }
 
 Sorries: {
@@ -352,6 +353,11 @@ Configs: {
 			// Label: Enable Fluxive
 			// Tooltip: ""
 		}
+
+		EnableScrambling: {
+			// Label: Enable Scrambling
+			// Tooltip: ""
+		}
 	}
 }
 
@@ -366,5 +372,10 @@ Buffs: {
 	FluxiveBuff: {
 		// Description: Flummoxed
 		// DisplayName: Your world is upside down!
+	}
+
+	ScrambledBuff: {
+		// DisplayName: Scrambled
+		// Description: Your HUD has been scrambled!
 	}
 }
