@@ -199,6 +199,12 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
         [th]Rare[/th]
         [th]More common during a party[/th]
     [/th]
+    [tr]
+        [th]Brainy[/th]
+        [th]Creates reflections of itself[/th]
+        [th]Legendary[/th]
+        [th][/th]
+    [/th]
 [/table]
 
 [hr][/hr]

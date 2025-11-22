@@ -20,6 +20,9 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableBlazing { get; set; }
+	
+	[DefaultValue(true)]
+	public bool EnableBrainy { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnableCursed { get; set; }

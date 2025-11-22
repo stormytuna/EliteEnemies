@@ -33,7 +33,8 @@ EliteVariations: {
 	// FruityElite: Fruity
 	// PoliteElite: Polite
 	// UnstableElite: Unstable
-	// PartyElite: Mods.EliteEnemies.EliteVariations.PartyElite
+	// PartyElite: Party
+	// BrainyElite: Brainy
 }
 
 Sorries: {
@@ -328,6 +329,16 @@ Configs: {
 		EnableParty: {
 			// Tooltip: ""
 			// Label: Enable Party
+		}
+
+		EnableAbyssal: {
+			// Tooltip: ""
+			// Label: Enable Abyssal
+		}
+
+		EnableBrainy: {
+			// Tooltip: ""
+			// Label: Enable Brainy
 		}
 	}
 }
