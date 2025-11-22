@@ -36,6 +36,7 @@ EliteVariations: {
 	PartyElite: Party
 	BrainyElite: Brainy
 	StoicElite: Stoic
+	FluxiveElite: Fluxive
 }
 
 Sorries: {
@@ -346,6 +347,11 @@ Configs: {
 			Tooltip: ""
 			Label: Enable Stoic
 		}
+
+		EnableFluxive: {
+			Label: Enable Fluxive
+			Tooltip: ""
+		}
 	}
 }
 
@@ -355,3 +361,10 @@ Projectiles: {
 }
 
 NPCs.LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile
+
+Buffs: {
+	FluxiveBuff: {
+		Description: Flummoxed
+		DisplayName: Your world is upside down!
+	}
+}

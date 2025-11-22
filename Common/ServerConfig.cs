@@ -37,6 +37,9 @@ public class ServerConfig : ModConfig
 	public bool EnableElectric { get; set; }
 	
 	[DefaultValue(true)]
+	public bool EnableFluxive { get; set; }
+	
+	[DefaultValue(true)]
 	public bool EnableFruity { get; set; }
 
 	[DefaultValue(true)]

@@ -211,6 +211,12 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
         [th]Rare[/th]
         [th][/th]
     [/th]
+    [tr]
+        [th]Fluxive[/th]
+        [th]Flips gravity when it hits you[/th]
+        [th]Super Rare[/th]
+        [th]Only applies after defeating any Mech boss[/th]
+    [/th]
 [/table]
 
 [hr][/hr]

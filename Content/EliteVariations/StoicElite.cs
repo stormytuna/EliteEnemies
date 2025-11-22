@@ -22,12 +22,3 @@ public class StoicElite : EliteVariation
 		}
 	}
 }
-
-public class Test : GlobalNPC
-{
-	public override bool? DrawHealthBar(NPC npc, byte hbPosition, ref float scale, ref Vector2 position) {
-		Main.NewText("rock and stone");
-		scale = 10f;
-		return base.DrawHealthBar(npc, hbPosition, ref scale, ref position);
-	}
-}
