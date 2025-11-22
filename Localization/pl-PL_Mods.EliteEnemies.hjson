@@ -32,7 +32,8 @@ EliteVariations: {
 	// StinkyElite: Stinky
 	// FruityElite: Fruity
 	// PoliteElite: Polite
-	// UnstableElite: Mods.EliteEnemies.EliteVariations.UnstableElite
+	// UnstableElite: Unstable
+	// PartyElite: Mods.EliteEnemies.EliteVariations.PartyElite
 }
 
 Sorries: {
@@ -322,6 +323,11 @@ Configs: {
 		EnableUnstable: {
 			// Tooltip: ""
 			// Label: Enable Unstable
+		}
+
+		EnableParty: {
+			// Tooltip: ""
+			// Label: Enable Party
 		}
 	}
 }

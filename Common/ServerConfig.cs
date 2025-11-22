@@ -71,6 +71,9 @@ public class ServerConfig : ModConfig
 
 	[DefaultValue(true)]
 	public bool EnableMolten { get; set; }
+	
+	[DefaultValue(true)]
+	public bool EnableParty { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnablePhasic { get; set; }

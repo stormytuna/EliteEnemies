@@ -33,6 +33,7 @@ EliteVariations: {
 	FruityElite: Fruity
 	PoliteElite: Polite
 	UnstableElite: Unstable
+	PartyElite: Party
 }
 
 Sorries: {
@@ -322,6 +323,11 @@ Configs: {
 		EnableUnstable: {
 			Tooltip: ""
 			Label: Enable Unstable
+		}
+
+		EnableParty: {
+			Tooltip: ""
+			Label: Enable Party
 		}
 	}
 }

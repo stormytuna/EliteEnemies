@@ -193,6 +193,12 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
         [th]Super Rare[/th]
         [th]Only applies during hardmode[/th]
     [/th]
+    [tr]
+        [th]Party[/th]
+        [th]Bleeds confetti[/th]
+        [th]Rare[/th]
+        [th]More common during a party[/th]
+    [/th]
 [/table]
 
 [hr][/hr]
