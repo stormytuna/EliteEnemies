@@ -68,7 +68,7 @@ public class PhasicElite : EliteVariation
 	}
 
 	public override bool? DrawHealthBar(NPC npc, byte hbPosition, ref float scale, ref Vector2 position) {
-		return _canInteract;
+		return _canInteract ? null : true;
 	}
 
 	public override bool CanHitNPC(NPC npc, NPC target) {

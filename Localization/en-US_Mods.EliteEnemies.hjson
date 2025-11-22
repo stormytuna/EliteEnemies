@@ -35,6 +35,7 @@ EliteVariations: {
 	UnstableElite: Unstable
 	PartyElite: Party
 	BrainyElite: Brainy
+	StoicElite: Stoic
 }
 
 Sorries: {
@@ -339,6 +340,11 @@ Configs: {
 		EnableBrainy: {
 			Tooltip: ""
 			Label: Enable Brainy
+		}
+
+		EnableStoic: {
+			Tooltip: ""
+			Label: Enable Stoic
 		}
 	}
 }

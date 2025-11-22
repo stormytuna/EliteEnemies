@@ -95,6 +95,9 @@ public class ServerConfig : ModConfig
 	public bool EnableSpiky { get; set; }
 	
 	[DefaultValue(true)]
+	public bool EnableStoic { get; set; }
+	
+	[DefaultValue(true)]
 	public bool EnableStinky { get; set; }
 
 	[DefaultValue(true)]
