@@ -16,17 +16,47 @@ public class ApplyEliteVariations : ILoadable
 
 	public void Unload() { }
 
+	private int NumMaxVariations {
+		get {
+			return WorldEliteAbundancySystem.Abundancy switch {
+				WorldEliteAbundancy.Scarce => 1,
+				WorldEliteAbundancy.Regular => 3,
+				WorldEliteAbundancy.Plentiful => 6,
+				_ => 3,
+			};
+		}
+	}
+
+	private float SpawnChance {
+		get {
+			return WorldEliteAbundancySystem.Abundancy switch {
+				WorldEliteAbundancy.Scarce => 0.05f,
+				WorldEliteAbundancy.Regular =>  0.1f,
+				WorldEliteAbundancy.Plentiful => 0.25f,
+				_ => 0.1f,
+			};
+		}
+	}
+
+	// TODO: Secret seed fuckery!
+	private Dictionary<EliteVariationRarity, float> _rarityToSpawnWeight = new() {
+		{EliteVariationRarity.Common, 20f},
+		{EliteVariationRarity.Uncommon, 15f},
+		{EliteVariationRarity.Rare, 10f},
+		{EliteVariationRarity.SuperRare, 5f},
+		{EliteVariationRarity.Legendary, 2f},
+	};
+
 	private void TryApplyEliteVariations(Action<NPC, IEntitySource> orig, NPC npc, IEntitySource source) {
 		bool isAffectableEnemy = !npc.friendly && npc.damage > 0 && !npc.immortal && !npc.dontTakeDamage && !ServerConfig.Instance.NPCBlacklist.Contains(new NPCDefinition(npc.type));
 		bool applyToEnemyOrCritter = isAffectableEnemy || (ServerConfig.Instance.ApplyToCritters && npc.CountsAsACritter);
 		bool careAboutBoss = ServerConfig.Instance.ApplyToBosses || !npc.CountsAsBoss();
-		bool careAboutModded = ServerConfig.Instance.ApplyToModdedNPCs || npc.ModNPC is null;
 
-		if (!applyToEnemyOrCritter || !careAboutBoss || !careAboutModded) {
+		if (!applyToEnemyOrCritter || !careAboutBoss) {
 			return;
 		}
 
-		int numVariations = Main.rand.NextRecursiveCount(ServerConfig.Instance.SpawnChance, ServerConfig.Instance.MaxSimultaneousVariations);
+		int numVariations = Main.rand.NextRecursiveCount(SpawnChance, NumMaxVariations);
 		if (numVariations <= 0) {
 			return;
 		}
@@ -41,7 +71,7 @@ public class ApplyEliteVariations : ILoadable
 		List<EliteVariation> applicableVariations = eliteVariations.Where(v => v.CanApply(npc)).ToList();
 		WeightedRandom<EliteVariation> weightedRandom = new();
 		foreach (EliteVariation variation in applicableVariations) {
-			weightedRandom.Add(variation, variation.SpawnWeight);
+			weightedRandom.Add(variation, _rarityToSpawnWeight[variation.Rarity]);
 		}
 
 		int numVariationsToApply = int.Min(numVariations, applicableVariations.Count);

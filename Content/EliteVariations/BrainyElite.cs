@@ -10,7 +10,7 @@ public class BrainyElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedBoss2 && ServerConfig.Instance.EnableBrainy;
+		return NPC.downedBoss2;
 	}
 
 	public override void OnApply(NPC npc) {
@@ -24,7 +24,6 @@ public class BrainyElite : EliteVariation
 			(drawData with { effect = SpriteEffects.FlipHorizontally }).Draw(spriteBatch);
 			(drawData with { effect = SpriteEffects.FlipVertically }).Draw(spriteBatch);
 			(drawData with { effect = SpriteEffects.FlipHorizontally | SpriteEffects.FlipVertically }).Draw(spriteBatch);
-			Main.NewText("fcusm");
 		});
 	}
 }

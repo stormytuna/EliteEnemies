@@ -18,7 +18,7 @@ public class DiscordantElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return Main.hardMode && !npc.IsWorm() && ServerConfig.Instance.EnableDiscordant;
+		return Main.hardMode && !npc.IsWorm();
 	}
 
 	public override void AI(NPC npc) {

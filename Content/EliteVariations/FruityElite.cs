@@ -12,7 +12,7 @@ public class FruityElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return Main.hardMode && ServerConfig.Instance.EnableFruity;
+		return Main.hardMode;
 	}
 
 	public override void OnApply(NPC npc) {

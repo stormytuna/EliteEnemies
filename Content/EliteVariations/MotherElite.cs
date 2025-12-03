@@ -9,7 +9,7 @@ public class MotherElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return !npc.IsWorm() && ServerConfig.Instance.EnableMother;
+		return !npc.IsWorm();
 	}
 
 	public override void OnKill(NPC npc) {

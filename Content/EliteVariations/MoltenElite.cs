@@ -10,7 +10,7 @@ public class MoltenElite : EliteVariation
 
 	public override bool CanApply(NPC npc) {
 		bool underground = npc.Center.Y > (Main.rockLayer * 16f);
-		return underground && Main.hardMode && ServerConfig.Instance.EnableMolten;
+		return underground && Main.hardMode;
 	}
 
 	public override void AI(NPC npc) {

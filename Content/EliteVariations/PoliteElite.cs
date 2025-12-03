@@ -8,10 +8,6 @@ public class PoliteElite : EliteVariation
 		get => EliteVariationRarity.Uncommon;
 	}
 
-	public override bool CanApply(NPC npc) {
-		return ServerConfig.Instance.EnablePolite;
-	}
-
 	public override void OnHitPlayer(NPC npc, Player target, Player.HurtInfo hurtInfo) {
 		if (!ApplyEliteVariation) {
 			return;

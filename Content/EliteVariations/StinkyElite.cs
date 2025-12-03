@@ -13,7 +13,7 @@ public class StinkyElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedMechBossAny && ServerConfig.Instance.EnableStinky;
+		return NPC.downedMechBossAny;
 	}
 
 	public override void AI(NPC npc) {

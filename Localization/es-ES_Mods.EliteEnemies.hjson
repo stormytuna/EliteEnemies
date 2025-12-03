@@ -37,7 +37,7 @@ EliteVariations: {
 	// BrainyElite: Brainy
 	// StoicElite: Stoic
 	// FluxiveElite: Fluxive
-	// ScramblingElite: Mods.EliteEnemies.EliteVariations.ScramblingElite
+	// ScramblingElite: Scrambling
 }
 
 Sorries: {
@@ -53,6 +53,20 @@ Sorries: {
 	// 9: Did I do that...
 	// 10: Sorrgy, accident.. # The typo is on purpose: https://www.youtube.com/watch?v=9oRnVn4aqpM
 	// 11: My bad!
+}
+
+WorldGen: {
+	Titles: {
+		// Scarce: Scarce
+		// Regular: Regular
+		// Plentiful: Plentiful
+	}
+
+	Descriptions: {
+		// Scarce: Fewer Elites, for laid-back players.
+		// Regular: The standard Elite Enemies experience.
+		// Plentiful: Many more Elites, not for the faint of heart!
+	}
 }
 
 Configs: {

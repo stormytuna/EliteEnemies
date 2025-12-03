@@ -10,7 +10,7 @@ public class FluxiveElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedMechBossAny && ServerConfig.Instance.EnableFluxive;
+		return NPC.downedMechBossAny;
 	}
 
 	public override void OnHitPlayer(NPC npc, Player target, Player.HurtInfo hurtInfo) {

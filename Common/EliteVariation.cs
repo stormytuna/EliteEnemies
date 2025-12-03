@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using Terraria.Localization;
 using Terraria.ModLoader.IO;
@@ -6,6 +7,15 @@ namespace EliteEnemies.Common;
 
 public abstract class EliteVariation : GlobalNPC
 {
+	// TODO: Secret seed fuckery!
+	private static Dictionary<EliteVariationRarity, float> _rarityToValueMult = new() {
+		{EliteVariationRarity.Common, 1.5f},
+		{EliteVariationRarity.Uncommon, 2f},
+		{EliteVariationRarity.Rare, 3.5f},
+		{EliteVariationRarity.SuperRare, 5f},
+		{EliteVariationRarity.Legendary, 8f},
+	};
+
 	private bool _firstFrame = true;
 
 	public new LocalizedText Name {
@@ -29,57 +39,6 @@ public abstract class EliteVariation : GlobalNPC
 	/// </summary>
 	public virtual EliteVariationRarity Rarity {
 		get => EliteVariationRarity.Common;
-	}
-
-	// Virtual for testing, in practice this should never be overridden
-	/// <summary>
-	///     The weight that this Elite Variation has in relation to other Elite Variations when randomly determining whether to spawn. Based on the <see cref="Rarity" /> of the Elite Variation by default.
-	/// </summary>
-	public virtual float SpawnWeight {
-		get {
-			return Rarity switch {
-				EliteVariationRarity.Common => ServerConfig.Instance.CommonSpawnWeight,
-				EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonSpawnWeight,
-				EliteVariationRarity.Rare => ServerConfig.Instance.RareSpawnWeight,
-				EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareSpawnWeight,
-				EliteVariationRarity.Legendary => ServerConfig.Instance.LegendarySpawnWeight,
-				_ => 0f
-			};
-		}
-	}
-
-	/// <summary>
-	/// Multiplier to coins dropped.
-	/// Influenced by Rarity by default.
-	/// </summary>
-	public virtual float ValueMultiplier {
-		get {
-			return Rarity switch {
-				EliteVariationRarity.Common => ServerConfig.Instance.CommonValueMultiplier,
-				EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonValueMultiplier,
-				EliteVariationRarity.Rare => ServerConfig.Instance.RareValueMultiplier,
-				EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareValueMultiplier,
-				EliteVariationRarity.Legendary => ServerConfig.Instance.LegendaryValueMultiplier,
-				_ => 0f,
-			};
-		}
-	}
-
-	/// <summary>
-	/// Multiplier to loot drops, 1f would be standard amount, 2f would drop twice as much loot, 1.5f would drop twice as much loot half of the time.
-	/// Influenced by Rarity by default.
-	/// </summary>
-	public virtual float LootMultiplier {
-		get {
-			return Rarity switch {
-				EliteVariationRarity.Common => ServerConfig.Instance.CommonLootMultiplier,
-				EliteVariationRarity.Uncommon => ServerConfig.Instance.UncommonLootMultiplier,
-				EliteVariationRarity.Rare => ServerConfig.Instance.RareLootMultiplier,
-				EliteVariationRarity.SuperRare => ServerConfig.Instance.SuperRareLootMultiplier,
-				EliteVariationRarity.Legendary => ServerConfig.Instance.LegendaryLootMultiplier,
-				_ => 0f,
-			};
-		}
 	}
 
 	public virtual bool CanApply(NPC npc) {
@@ -116,7 +75,7 @@ public abstract class EliteVariation : GlobalNPC
 			_firstFrame = false;
 
 			OnApply(npc);
-			npc.value = (int)(npc.value * ValueMultiplier);
+			npc.value = (int)(npc.value * _rarityToValueMult[Rarity]);
 		}
 
 		return ret;

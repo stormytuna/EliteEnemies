@@ -13,10 +13,6 @@ public class GlowingElite : EliteVariation
 		get => EliteVariationRarity.Rare;
 	}
 
-	public override bool CanApply(NPC npc) {
-		return ServerConfig.Instance.EnableGlowing;
-	}
-
 	public override void OnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {
 			_lightColor = new Color(Main.rand.NextFloat(), Main.rand.NextFloat(), Main.rand.NextFloat()) * Main.rand.NextFloat(0.5f, 2f);

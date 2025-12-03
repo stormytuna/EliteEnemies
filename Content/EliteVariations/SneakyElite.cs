@@ -8,10 +8,6 @@ public class SneakyElite : EliteVariation
 		get => EliteVariationRarity.SuperRare;
 	}
 
-	public override bool CanApply(NPC npc) {
-		return ServerConfig.Instance.EnableSneaky;
-	}
-
 	public override void DrawEffects(NPC npc, ref Color drawColor) {
 		if (!ApplyEliteVariation) {
 			return;

@@ -10,7 +10,7 @@ public class CursedElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return Main.hardMode && !WorldGen.crimson && ServerConfig.Instance.EnableCursed;
+		return Main.hardMode && !WorldGen.crimson;
 	}
 
 	public override void OnApply(NPC npc) {

@@ -18,7 +18,7 @@ public class PhasicElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedBoss3 && !npc.IsWorm() && ServerConfig.Instance.EnablePhasic;
+		return NPC.downedBoss3 && !npc.IsWorm();
 	}
 
 	public override void SafeLoad() {

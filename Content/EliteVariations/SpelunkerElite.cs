@@ -8,10 +8,6 @@ public class SpelunkerElite : EliteVariation
 		get => EliteVariationRarity.Rare;
 	}
 
-	public override bool CanApply(NPC npc) {
-		return ServerConfig.Instance.EnableSpelunker;
-	}
-
 	public override void AI(NPC npc) {
 		if (!ApplyEliteVariation) {
 			return;

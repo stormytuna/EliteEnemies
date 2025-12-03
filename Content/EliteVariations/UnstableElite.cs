@@ -9,7 +9,7 @@ public class UnstableElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return Main.hardMode && ServerConfig.Instance.EnableUnstable;
+		return Main.hardMode;
 	}
 
 	public override void OnApply(NPC npc) {

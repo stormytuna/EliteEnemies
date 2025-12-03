@@ -15,9 +15,9 @@ public delegate void NPCRenderAction(NPC npc, RenderTarget2D renderTarget, Sprit
 /// <summary>
 /// Encapsulates an NPCRenderAction with an associated priority.
 /// </summary>
-/// <param name="action">The render action to be performed.</param>
-/// <param name="priority">The priority of the render action.</param>
-public record class NPCRenderActionWithPriority(NPCRenderAction action, int priority);
+/// <param name="Action">The render action to be performed.</param>
+/// <param name="Priority">The priority of the render action.</param>
+public record class NPCRenderActionWithPriority(NPCRenderAction Action, int Priority);
 
 public enum RenderPriority
 {
@@ -96,8 +96,8 @@ public class NPCRenderRedirectSystem : ModSystem
 
 			bool useStaging2 = false;
 			List<NPCRenderAction> sortedRenderActions = renderActions
-				.OrderBy(x => x.priority)
-				.Select(x => x.action)
+				.OrderBy(x => x.Priority)
+				.Select(x => x.Action)
 				.ToList();
 			for (int i = 0; i < sortedRenderActions.Count; i++) {
 				NPCRenderAction renderAction = sortedRenderActions[i];
@@ -151,7 +151,7 @@ public class NPCRenderRedirectSystem : ModSystem
 		}
 
 		if (!_renderActions.TryGetValue(npc.whoAmI, out List<NPCRenderActionWithPriority> value)) {
-			value = ([]);
+			value = [];
 			_renderActions.Add(npc.whoAmI, value);
 		}
 
