@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -16,7 +15,8 @@ public enum WorldEliteAbundancy
 	Scarce, Regular, Plentiful
 }
 
-public class Test : ModPlayer {
+public class Test : ModPlayer
+{
 	public override void UpdateEquips() {
 		Main.NewText(WorldEliteAbundancySystem.WorldEliteAbundancy);
 	}
@@ -39,7 +39,8 @@ public class WorldEliteAbundancySystem : ModSystem
 		if (Main.ActiveWorldFileData.TryGetHeaderData<WorldEliteAbundancySystem>(out TagCompound data)) {
 			if (data.ContainsKey("WorldEliteAbundancy")) {
 				WorldEliteAbundancy = (WorldEliteAbundancy)data.GetByte("WorldEliteAbundancy");
-			} else {
+			}
+			else {
 				WorldEliteAbundancy = WorldEliteAbundancy.Regular;
 			}
 		}
@@ -74,7 +75,7 @@ public class WorldEliteAbundancySystem : ModSystem
 		cursor.EmitLdcI4(48);
 		cursor.EmitAdd();
 
-		cursor.GotoNext(MoveType.After, 
+		cursor.GotoNext(MoveType.After,
 			i => i.MatchLdcR4(170f),
 			i => i.MatchLdloc0(),
 			i => i.MatchConvR4(),
@@ -101,32 +102,32 @@ public class WorldEliteAbundancySystem : ModSystem
 			}
 
 			WorldEliteAbundancy[] elites = [
-				WorldEliteAbundancy.Scarce, 
-				WorldEliteAbundancy.Regular, 
+				WorldEliteAbundancy.Scarce,
+				WorldEliteAbundancy.Regular,
 				WorldEliteAbundancy.Plentiful,
 			];
 
 			LocalizedText[] titles = [
-				GetLang("WorldGen.Titles.Scarce"), 
-				GetLang("WorldGen.Titles.Regular"), 
-				GetLang("WorldGen.Titles.Plentiful"), 
+				GetLang("WorldGen.Titles.Scarce"),
+				GetLang("WorldGen.Titles.Regular"),
+				GetLang("WorldGen.Titles.Plentiful"),
 			];
 
 			LocalizedText[] descriptions = [
-				GetLang("WorldGen.Descriptions.Scarce"), 
-				GetLang("WorldGen.Descriptions.Regular"), 
-				GetLang("WorldGen.Descriptions.Plentiful"), 
+				GetLang("WorldGen.Descriptions.Scarce"),
+				GetLang("WorldGen.Descriptions.Regular"),
+				GetLang("WorldGen.Descriptions.Plentiful"),
 			];
 
 			Color[] colors = [
-				Color.Pink, 
-				Color.LimeGreen, 
+				Color.Pink,
+				Color.LimeGreen,
 				Color.CornflowerBlue,
 			];
 
 			string[] iconPaths = [
-				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconScarce", 
-				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconRegular", 
+				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconScarce",
+				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconRegular",
 				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconPlentiful",
 			];
 
@@ -145,7 +146,7 @@ public class WorldEliteAbundancySystem : ModSystem
 					.SetValue(button, ModContent.Request<Texture2D>(iconPaths[i]));
 
 				button.OnLeftMouseDown += (evt, listeningElement) => {
-					var listeningButton = (GroupOptionButton<WorldEliteAbundancy>)listeningElement;	
+					var listeningButton = (GroupOptionButton<WorldEliteAbundancy>)listeningElement;
 					WorldEliteAbundancy = listeningButton.OptionValue;
 					foreach (var button in _eliteOptionsButtons) {
 						ModContent.GetInstance<EliteEnemies>().Logger.Info(button.OptionValue);

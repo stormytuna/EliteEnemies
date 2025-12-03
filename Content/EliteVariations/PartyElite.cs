@@ -1,5 +1,4 @@
 using EliteEnemies.Common;
-using Terraria.GameContent.Events;
 
 namespace EliteEnemies.Content.EliteVariations;
 

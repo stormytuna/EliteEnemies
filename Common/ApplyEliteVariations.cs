@@ -31,7 +31,7 @@ public class ApplyEliteVariations : ILoadable
 		get {
 			return WorldEliteAbundancySystem.Abundancy switch {
 				WorldEliteAbundancy.Scarce => 0.05f,
-				WorldEliteAbundancy.Regular =>  0.1f,
+				WorldEliteAbundancy.Regular => 0.1f,
 				WorldEliteAbundancy.Plentiful => 0.25f,
 				_ => 0.1f,
 			};
