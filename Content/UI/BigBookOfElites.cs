@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using EliteEnemies.Common;
-using EliteEnemies.Content.EliteVariations;
 using FishUtils.UI;
 using Terraria.GameContent.UI.Elements;
 using Terraria.Localization;
@@ -9,7 +8,8 @@ using Terraria.UI;
 
 namespace EliteEnemies.Content.UI;
 
-public class BigBookOfElitesItem : ModItem {
+public class BigBookOfElitesItem : ModItem
+{
 	public override void SetDefaults() {
 		Item.width = 20;
 		Item.height = 20;
@@ -27,7 +27,8 @@ public class BigBookOfElitesItem : ModItem {
 }
 
 [Autoload(Side = ModSide.Client)]
-public class BigBookOfElites : ModSystem {
+public class BigBookOfElites : ModSystem
+{
 	private static UserInterface _interface;
 	private static BigBookOfElitesUIState _uiState;
 	private static GameTime _oldGameTime;
@@ -49,13 +50,14 @@ public class BigBookOfElites : ModSystem {
 	public static void Toggle() {
 		if (_interface.CurrentState is null) {
 			Show();
-		} else {
+		}
+		else {
 			Hide();
 		}
 	}
 
 	public override void UpdateUI(GameTime gameTime) {
-		_oldGameTime = gameTime;	
+		_oldGameTime = gameTime;
 		if (_interface?.CurrentState is not null) {
 			_interface.Update(gameTime);
 		}
@@ -81,9 +83,11 @@ public class BigBookOfElites : ModSystem {
 	}
 }
 
-public class BigBookOfElitesUIState : UIState {
-	public static class Theming {
-		public static Color Title => Color.Violet;		
+public class BigBookOfElitesUIState : UIState
+{
+	public static class Theming
+	{
+		public static Color Title => Color.Violet;
 		public static Color Info => Color.CornflowerBlue;
 		public static Color Settings => Color.SlateGray;
 
@@ -285,22 +289,23 @@ public class BigBookOfElitesUIState : UIState {
 	}
 
 	private void ChangeEliteAbundancy(int newAbundancy) {
-			if (Main.netMode == NetmodeID.MultiplayerClient && !Main.countsAsHostForGameplay[Main.myPlayer]) {
-				// TODO: localisation 
-				Main.NewText("Only the host can change the Elite Abundancy!");
-				return;
-			}
+		if (Main.netMode == NetmodeID.MultiplayerClient && !Main.countsAsHostForGameplay[Main.myPlayer]) {
+			// TODO: localisation 
+			Main.NewText("Only the host can change the Elite Abundancy!");
+			return;
+		}
 
-			if (newAbundancy == Enum.GetNames<WorldEliteAbundancy>().Length) {
-				newAbundancy = 0;	
-			} else if (newAbundancy < 0) {
-				newAbundancy = Enum.GetNames<WorldEliteAbundancy>().Length - 1;
-			}
+		if (newAbundancy == Enum.GetNames<WorldEliteAbundancy>().Length) {
+			newAbundancy = 0;
+		}
+		else if (newAbundancy < 0) {
+			newAbundancy = Enum.GetNames<WorldEliteAbundancy>().Length - 1;
+		}
 
-			WorldEliteAbundancySystem.Abundancy = (WorldEliteAbundancy)newAbundancy;
-			UpdateChosenEliteAbundancyText((WorldEliteAbundancy)newAbundancy);
+		WorldEliteAbundancySystem.Abundancy = (WorldEliteAbundancy)newAbundancy;
+		UpdateChosenEliteAbundancyText((WorldEliteAbundancy)newAbundancy);
 
-			// TODO: Message in chat, and sync changes with other clients
+		// TODO: Message in chat, and sync changes with other clients
 	}
 
 	private void UpdateChosenEliteAbundancyText(WorldEliteAbundancy abundancy) {
@@ -318,20 +323,20 @@ public class BigBookOfElitesUIState : UIState {
 
 	protected override void DrawSelf(SpriteBatch spriteBatch) {
 		base.DrawSelf(spriteBatch);
-		
-		if (_mainPanel.ContainsPoint(Main.MouseScreen)) { 
+
+		if (_mainPanel.ContainsPoint(Main.MouseScreen)) {
 			Main.LocalPlayer.mouseInterface = true;
 		}
 	}
 
 	public class ChangeEliteAbundancyCommand : ModCommand
 	{
-		public override string Command { 
-			get => "abundancy"; 
+		public override string Command {
+			get => "abundancy";
 		}
 
-		public override CommandType Type { 
-			get => CommandType.World; 
+		public override CommandType Type {
+			get => CommandType.World;
 		}
 
 		public override void Action(CommandCaller caller, string input, string[] args) {
@@ -340,7 +345,8 @@ public class BigBookOfElitesUIState : UIState {
 	}
 }
 
-public class EliteDetailButtonUI : UIElement {
+public class EliteDetailButtonUI : UIElement
+{
 	readonly EliteVariation _elite;
 	readonly NineSliceUIPanel _mainPanel;
 	readonly UIText _nameText;
