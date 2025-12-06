@@ -67,6 +67,27 @@ WorldGen: {
 		// Regular: The standard Elite Enemies experience.
 		// Plentiful: Many more Elites, not for the faint of heart!
 	}
+
+	DescriptionsLong: {
+		/* Scarce:
+			'''
+			{$WorldGen.Descriptions.Scarce}
+			Max variations per NPC: 1.
+			Variation spawn chance: 5%.
+			''' */
+		/* Regular:
+			'''
+			{$WorldGen.Descriptions.Regular}
+			Max variations per NPC: 3.
+			Variation spawn chance: 10%.
+			''' */
+		/* Plentiful:
+			'''
+			{$WorldGen.Descriptions.Plentiful}
+			Max variations per NPC: 3.
+			Variation spawn chance: 10%.
+			''' */
+	}
 }
 
 Configs: {
@@ -391,5 +412,12 @@ Buffs: {
 	ScrambledBuff: {
 		// DisplayName: Scrambled
 		// Description: Your HUD has been scrambled!
+	}
+}
+
+Items: {
+	BigBookOfElitesItem: {
+		// DisplayName: Big Book Of Elites Item
+		// Tooltip: ""
 	}
 }

@@ -15,13 +15,6 @@ public enum WorldEliteAbundancy
 	Scarce, Regular, Plentiful
 }
 
-public class Test : ModPlayer
-{
-	public override void UpdateEquips() {
-		Main.NewText(WorldEliteAbundancySystem.Abundancy);
-	}
-}
-
 public class WorldEliteAbundancySystem : ModSystem
 {
 	private static GroupOptionButton<WorldEliteAbundancy>[] _eliteOptionsButtons = [];
