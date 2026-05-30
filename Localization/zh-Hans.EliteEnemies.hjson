@@ -1,0 +1,245 @@
+EliteVariations: {
+	// HugeElite: 巨大
+	// TinyElite: 微小
+	// ImmovableElite: 泰坦
+	// DiscordantElite: 混乱
+	// VolatileElite: 亡语
+	// JackedElite: 强壮
+	// MedicatedElite: 免疫
+
+	ThiefElite: {
+		// $parentVal: Thief
+		// Stolen: "{0} 被偷走了！"
+	}
+
+	// LuckyElite: 幸运
+	// InspiringElite: 鼓舞
+	// GlowingElite: 发光
+	// SpelunkerElite: 探险家
+	// SneakyElite: 隐形
+	// PhasicElite: 相位
+	// MotherElite: 分裂
+	// BlazingElite: 烈焰
+	// IchorElite: 灵液
+	// CursedElite: 诅咒
+	// GlacialElite: 冰霜
+}
+
+Configs: {
+	ServerConfig: {
+		// DisplayName: 服务器配置
+
+		Headers: {
+			// SpawnChance: 生成几率
+			// ValueMultiplier: 价值倍率
+			// LootMultiplier: 战利品倍率
+			// Misc: 杂项
+			// Variations: 变种
+		}
+
+		CommonSpawnChance: {
+			// Label: 普通生成几率
+			// Tooltip: "普通精英怪的生成几率"
+		}
+
+		UncommonSpawnChance: {
+			// Label: 稀有生成几率
+			// Tooltip: "稀有精英怪的生成几率"
+		}
+
+		RareSpawnChance: {
+			// Label: 史诗生成几率
+			// Tooltip: "史诗精英怪的生成几率"
+		}
+
+		SuperRareSpawnChance: {
+			// Label: 传说生成几率
+			// Tooltip: "传说精英怪的生成几率"
+		}
+
+		LegendarySpawnChance: {
+			// Label: 神话生成几率
+			// Tooltip: "神话精英怪的生成几率"
+		}
+
+		CommonValueMultiplier: {
+			// Label: 普通价值倍率
+			// Tooltip: "普通精英怪掉落物品的价值倍率"
+		}
+
+		UncommonValueMultiplier: {
+			// Label: 稀有价值倍率
+			// Tooltip: "稀有精英怪掉落物品的价值倍率"
+		}
+
+		RareValueMultiplier: {
+			// Label: 史诗价值倍率
+			// Tooltip: "史诗精英怪掉落物品的价值倍率"
+		}
+
+		SuperRareValueMultiplier: {
+			// Label: 传说价值倍率
+			// Tooltip: "传说精英怪掉落物品的价值倍率"
+		}
+
+		LegendaryValueMultiplier: {
+			// Label: 神话价值倍率
+			// Tooltip: "神话精英怪掉落物品的价值倍率"
+		}
+
+		CommonLootMultiplier: {
+			// Label: 普通战利品倍率
+			// Tooltip: "普通精英怪掉落战利品的数量倍率"
+		}
+
+		UncommonLootMultiplier: {
+			// Label: 稀有战利品倍率
+			// Tooltip: "稀有精英怪掉落战利品的数量倍率"
+		}
+
+		RareLootMultiplier: {
+			// Label: 史诗战利品倍率
+			// Tooltip: "史诗精英怪掉落战利品的数量倍率"
+		}
+
+		SuperRareLootMultiplier: {
+			// Label: 传说战利品倍率
+			// Tooltip: "传说精英怪掉落战利品的数量倍率"
+		}
+
+		LegendaryLootMultiplier: {
+			// Label: 神话战利品倍率
+			// Tooltip: "神话精英怪掉落战利品的数量倍率"
+		}
+
+		ApplyToCritters: {
+			// Label: 应用于小动物
+			// Tooltip: "是否将精英怪效果应用于小动物"
+		}
+
+		ApplyToBosses: {
+			// Label: 应用于 Boss
+			// Tooltip: "是否将精英怪效果应用于 Boss"
+		}
+
+		MaxSimultaneousVariations: {
+			// Tooltip: "一个怪物同时可以拥有的最大精英变种数量"
+			// Label: 最大同时变种数
+		}
+
+		EnableBlazing: {
+			// Tooltip: "是否启用「烈焰」精英变种"
+			// Label: 启用烈焰
+		}
+
+		EnableCursed: {
+			// Label: 启用诅咒
+			// Tooltip: "是否启用「诅咒」精英变种"
+		}
+
+		EnableDiscordant: {
+			// Label: 启用混乱
+			// Tooltip: "是否启用「混乱」精英变种"
+		}
+
+		EnableGlacial: {
+			// Label: 启用冰霜
+			// Tooltip: "是否启用「冰霜」精英变种"
+		}
+
+		EnableGlowing: {
+			// Label: 启用发光
+			// Tooltip: "是否启用「发光」精英变种"
+		}
+
+		EnableHuge: {
+			// Label: 启用巨大
+			// Tooltip: "是否启用「巨大」精英变种"
+		}
+
+		EnableIchor: {
+			// Label: 启用灵液
+			// Tooltip: "是否启用「灵液」精英变种"
+		}
+
+		EnableImmovable: {
+			// Label: 启用泰坦
+			// Tooltip: "是否启用「泰坦」精英变种"
+		}
+
+		EnableInspiring: {
+			// Label: 启用鼓舞
+			// Tooltip: "是否启用「鼓舞」精英变种"
+		}
+
+		EnableJacked: {
+			// Label: 启用强壮
+			// Tooltip: "是否启用「强壮」精英变种"
+		}
+
+		EnableLucky: {
+			// Label: 启用幸运
+			// Tooltip: "是否启用「幸运」精英变种"
+		}
+
+		EnableMedicated: {
+			// Label: 启用免疫
+			// Tooltip: "是否启用「免疫」精英变种"
+		}
+
+		EnableMother: {
+			// Label: 启用分裂
+			// Tooltip: "是否启用「分裂」精英变种"
+		}
+
+		EnablePhasic: {
+			// Label: 启用相位
+			// Tooltip: "是否启用「相位」精英变种"
+		}
+
+		EnableSneaky: {
+			// Label: 启用隐形
+			// Tooltip: "是否启用「隐形」精英变种"
+		}
+
+		EnableSpelunker: {
+			// Label: 启用探险家
+			// Tooltip: "是否启用「探险家」精英变种"
+		}
+
+		EnableThief: {
+			// Label: 启用小偷
+			// Tooltip: "是否启用「小偷」精英变种"
+		}
+
+		EnableTiny: {
+			// Label: 启用微小
+			// Tooltip: "是否启用「微小」精英变种"
+		}
+
+		EnableVolatile: {
+			// Label: 启用亡语
+			// Tooltip: "是否启用「亡语」精英变种"
+		}
+
+		ApplyScaleChanges: {
+			// Label: 应用大小变化
+			// Tooltip: "是否应用精英怪的大小变化效果"
+		}
+
+		ApplyVelocityChanges: {
+			// Label: 应用速度变化
+			// Tooltip: "是否应用精英怪的速度变化效果"
+		}
+
+		ApplyToModdedNPCs: {
+			// Label: 应用于模组 NPC
+			// Tooltip: "是否将精英怪效果应用于其他模组添加的 NPC"
+		}
+
+		NPCBlacklist: {
+			// Tooltip: "在此列表中的 NPC 不会成为精英怪，输入 NPC 的内部名称，用逗号分隔"
+			// Label: NPC 黑名单
+		}
+	}
+}
