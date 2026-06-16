@@ -38,6 +38,7 @@ EliteVariations: {
 	// StoicElite: Stoic
 	// FluxiveElite: Fluxive
 	// ScramblingElite: Scrambling
+	// ArmoredElite: Mods.EliteEnemies.EliteVariations.ArmoredElite
 }
 
 Sorries: {
@@ -400,6 +401,11 @@ Configs: {
 
 		EnableScrambling: {
 			// Label: Enable Scrambling
+			// Tooltip: ""
+		}
+
+		EnableArmored: {
+			// Label: Enable Armored
 			// Tooltip: ""
 		}
 	}

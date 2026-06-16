@@ -10,7 +10,7 @@ public class BrainyElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedBoss2;
+		return ServerConfig.Instance.EnableBrainy && NPC.downedBoss2;
 	}
 
 	public override void OnApply(NPC npc) {

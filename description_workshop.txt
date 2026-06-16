@@ -2,11 +2,12 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
 
 [h2]TLDR[/h2]
 
-- Adds 19 variations that can apply to any NPC
+- Adds 35 variations that can apply to any NPC
 - Variations range from stat increases to unique effects
-- Variations have rarities, which influence how often they appear and how much loot they drop
+- Variations have rarities, which influence how often they appear and how much extra loot they drop
+- Adds a new option at world creation to select how abundant you'd like the elites to be. If you change your mind, purchase an Elite Abundancy Globe from the Zoologist
 - Multiplayer is supported
-- Currently supports English, Polish and (partial) Spanish, see below if you'd like to contribute another translation
+- Currently supports English, (partial) Polish and (partial) Spanish, see below if you'd like to contribute another translation
 
 [hr][/hr]
 
@@ -92,7 +93,7 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
         [th][/th]
     [/tr]
     [tr]
-        [th]Spikey[/th]
+        [th]Spiky[/th]
         [th]Damages players who hit it when nearby[/th]
         [th]Rare[/th]
         [th][/th]
@@ -223,6 +224,12 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
         [th]Super Rare[/th]
         [th]Only applies after defeating any Mech boss[/th]
     [/th]
+    [tr]
+        [th]Armored[/th]
+        [th]Cannot be critically hit[/th]
+        [th]Uncommon[/th]
+        [th][/th]
+    [/th]
 [/table]
 
 [hr][/hr]
@@ -273,8 +280,6 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
 [h2]Configuration[/h2]
 
 - Toggle for each variation
-- Spawn chance of each rarity [0..1]
-- Max simultaneous variations [0..20]
 - An NPC blacklist
 - Whether to apply NPC scale changes
 - Whether to apply NPC velocity changes
@@ -292,5 +297,7 @@ Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
 [hr][/hr]
 
 Source code: https://github.com/stormytuna/EliteEnemies
+
+If you enjoy my work, [url=https://ko-fi.com/stormytuna]please consider donating[/url]
 
 If you're able to contribute translations it would be very appreciated! Please open an issue with the translations, or create a PR with the new .hjson localisation file

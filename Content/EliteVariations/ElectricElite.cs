@@ -12,7 +12,7 @@ public class ElectricElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedPlantBoss;
+		return ServerConfig.Instance.EnableElectric && NPC.downedPlantBoss;
 	}
 
 	public override void AI(NPC npc) {

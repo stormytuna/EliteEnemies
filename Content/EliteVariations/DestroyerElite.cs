@@ -11,7 +11,7 @@ public class DestroyerElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedBoss2;
+		return ServerConfig.Instance.EnableDestroyer && NPC.downedBoss2;
 	}
 
 	public override void AI(NPC npc) {

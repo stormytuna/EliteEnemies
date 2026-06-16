@@ -18,6 +18,10 @@ public class SpikyElite : EliteVariation
 		get => EliteVariationRarity.Rare;
 	}
 
+    public override bool CanApply(NPC npc) {
+        return ServerConfig.Instance.EnableSpiky;
+    }
+
 	public override void OnHitByItem(NPC npc, Player player, Item item, NPC.HitInfo hit, int damageDone) {
 		TryHurtAttacker(npc, player);
 	}

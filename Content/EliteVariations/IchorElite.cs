@@ -9,7 +9,7 @@ public class IchorElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return Main.hardMode && WorldGen.crimson;
+		return ServerConfig.Instance.EnableIchor && Main.hardMode && WorldGen.crimson;
 	}
 
 	public override void OnApply(NPC npc) {

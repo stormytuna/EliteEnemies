@@ -19,8 +19,6 @@ public class EliteAbundancySwitcher : ModItem
 	public static LocalizedText CeaselessDescription { get; private set; }
 	public static LocalizedText Announcement { get; private set; }
 
-    public override string Texture => $"Terraria/Images/Item_{ItemID.MagicMirror}";
-
     public override void SetStaticDefaults() {
 		AbundancyTooltip = this.GetLocalization("AbundancyTooltip");
 		ScarceDescription = this.GetLocalization("ScarceTooltip");
@@ -97,7 +95,7 @@ public class EliteAbundancySwitcherProjectile : ModProjectile
 {
 	public WorldEliteAbundancy Abundancy = WorldEliteAbundancy.Regular;
 
-    public override string Texture => $"Terraria/Images/Item_{ItemID.MagicMirror}";
+    public override string Texture => $"{nameof(EliteEnemies)}/Content/UI/{nameof(EliteAbundancySwitcher)}";
 
     public override void SetDefaults() {
 		Projectile.width = 18;

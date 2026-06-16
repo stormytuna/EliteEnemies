@@ -9,7 +9,7 @@ public class GlacialElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return !Main.hardMode;
+		return ServerConfig.Instance.EnableGlacial && !Main.hardMode;
 	}
 
 	public override void OnApply(NPC npc) {

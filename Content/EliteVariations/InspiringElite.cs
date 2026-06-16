@@ -16,7 +16,7 @@ public class InspiringElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedBoss2;
+		return ServerConfig.Instance.EnableInspiring && NPC.downedBoss2;
 	}
 
 	public override void SafeLoad() {

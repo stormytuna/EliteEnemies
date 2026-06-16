@@ -1,3 +1,4 @@
-V1.0.7
+V2.0.0
 
-- Updated Polish localisation (Thanks Roton!)
+- Added many new elites!
+- Added an Elite Abundancy option on world select, it can be changed in the world by purchasing an Elite Abundancy Globe from the Zoologist (Defaults to Regular on worlds generated before this change)

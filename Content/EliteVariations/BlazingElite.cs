@@ -9,7 +9,7 @@ public class BlazingElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return !Main.hardMode;
+		return ServerConfig.Instance.EnableBlazing && !Main.hardMode;
 	}
 
 	public override void OnApply(NPC npc) {

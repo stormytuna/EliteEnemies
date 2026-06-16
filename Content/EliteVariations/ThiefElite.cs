@@ -13,7 +13,7 @@ public class ThiefElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return !NPCID.Sets.CantTakeLunchMoney[npc.type];
+		return ServerConfig.Instance.EnableThief && !NPCID.Sets.CantTakeLunchMoney[npc.type];
 	}
 
 	public override void PostAI(NPC npc) {

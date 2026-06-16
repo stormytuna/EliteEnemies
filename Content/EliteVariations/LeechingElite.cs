@@ -9,7 +9,7 @@ public class LeechingElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return NPC.downedBoss3;
+		return ServerConfig.Instance.EnableLeeching && NPC.downedBoss3;
 	}
 
 	public override void AI(NPC npc) {

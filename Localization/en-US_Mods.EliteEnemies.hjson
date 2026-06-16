@@ -2,9 +2,9 @@ EliteVariations: {
 	HugeElite: Huge
 	TinyElite: Tiny
 	ImmovableElite: Immovable
-	DiscordantElite: Discordant
+	DiscordantElite: Discordant # As in the Rod of Discord
 	VolatileElite: Volatile
-	JackedElite: Jacked
+	JackedElite: Jacked # As in muscular 
 	MedicatedElite: Medicated
 
 	ThiefElite: {
@@ -17,8 +17,8 @@ EliteVariations: {
 	GlowingElite: Glowing
 	SpelunkerElite: Spelunker
 	SneakyElite: Sneaky
-	PhasicElite: Phasic
-	MotherElite: Mother
+	PhasicElite: Phasic # As in having phases, like the moon
+	MotherElite: Mother # As in Mother Slime
 	BlazingElite: Blazing
 	IchorElite: Ichor
 	CursedElite: Cursed
@@ -38,6 +38,7 @@ EliteVariations: {
 	StoicElite: Stoic
 	FluxiveElite: Fluxive
 	ScramblingElite: Scrambling
+	ArmoredElite: Armored
 }
 
 Sorries: {
@@ -104,63 +105,8 @@ Configs: {
 		DisplayName: Server Config
 
 		Headers: {
-			SpawnChance: Spawn Chance
-			ValueMultiplier: Value Multiplier
-			LootMultiplier: Loot Multiplier
 			Misc: Misc
 			Variations: Variations
-			Spawning: Spawning Header
-			SpawnWeights: Spawn Weights Header
-		}
-
-		CommonValueMultiplier: {
-			Label: Common Value Multiplier
-			Tooltip: ""
-		}
-
-		UncommonValueMultiplier: {
-			Label: Uncommon Value Multiplier
-			Tooltip: ""
-		}
-
-		RareValueMultiplier: {
-			Label: Rare Value Multiplier
-			Tooltip: ""
-		}
-
-		SuperRareValueMultiplier: {
-			Label: Super Rare Value Multiplier
-			Tooltip: ""
-		}
-
-		LegendaryValueMultiplier: {
-			Label: Legendary Value Multiplier
-			Tooltip: ""
-		}
-
-		CommonLootMultiplier: {
-			Label: Common Loot Multiplier
-			Tooltip: ""
-		}
-
-		UncommonLootMultiplier: {
-			Label: Uncommon Loot Multiplier
-			Tooltip: ""
-		}
-
-		RareLootMultiplier: {
-			Label: Rare Loot Multiplier
-			Tooltip: ""
-		}
-
-		SuperRareLootMultiplier: {
-			Label: Super Rare Loot Multiplier
-			Tooltip: ""
-		}
-
-		LegendaryLootMultiplier: {
-			Label: Legendary Loot Multiplier
-			Tooltip: ""
 		}
 
 		ApplyToCritters: {
@@ -173,104 +119,99 @@ Configs: {
 			Tooltip: ""
 		}
 
-		MaxSimultaneousVariations: {
-			Tooltip: ""
-			Label: Max Simultaneous Variations
-		}
-
 		EnableBlazing: {
-			Tooltip: ""
+			Tooltip: "Inflicts On Fire when close, inflicts Hellfire on hit, immune to fire debuffs"
 			Label: Enable Blazing
 		}
 
 		EnableCursed: {
 			Label: Enable Cursed
-			Tooltip: ""
+			Tooltip: "Inflicts Hellfire when close, inflicts Cursed Inferno on hit, immune to fire debuffs"
 		}
 
 		EnableDiscordant: {
 			Label: Enable Discordant
-			Tooltip: ""
+			Tooltip: "Teleports around randomly"
 		}
 
 		EnableGlacial: {
 			Label: Enable Glacial
-			Tooltip: ""
+			Tooltip: "Inflicts Frostburn when close and on hit, immune to Frostburn"
 		}
 
 		EnableGlowing: {
 			Label: Enable Glowing
-			Tooltip: ""
+			Tooltip: "Glows a random colour"
 		}
 
 		EnableHuge: {
 			Label: Enable Huge
-			Tooltip: ""
+			Tooltip: "Increases scale and damage, reduces knockback and speed"
 		}
 
 		EnableIchor: {
 			Label: Enable Ichor
-			Tooltip: ""
+			Tooltip: "Inflicts Hellfire when close, inflicts Ichor on hit, immune to fire debuffs"
 		}
 
 		EnableImmovable: {
 			Label: Enable Immovable
-			Tooltip: ""
+			Tooltip: "Immune to knockback"
 		}
 
 		EnableInspiring: {
 			Label: Enable Inspiring
-			Tooltip: ""
+			Tooltip: "Grants nearby enemies increased damage and damage resistance"
 		}
 
 		EnableJacked: {
 			Label: Enable Jacked
-			Tooltip: ""
+			Tooltip: "Increases damage, defense and max health"
 		}
 
 		EnableLucky: {
 			Label: Enable Lucky
-			Tooltip: ""
+			Tooltip: "Forces all damage dealt to them to have the lowest damage variance possible"
 		}
 
 		EnableMedicated: {
 			Label: Enable Medicated
-			Tooltip: ""
+			Tooltip: "Immune to all but tag debuffs"
 		}
 
 		EnableMother: {
 			Label: Enable Mother
-			Tooltip: ""
+			Tooltip: "Spawns 1-3 smaller, weaker children on death"
 		}
 
 		EnablePhasic: {
 			Label: Enable Phasic
-			Tooltip: ""
+			Tooltip: "Phases in and out of reality periodically"
 		}
 
 		EnableSneaky: {
 			Label: Enable Sneaky
-			Tooltip: ""
+			Tooltip: "Invisible when not near the player"
 		}
 
 		EnableSpelunker: {
 			Label: Enable Spelunker
-			Tooltip: ""
+			Tooltip: "Glows with a golden light and highlights nearby ores"
 		}
 
 		EnableThief: {
 			Label: Enable Thief
-			Tooltip: ""
+			Tooltip: "Steals items on the floor"
 		}
 
 		EnableTiny: {
 			Label: Enable Tiny
-			Tooltip: ""
+			Tooltip: "Decreases scale, increases knockback and speed"
 		}
 
 		EnableVolatile: {
 			Label: Enable Volatile
-			Tooltip: ""
+			Tooltip: "Explodes on death"
 		}
 
 		ApplyScaleChanges: {
@@ -283,11 +224,6 @@ Configs: {
 			Tooltip: ""
 		}
 
-		ApplyToModdedNPCs: {
-			Label: Apply To Modded NPCs
-			Tooltip: ""
-		}
-
 		NPCBlacklist: {
 			Tooltip: ""
 			Label: NPC Blacklist
@@ -295,111 +231,81 @@ Configs: {
 
 		EnableElectric: {
 			Label: Enable Electric
-			Tooltip: ""
+			Tooltip: "Strikes nearby players with lightning and inflicts Electrified"
 		}
 
 		EnableMolten: {
 			Label: Enable Molten
-			Tooltip: ""
+			Tooltip: "Spawns lava on death"
 		}
 
 		EnableAdaptive: {
 			Label: Enable Adaptive
-			Tooltip: ""
+			Tooltip: "Adapts to damage, granting it resistances to damage types it's hit by"
 		}
 
 		EnableSpiky: {
 			Label: Enable Spiky
-			Tooltip: ""
+			Tooltip: "Damages players who hit it when nearby"
 		}
 
 		EnableLeeching: {
 			Label: Enable Leeching
-			Tooltip: ""
+			Tooltip: "Heals when it hits a player"
 		}
 
 		EnableDestroyer: {
-			Tooltip: ""
+			Tooltip: "Has a 10% critical strike chance"
 			Label: Enable Destroyer
-		}
-
-		SpawnChance: {
-			Label: Spawn Chance
-			Tooltip: ""
-		}
-
-		CommonSpawnWeight: {
-			Label: Common Spawn Weight
-			Tooltip: ""
-		}
-
-		UncommonSpawnWeight: {
-			Label: Uncommon Spawn Weight
-			Tooltip: ""
-		}
-
-		RareSpawnWeight: {
-			Label: Rare Spawn Weight
-			Tooltip: ""
-		}
-
-		SuperRareSpawnWeight: {
-			Label: Super Rare Spawn Weight
-			Tooltip: ""
-		}
-
-		LegendarySpawnWeight: {
-			Label: Legendary Spawn Weight
-			Tooltip: ""
 		}
 
 		EnableStinky: {
 			Label: Enable Stinky
-			Tooltip: ""
+			Tooltip: "Continuously releases toxic clouds"
 		}
 
 		EnableFruity: {
 			Label: Enable Fruity
-			Tooltip: ""
+			Tooltip: "Can inflict random debuffs"
 		}
 
 		EnablePolite: {
 			Label: Enable Polite
-			Tooltip: ""
+			Tooltip: "Apologizes for hurting you"
 		}
 
 		EnableUnstable: {
-			Tooltip: ""
+			Tooltip: "Continuously releases unstable bolts of energy"
 			Label: Enable Unstable
 		}
 
 		EnableParty: {
-			Tooltip: ""
+			Tooltip: "Bleeds confetti"
 			Label: Enable Party
 		}
 
-		EnableAbyssal: {
-			Tooltip: ""
-			Label: Enable Abyssal
-		}
-
 		EnableBrainy: {
-			Tooltip: ""
+			Tooltip: "Creates reflections of itself"
 			Label: Enable Brainy
 		}
 
 		EnableStoic: {
-			Tooltip: ""
+			Tooltip: "Hides the damage you deal to it"
 			Label: Enable Stoic
 		}
 
 		EnableFluxive: {
 			Label: Enable Fluxive
-			Tooltip: ""
+			Tooltip: "Flips gravity when it hits you"
 		}
 
 		EnableScrambling: {
 			Label: Enable Scrambling
+			Tooltip: "Scrambles your HUD"
+		}
+
+		EnableArmored: {
+			Label: Enable Armored
 			Tooltip: ""
 		}
 	}

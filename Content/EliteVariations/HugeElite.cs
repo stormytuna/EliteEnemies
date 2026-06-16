@@ -14,7 +14,7 @@ public class HugeElite : EliteVariation
 	}
 
 	public override bool CanApply(NPC npc) {
-		return npc.HasNotEliteVariation<TinyElite>() && !npc.IsWorm();
+		return ServerConfig.Instance.EnableHuge && npc.HasNotEliteVariation<TinyElite>() && !npc.IsWorm();
 	}
 
 	public override void OnSpawn(NPC npc, IEntitySource source) {

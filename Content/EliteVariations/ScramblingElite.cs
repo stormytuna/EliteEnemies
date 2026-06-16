@@ -9,6 +9,10 @@ public class ScramblingElite : EliteVariation
 		get => EliteVariationRarity.SuperRare;
 	}
 
+    public override bool CanApply(NPC npc) {
+        return ServerConfig.Instance.EnableScrambling;
+    }
+
 	public override void OnApply(NPC npc) {
 		NPCRenderRedirectSystem.RegisterRenderAction(npc, (int)RenderPriority.First + 50, static (npc, renderTarget, spriteBatch) => {
 			spriteBatch.TakeSnapshotAndEnd(out var sbParams);

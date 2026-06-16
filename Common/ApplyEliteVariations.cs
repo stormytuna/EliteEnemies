@@ -60,7 +60,7 @@ public class ApplyEliteVariations : ILoadable
 
 		int numVariations = Main.rand.NextRecursiveCount(SpawnChance, NumMaxVariations);
 		if (WorldEliteAbundancySystem.Abundancy == WorldEliteAbundancy.Ceaseless) {
-			numVariations = int.Clamp(numVariations, 1, NumMaxVariations);
+			numVariations++;
 		}
 
 		if (numVariations <= 0) {
