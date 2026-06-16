@@ -8,9 +8,9 @@ public class MedicatedElite : EliteVariation
 		get => EliteVariationRarity.Uncommon;
 	}
 
-    public override bool CanApply(NPC npc) {
-        return ServerConfig.Instance.EnableMedicated;
-    }
+	public override bool CanApply(NPC npc) {
+		return ServerConfig.Instance.EnableMedicated;
+	}
 
 	public override void OnApply(NPC npc) {
 		if (!ApplyEliteVariation) {

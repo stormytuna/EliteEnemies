@@ -8,9 +8,9 @@ public class StoicElite : EliteVariation
 		get => EliteVariationRarity.Rare;
 	}
 
-    public override bool CanApply(NPC npc) {
-        return ServerConfig.Instance.EnableStoic;
-    }
+	public override bool CanApply(NPC npc) {
+		return ServerConfig.Instance.EnableStoic;
+	}
 
 	public override bool? DrawHealthBar(NPC npc, byte hbPosition, ref float scale, ref Vector2 position) {
 		return ApplyEliteVariation ? false : null;

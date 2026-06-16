@@ -8,9 +8,9 @@ public class LuckyElite : EliteVariation
 		get => EliteVariationRarity.Uncommon;
 	}
 
-    public override bool CanApply(NPC npc) {
-        return ServerConfig.Instance.EnableLucky;
-    }
+	public override bool CanApply(NPC npc) {
+		return ServerConfig.Instance.EnableLucky;
+	}
 
 	public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
 		if (ApplyEliteVariation) {

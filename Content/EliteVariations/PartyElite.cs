@@ -8,7 +8,7 @@ public class PartyElite : EliteVariation
 		get => EliteVariationRarity.Rare;
 	}
 
-    /* TODO: This was really cute, would like to keep it!
+	/* TODO: This was really cute, would like to keep it!
 	public override float SpawnWeight {
 		get {
 			float baseWeight = base.SpawnWeight;
@@ -21,9 +21,9 @@ public class PartyElite : EliteVariation
 	}
 	*/
 
-    public override bool CanApply(NPC npc) {
-        return ServerConfig.Instance.EnableParty;
-    }
+	public override bool CanApply(NPC npc) {
+		return ServerConfig.Instance.EnableParty;
+	}
 
 	private void MakeConfettiDust(NPC npc, int numDust) {
 		for (int i = 0; i < numDust; i++) {

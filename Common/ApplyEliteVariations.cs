@@ -93,7 +93,8 @@ public class ApplyEliteVariations : ILoadable
 			// Easiest way to catch mutually exclusive variations without reconstructing the weighted random
 			if (variation.CanApply(npc)) {
 				variation.ApplyEliteVariation = true;
-			} else {
+			}
+			else {
 				numVariationsToApply++;
 			}
 

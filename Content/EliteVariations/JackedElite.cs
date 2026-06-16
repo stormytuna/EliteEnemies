@@ -13,9 +13,9 @@ public class JackedElite : EliteVariation
 		get => EliteVariationRarity.Common;
 	}
 
-    public override bool CanApply(NPC npc) {
+	public override bool CanApply(NPC npc) {
 		return ServerConfig.Instance.EnableJacked;
-    }
+	}
 
 	public override void OnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {

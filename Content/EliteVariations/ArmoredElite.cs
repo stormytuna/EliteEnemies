@@ -12,13 +12,13 @@ public class ArmoredElite : EliteVariation
 		return ServerConfig.Instance.EnableArmored;
 	}
 
-    public override void OnApply(NPC npc) {
+	public override void OnApply(NPC npc) {
 		npc.HitSound = SoundID.NPCHit4;
-    }
+	}
 
-    public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
+	public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
 		modifiers.DisableCrit();
-    }
+	}
 
 	public override void DrawEffects(NPC npc, ref Color drawColor) {
 		if (ApplyEliteVariation) {

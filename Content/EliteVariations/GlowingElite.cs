@@ -13,9 +13,9 @@ public class GlowingElite : EliteVariation
 		get => EliteVariationRarity.Rare;
 	}
 
-    public override bool CanApply(NPC npc) {
-        return ServerConfig.Instance.EnableGlowing;
-    }
+	public override bool CanApply(NPC npc) {
+		return ServerConfig.Instance.EnableGlowing;
+	}
 
 	public override void OnSpawn(NPC npc, IEntitySource source) {
 		if (ApplyEliteVariation) {

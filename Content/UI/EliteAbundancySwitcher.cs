@@ -19,46 +19,45 @@ public class EliteAbundancySwitcher : ModItem
 	public static LocalizedText CeaselessDescription { get; private set; }
 	public static LocalizedText Announcement { get; private set; }
 
-    public override void SetStaticDefaults() {
+	public override void SetStaticDefaults() {
 		AbundancyTooltip = this.GetLocalization("AbundancyTooltip");
 		ScarceDescription = this.GetLocalization("ScarceTooltip");
 		RegularDescription = this.GetLocalization("RegularTooltip");
 		PlentifulDescription = this.GetLocalization("PlentifulTooltip");
 		CeaselessDescription = this.GetLocalization("CeaselessTooltip");
 		Announcement = this.GetLocalization("Announcement");
-    }
+	}
 
-    public override void SetDefaults()
-    {
+	public override void SetDefaults() {
 		Item.width = Item.height = 18;
 		Item.DefaultToThrownWeapon(ModContent.ProjectileType<EliteAbundancySwitcherProjectile>(), 20, 8f);
 		Item.UseSound = SoundID.Item106;
 		Item.SetShopValues(Terraria.Enums.ItemRarityColor.Green2, Item.buyPrice(gold: 3));
-    }
+	}
 
-    public override bool CanRightClick() {
+	public override bool CanRightClick() {
 		return true;
-    }
+	}
 
-    public override void RightClick(Player player) {
-        _abundancy = _abundancy + 1;
+	public override void RightClick(Player player) {
+		_abundancy = _abundancy + 1;
 		if (!Enum.IsDefined(_abundancy)) {
 			_abundancy = WorldEliteAbundancy.Scarce;
 		}
 
 		Item.stack++;
-    }
+	}
 
-    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+	public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
 		var proj = Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback);
 		if (proj.ModProjectile is EliteAbundancySwitcherProjectile modProj) {
 			modProj.Abundancy = _abundancy;
 		}
 
 		return false;
-    }
+	}
 
-    public override void ModifyTooltips(List<TooltipLine> tooltips) {
+	public override void ModifyTooltips(List<TooltipLine> tooltips) {
 		Color abundancyColor = WorldEliteAbundancySystem.GetColorForAbundancy(_abundancy);
 		string abundancyName = Enum.GetName(_abundancy);
 		string abundancyColored = abundancyName.ApplyColor(abundancyColor.WithMouseTextPulsing());
@@ -77,35 +76,35 @@ public class EliteAbundancySwitcher : ModItem
 		foreach (var line in lines) {
 			tooltips.Add(new TooltipLine(Mod, "abundancytooltip", line));
 		}
-    }
+	}
 }
 
 public class EliteAbundancySwitcherGlobalNPC : GlobalNPC
 {
-    public override bool AppliesToEntity(NPC entity, bool lateInstantiation) {
-        return entity.type == NPCID.BestiaryGirl;
-    }
+	public override bool AppliesToEntity(NPC entity, bool lateInstantiation) {
+		return entity.type == NPCID.BestiaryGirl;
+	}
 
-    public override void ModifyShop(NPCShop shop) {
+	public override void ModifyShop(NPCShop shop) {
 		shop.InsertAfter(ItemID.TreeGlobe, ModContent.ItemType<EliteAbundancySwitcher>());
-    }
+	}
 }
 
 public class EliteAbundancySwitcherProjectile : ModProjectile
 {
 	public WorldEliteAbundancy Abundancy = WorldEliteAbundancy.Regular;
 
-    public override string Texture => $"{nameof(EliteEnemies)}/Content/UI/{nameof(EliteAbundancySwitcher)}";
+	public override string Texture => $"{nameof(EliteEnemies)}/Content/UI/{nameof(EliteAbundancySwitcher)}";
 
-    public override void SetDefaults() {
+	public override void SetDefaults() {
 		Projectile.width = 18;
 		Projectile.height = 18;
 		Projectile.aiStyle = ProjAIStyleID.ThrownProjectile;
 		Projectile.friendly = true;
 		Projectile.penetrate = 1;
-    }
+	}
 
-    public override void OnKill(int timeLeft) {
+	public override void OnKill(int timeLeft) {
 		SoundEngine.PlaySound(SoundID.Item107, Projectile.Center);
 
 		for (int i = 0; i < 15; i++) {
@@ -131,15 +130,15 @@ public class EliteAbundancySwitcherProjectile : ModProjectile
 			WorldEliteAbundancySystem.Abundancy = Abundancy;
 			NetMessage.SendData(MessageID.WorldData);
 		}
-    }
+	}
 
-    public override void SendExtraAI(BinaryWriter writer) {
+	public override void SendExtraAI(BinaryWriter writer) {
 		writer.Write7BitEncodedInt((int)Abundancy);
-    }
+	}
 
-    public override void ReceiveExtraAI(BinaryReader reader) {
+	public override void ReceiveExtraAI(BinaryReader reader) {
 		Abundancy = (WorldEliteAbundancy)reader.Read7BitEncodedInt();
-    }
+	}
 }
 
 /*
