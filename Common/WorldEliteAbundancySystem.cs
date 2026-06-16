@@ -136,7 +136,7 @@ public class WorldEliteAbundancySystem : ModSystem
 				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconScarce",
 				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconRegular",
 				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconPlentiful",
-				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconPlentiful",
+				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconCeaseless",
 			];
 
 			List<GroupOptionButton<WorldEliteAbundancy>> groupOptionButtons = [];

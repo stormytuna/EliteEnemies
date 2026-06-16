@@ -1,7 +1,8 @@
-Elite Enemies adds generic elite variations to enemies and (optionally) bosses!
+Elite Enemies adds elite variations to enemies and (optionally) bosses! Each variation increases the power of the enemy, but also makes it drop more gold and loot.
 
-- Adds 37 variations that can apply to any NPC
+- Adds 37 variations that can apply to (almost) any enemy
 - Variations range from stat increases to unique effects
-- Variations have rarities, which influence how often they appear and how much loot they drop
+- Variations have rarities, which influence how often they appear and how much extra loot they drop
+- Adds a new option at world creation to select how abundant you'd like the elites to be. If you change your mind, purchase an Elite Abundancy Globe from the Zoologist
 - Multiplayer is supported
-- Currently supports English, Polish and Spanish, see the workshop if you'd like to contribute another translation
+- Currently supports English, (partial) Polish and (partial) Spanish, see below if you'd like to contribute another translation
