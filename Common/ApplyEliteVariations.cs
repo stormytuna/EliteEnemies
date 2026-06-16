@@ -77,7 +77,9 @@ public class ApplyEliteVariations : ILoadable
 		List<EliteVariation> applicableVariations = eliteVariations.Where(v => v.CanApply(npc)).ToList();
 		WeightedRandom<EliteVariation> weightedRandom = new();
 		foreach (EliteVariation variation in applicableVariations) {
-			weightedRandom.Add(variation, _rarityToSpawnWeight[variation.Rarity]);
+			float weight = _rarityToSpawnWeight[variation.Rarity];
+			variation.ModifySpawnWeight(ref weight);
+			weightedRandom.Add(variation, weight);
 		}
 
 		weightedRandom.CalculateTotalWeight();

@@ -6,6 +6,7 @@
 | ---------- | ------------------------------------------------------------------------------------ | ---------- | ---------------------------------------------------------------- |
 | Huge       | Increases scale and damage, reduces knockback and speed                              | Common     | Cannot apply to worms; mutually exclusive with Tiny              |
 | Jacked     | Increases damage, defense and max health                                             | Common     |                                                                  |
+| Piercing   | Has some Armor Penetration                                                           | Common     |                                                                  |
 | Tiny       | Decreases scale, increases knockback and speed                                       | Common     | Cannot apply to worms; mutually exclusive with Huge              |
 | Armored    | Cannot be critically hit                                                             | Uncommon   |                                                                  |
 | Cursed     | Inflicts Hellfire when close, inflicts Cursed Inferno on hit, immune to fire debuffs | Uncommon   | Only applies during hardmode in corrupt worlds                   |
@@ -17,6 +18,7 @@
 | Destroyer  | Has a 10% critical strike chance                                                     | Rare       | Only applies after defeating Eater of Worlds or Brain of Cthulhu |
 | Glacial    | Inflicts Frostburn when close and on hit, immune to Frostburn                        | Rare       | Only applies during pre-hardmode                                 |
 | Glowing    | Glows a random colour                                                                | Rare       |                                                                  |
+| Nyan       | Meows                                                                                | Rare       |                                                                  |
 | Party      | Bleeds confetti                                                                      | Rare       | More common during a party                                       |
 | Spelunker  | Glows with a golden light and highlights nearby ores                                 | Rare       |                                                                  |
 | Spiky      | Damages players who hit it when nearby                                               | Rare       |                                                                  |

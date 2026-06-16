@@ -2,7 +2,7 @@ Elite Enemies adds elite variations to enemies and (optionally) bosses! Each var
 
 [h2]TLDR[/h2]
 
-- Adds 35 variations that can apply to (almost) any enemy
+- Adds 37 variations that can apply to (almost) any enemy
 - Variations range from stat increases to unique effects
 - Variations have rarities, which influence how often they appear and how much extra loot they drop
 - Adds a new option at world creation to select how abundant you'd like the elites to be. If you change your mind, purchase an Elite Abundancy Globe from the Zoologist

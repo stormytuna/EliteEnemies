@@ -1,4 +1,5 @@
 using EliteEnemies.Common;
+using Terraria.GameContent.Events;
 
 namespace EliteEnemies.Content.EliteVariations;
 
@@ -8,18 +9,11 @@ public class PartyElite : EliteVariation
 		get => EliteVariationRarity.Rare;
 	}
 
-	/* TODO: This was really cute, would like to keep it!
-	public override float SpawnWeight {
-		get {
-			float baseWeight = base.SpawnWeight;
-			if (BirthdayParty.PartyIsUp) {
-				return baseWeight * 10f;
-			}
-
-			return baseWeight;
+    public override void ModifySpawnWeight(ref float weight) {
+		if (BirthdayParty.PartyIsUp) {
+			weight *= 10f;
 		}
-	}
-	*/
+    }
 
 	public override bool CanApply(NPC npc) {
 		return ServerConfig.Instance.EnableParty;

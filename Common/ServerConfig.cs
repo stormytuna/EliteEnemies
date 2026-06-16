@@ -97,10 +97,16 @@ public class ServerConfig : ModConfig
 	public bool EnableMolten { get; set; }
 
 	[DefaultValue(true)]
+	public bool EnableNyan { get; set; }
+
+	[DefaultValue(true)]
 	public bool EnableParty { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnablePhasic { get; set; }
+
+	[DefaultValue(true)]
+	public bool EnablePiercing { get; set; }
 
 	[DefaultValue(true)]
 	public bool EnablePolite { get; set; }

@@ -39,6 +39,8 @@ EliteVariations: {
 	// FluxiveElite: Fluxive
 	// ScramblingElite: Scrambling
 	// ArmoredElite: Armored
+	// NyanElite: Nyan
+	// PiercingElite: Piercing
 }
 
 Sorries: {
@@ -307,6 +309,16 @@ Configs: {
 		EnableArmored: {
 			// Label: Enable Armored
 			// Tooltip: ""
+		}
+
+		EnablePiercing: {
+			// Tooltip: Has some Armor Penetration
+			// Label: Enable Piercing
+		}
+
+		EnableNyan: {
+			// Tooltip: Meows
+			// Label: Enable Nyan
 		}
 	}
 }

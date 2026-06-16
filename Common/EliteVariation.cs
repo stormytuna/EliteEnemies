@@ -41,6 +41,8 @@ public abstract class EliteVariation : GlobalNPC
 		get => EliteVariationRarity.Common;
 	}
 
+	public virtual void ModifySpawnWeight(ref float weight) { }
+
 	public virtual bool CanApply(NPC npc) {
 		return true;
 	}
