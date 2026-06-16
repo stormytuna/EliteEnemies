@@ -4,7 +4,7 @@ EliteVariations: {
 	ImmovableElite: Immovable
 	DiscordantElite: Discordant # As in the Rod of Discord
 	VolatileElite: Volatile
-	JackedElite: Jacked # As in muscular 
+	JackedElite: Jacked # As in muscular
 	MedicatedElite: Medicated
 
 	ThiefElite: {
@@ -120,98 +120,98 @@ Configs: {
 		}
 
 		EnableBlazing: {
-			Tooltip: "Inflicts On Fire when close, inflicts Hellfire on hit, immune to fire debuffs"
+			Tooltip: Inflicts On Fire when close, inflicts Hellfire on hit, immune to fire debuffs
 			Label: Enable Blazing
 		}
 
 		EnableCursed: {
 			Label: Enable Cursed
-			Tooltip: "Inflicts Hellfire when close, inflicts Cursed Inferno on hit, immune to fire debuffs"
+			Tooltip: Inflicts Hellfire when close, inflicts Cursed Inferno on hit, immune to fire debuffs
 		}
 
 		EnableDiscordant: {
 			Label: Enable Discordant
-			Tooltip: "Teleports around randomly"
+			Tooltip: Teleports around randomly
 		}
 
 		EnableGlacial: {
 			Label: Enable Glacial
-			Tooltip: "Inflicts Frostburn when close and on hit, immune to Frostburn"
+			Tooltip: Inflicts Frostburn when close and on hit, immune to Frostburn
 		}
 
 		EnableGlowing: {
 			Label: Enable Glowing
-			Tooltip: "Glows a random colour"
+			Tooltip: Glows a random colour
 		}
 
 		EnableHuge: {
 			Label: Enable Huge
-			Tooltip: "Increases scale and damage, reduces knockback and speed"
+			Tooltip: Increases scale and damage, reduces knockback and speed
 		}
 
 		EnableIchor: {
 			Label: Enable Ichor
-			Tooltip: "Inflicts Hellfire when close, inflicts Ichor on hit, immune to fire debuffs"
+			Tooltip: Inflicts Hellfire when close, inflicts Ichor on hit, immune to fire debuffs
 		}
 
 		EnableImmovable: {
 			Label: Enable Immovable
-			Tooltip: "Immune to knockback"
+			Tooltip: Immune to knockback
 		}
 
 		EnableInspiring: {
 			Label: Enable Inspiring
-			Tooltip: "Grants nearby enemies increased damage and damage resistance"
+			Tooltip: Grants nearby enemies increased damage and damage resistance
 		}
 
 		EnableJacked: {
 			Label: Enable Jacked
-			Tooltip: "Increases damage, defense and max health"
+			Tooltip: Increases damage, defense and max health
 		}
 
 		EnableLucky: {
 			Label: Enable Lucky
-			Tooltip: "Forces all damage dealt to them to have the lowest damage variance possible"
+			Tooltip: Forces all damage dealt to them to have the lowest damage variance possible
 		}
 
 		EnableMedicated: {
 			Label: Enable Medicated
-			Tooltip: "Immune to all but tag debuffs"
+			Tooltip: Immune to all but tag debuffs
 		}
 
 		EnableMother: {
 			Label: Enable Mother
-			Tooltip: "Spawns 1-3 smaller, weaker children on death"
+			Tooltip: Spawns 1-3 smaller, weaker children on death
 		}
 
 		EnablePhasic: {
 			Label: Enable Phasic
-			Tooltip: "Phases in and out of reality periodically"
+			Tooltip: Phases in and out of reality periodically
 		}
 
 		EnableSneaky: {
 			Label: Enable Sneaky
-			Tooltip: "Invisible when not near the player"
+			Tooltip: Invisible when not near the player
 		}
 
 		EnableSpelunker: {
 			Label: Enable Spelunker
-			Tooltip: "Glows with a golden light and highlights nearby ores"
+			Tooltip: Glows with a golden light and highlights nearby ores
 		}
 
 		EnableThief: {
 			Label: Enable Thief
-			Tooltip: "Steals items on the floor"
+			Tooltip: Steals items on the floor
 		}
 
 		EnableTiny: {
 			Label: Enable Tiny
-			Tooltip: "Decreases scale, increases knockback and speed"
+			Tooltip: Decreases scale, increases knockback and speed
 		}
 
 		EnableVolatile: {
 			Label: Enable Volatile
-			Tooltip: "Explodes on death"
+			Tooltip: Explodes on death
 		}
 
 		ApplyScaleChanges: {
@@ -231,77 +231,77 @@ Configs: {
 
 		EnableElectric: {
 			Label: Enable Electric
-			Tooltip: "Strikes nearby players with lightning and inflicts Electrified"
+			Tooltip: Strikes nearby players with lightning and inflicts Electrified
 		}
 
 		EnableMolten: {
 			Label: Enable Molten
-			Tooltip: "Spawns lava on death"
+			Tooltip: Spawns lava on death
 		}
 
 		EnableAdaptive: {
 			Label: Enable Adaptive
-			Tooltip: "Adapts to damage, granting it resistances to damage types it's hit by"
+			Tooltip: Adapts to damage, granting it resistances to damage types it's hit by
 		}
 
 		EnableSpiky: {
 			Label: Enable Spiky
-			Tooltip: "Damages players who hit it when nearby"
+			Tooltip: Damages players who hit it when nearby
 		}
 
 		EnableLeeching: {
 			Label: Enable Leeching
-			Tooltip: "Heals when it hits a player"
+			Tooltip: Heals when it hits a player
 		}
 
 		EnableDestroyer: {
-			Tooltip: "Has a 10% critical strike chance"
+			Tooltip: Has a 10% critical strike chance
 			Label: Enable Destroyer
 		}
 
 		EnableStinky: {
 			Label: Enable Stinky
-			Tooltip: "Continuously releases toxic clouds"
+			Tooltip: Continuously releases toxic clouds
 		}
 
 		EnableFruity: {
 			Label: Enable Fruity
-			Tooltip: "Can inflict random debuffs"
+			Tooltip: Can inflict random debuffs
 		}
 
 		EnablePolite: {
 			Label: Enable Polite
-			Tooltip: "Apologizes for hurting you"
+			Tooltip: Apologizes for hurting you
 		}
 
 		EnableUnstable: {
-			Tooltip: "Continuously releases unstable bolts of energy"
+			Tooltip: Continuously releases unstable bolts of energy
 			Label: Enable Unstable
 		}
 
 		EnableParty: {
-			Tooltip: "Bleeds confetti"
+			Tooltip: Bleeds confetti
 			Label: Enable Party
 		}
 
 		EnableBrainy: {
-			Tooltip: "Creates reflections of itself"
+			Tooltip: Creates reflections of itself
 			Label: Enable Brainy
 		}
 
 		EnableStoic: {
-			Tooltip: "Hides the damage you deal to it"
+			Tooltip: Hides the damage you deal to it
 			Label: Enable Stoic
 		}
 
 		EnableFluxive: {
 			Label: Enable Fluxive
-			Tooltip: "Flips gravity when it hits you"
+			Tooltip: Flips gravity when it hits you
 		}
 
 		EnableScrambling: {
 			Label: Enable Scrambling
-			Tooltip: "Scrambles your HUD"
+			Tooltip: Scrambles your HUD
 		}
 
 		EnableArmored: {

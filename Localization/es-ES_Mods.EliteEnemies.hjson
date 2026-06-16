@@ -38,7 +38,7 @@ EliteVariations: {
 	// StoicElite: Stoic
 	// FluxiveElite: Fluxive
 	// ScramblingElite: Scrambling
-	// ArmoredElite: Mods.EliteEnemies.EliteVariations.ArmoredElite
+	// ArmoredElite: Armored
 }
 
 Sorries: {
@@ -105,63 +105,8 @@ Configs: {
 		DisplayName: Configuración del Servidor
 
 		Headers: {
-			SpawnChance: Probabilidad de aparición
-			ValueMultiplier: Multiplicador de valor
-			LootMultiplier: Multiplicador de botín
 			Misc: Misceláneas
 			Variations: Variaciones
-			// Spawning: Spawning Header
-			// SpawnWeights: Spawn Weights Header
-		}
-
-		CommonValueMultiplier: {
-			Label: Multiplicador de valor común
-			Tooltip: ""
-		}
-
-		UncommonValueMultiplier: {
-			Label: Multiplicador de valor poco común
-			Tooltip: ""
-		}
-
-		RareValueMultiplier: {
-			Label: Multiplicador de valor raro
-			Tooltip: ""
-		}
-
-		SuperRareValueMultiplier: {
-			Label: Multiplicador de valor super raro
-			Tooltip: ""
-		}
-
-		LegendaryValueMultiplier: {
-			Label: Multiplicador de valor legendario
-			Tooltip: ""
-		}
-
-		CommonLootMultiplier: {
-			Label: Multiplicador de botín común
-			Tooltip: ""
-		}
-
-		UncommonLootMultiplier: {
-			Label: Multiplicador de botín poco común
-			Tooltip: ""
-		}
-
-		RareLootMultiplier: {
-			Label: Multiplicador de botín raro
-			Tooltip: ""
-		}
-
-		SuperRareLootMultiplier: {
-			Label: Multiplicador de botín super raro
-			Tooltip: ""
-		}
-
-		LegendaryLootMultiplier: {
-			Label: Multiplicador de botín legendario
-			Tooltip: ""
 		}
 
 		ApplyToCritters: {
@@ -172,11 +117,6 @@ Configs: {
 		ApplyToBosses: {
 			Label: Aplicar a jefes
 			Tooltip: ""
-		}
-
-		MaxSimultaneousVariations: {
-			Tooltip: ""
-			Label: Máximo de variaciones simultáneas
 		}
 
 		EnableBlazing: {
@@ -284,11 +224,6 @@ Configs: {
 			Tooltip: ""
 		}
 
-		ApplyToModdedNPCs: {
-			Label: Aplicar a NPCs personalizados
-			Tooltip: ""
-		}
-
 		NPCBlacklist: {
 			// Tooltip: ""
 			// Label: NPC Blacklist
@@ -296,112 +231,77 @@ Configs: {
 
 		EnableElectric: {
 			// Label: Enable Electric
-			// Tooltip: ""
+			// Tooltip: Strikes nearby players with lightning and inflicts Electrified
 		}
 
 		EnableMolten: {
 			// Label: Enable Molten
-			// Tooltip: ""
+			// Tooltip: Spawns lava on death
 		}
 
 		EnableAdaptive: {
 			// Label: Enable Adaptive
-			// Tooltip: ""
+			// Tooltip: Adapts to damage, granting it resistances to damage types it's hit by
 		}
 
 		EnableSpiky: {
 			// Label: Enable Spiky
-			// Tooltip: ""
+			// Tooltip: Damages players who hit it when nearby
 		}
 
 		EnableLeeching: {
 			// Label: Enable Leeching
-			// Tooltip: ""
+			// Tooltip: Heals when it hits a player
 		}
 
 		EnableDestroyer: {
-			// Tooltip: ""
+			// Tooltip: Has a 10% critical strike chance
 			// Label: Enable Destroyer
-		}
-
-		SpawnChance: {
-			// Label: Spawn Chance
-			// Tooltip: ""
-		}
-
-		CommonSpawnWeight: {
-			// Label: Common Spawn Weight
-			// Tooltip: ""
-		}
-
-		UncommonSpawnWeight: {
-			// Label: Uncommon Spawn Weight
-			// Tooltip: ""
-		}
-
-		RareSpawnWeight: {
-			// Label: Rare Spawn Weight
-			// Tooltip: ""
-		}
-
-		SuperRareSpawnWeight: {
-			// Label: Super Rare Spawn Weight
-			// Tooltip: ""
-		}
-
-		LegendarySpawnWeight: {
-			// Label: Legendary Spawn Weight
-			// Tooltip: ""
 		}
 
 		EnableStinky: {
 			// Label: Enable Stinky
-			// Tooltip: ""
+			// Tooltip: Continuously releases toxic clouds
 		}
 
 		EnableFruity: {
 			// Label: Enable Fruity
-			// Tooltip: ""
+			// Tooltip: Can inflict random debuffs
 		}
 
 		EnablePolite: {
 			// Label: Enable Polite
-			// Tooltip: ""
+			// Tooltip: Apologizes for hurting you
 		}
 
 		EnableUnstable: {
-			// Tooltip: ""
+			// Tooltip: Continuously releases unstable bolts of energy
 			// Label: Enable Unstable
 		}
 
 		EnableParty: {
-			// Tooltip: ""
+			// Tooltip: Bleeds confetti
 			// Label: Enable Party
 		}
 
-		EnableAbyssal: {
-			// Tooltip: ""
-			// Label: Enable Abyssal
-		}
-
 		EnableBrainy: {
-			// Tooltip: ""
+			// Tooltip: Creates reflections of itself
 			// Label: Enable Brainy
 		}
 
 		EnableStoic: {
-			// Tooltip: ""
+			// Tooltip: Hides the damage you deal to it
 			// Label: Enable Stoic
 		}
 
 		EnableFluxive: {
 			// Label: Enable Fluxive
-			// Tooltip: ""
+			// Tooltip: Flips gravity when it hits you
 		}
 
 		EnableScrambling: {
 			// Label: Enable Scrambling
-			// Tooltip: ""
+			// Tooltip: Scrambles your HUD
 		}
 
 		EnableArmored: {
