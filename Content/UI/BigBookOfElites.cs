@@ -1,13 +1,150 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using EliteEnemies.Common;
-using FishUtils.UI;
-using Terraria.GameContent.UI.Elements;
+using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.Localization;
-using Terraria.UI;
 
 namespace EliteEnemies.Content.UI;
 
+public class EliteAbundancySwitcher : ModItem
+{
+	private WorldEliteAbundancy _abundancy = WorldEliteAbundancy.Regular;
+
+	public static LocalizedText AbundancyTooltip { get; private set; }
+	public static LocalizedText ScarceDescription { get; private set; }
+	public static LocalizedText RegularDescription { get; private set; }
+	public static LocalizedText PlentifulDescription { get; private set; }
+	public static LocalizedText CeaselessDescription { get; private set; }
+	public static LocalizedText Announcement { get; private set; }
+
+    public override string Texture => $"Terraria/Images/Item_{ItemID.MagicMirror}";
+
+    public override void SetStaticDefaults() {
+		AbundancyTooltip = this.GetLocalization("AbundancyTooltip");
+		ScarceDescription = this.GetLocalization("ScarceTooltip");
+		RegularDescription = this.GetLocalization("RegularTooltip");
+		PlentifulDescription = this.GetLocalization("PlentifulTooltip");
+		CeaselessDescription = this.GetLocalization("CeaselessTooltip");
+		Announcement = this.GetLocalization("Announcement");
+    }
+
+    public override void SetDefaults()
+    {
+		Item.width = Item.height = 18;
+		Item.DefaultToThrownWeapon(ModContent.ProjectileType<EliteAbundancySwitcherProjectile>(), 20, 8f);
+		Item.UseSound = SoundID.Item106;
+		Item.SetShopValues(Terraria.Enums.ItemRarityColor.Green2, Item.buyPrice(gold: 3));
+    }
+
+    public override bool CanRightClick() {
+		return true;
+    }
+
+    public override void RightClick(Player player) {
+        _abundancy = _abundancy + 1;
+		if (!Enum.IsDefined(_abundancy)) {
+			_abundancy = WorldEliteAbundancy.Scarce;
+		}
+
+		Item.stack++;
+    }
+
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+		var proj = Projectile.NewProjectileDirect(source, position, velocity, type, damage, knockback);
+		if (proj.ModProjectile is EliteAbundancySwitcherProjectile modProj) {
+			modProj.Abundancy = _abundancy;
+		}
+
+		return false;
+    }
+
+    public override void ModifyTooltips(List<TooltipLine> tooltips) {
+		Color abundancyColor = WorldEliteAbundancySystem.GetColorForAbundancy(_abundancy);
+		string abundancyName = Enum.GetName(_abundancy);
+		string abundancyColored = abundancyName.ApplyColor(abundancyColor.WithMouseTextPulsing());
+
+		tooltips.Add(new TooltipLine(Mod, "abundancytooltip", AbundancyTooltip.Format(abundancyColored)));
+
+		LocalizedText abundancyTooltip = _abundancy switch {
+			WorldEliteAbundancy.Scarce => ScarceDescription,
+			WorldEliteAbundancy.Regular => RegularDescription,
+			WorldEliteAbundancy.Plentiful => PlentifulDescription,
+			WorldEliteAbundancy.Ceaseless => CeaselessDescription,
+			_ => throw new Exception("how are you seeing this, that's scary..."),
+		};
+
+		string[] lines = abundancyTooltip.Value.Split('\n');
+		foreach (var line in lines) {
+			tooltips.Add(new TooltipLine(Mod, "abundancytooltip", line));
+		}
+    }
+}
+
+public class EliteAbundancySwitcherGlobalNPC : GlobalNPC
+{
+    public override bool AppliesToEntity(NPC entity, bool lateInstantiation) {
+        return entity.type == NPCID.BestiaryGirl;
+    }
+
+    public override void ModifyShop(NPCShop shop) {
+		shop.InsertAfter(ItemID.TreeGlobe, ModContent.ItemType<EliteAbundancySwitcher>());
+    }
+}
+
+public class EliteAbundancySwitcherProjectile : ModProjectile
+{
+	public WorldEliteAbundancy Abundancy = WorldEliteAbundancy.Regular;
+
+    public override string Texture => $"Terraria/Images/Item_{ItemID.MagicMirror}";
+
+    public override void SetDefaults() {
+		Projectile.width = 18;
+		Projectile.height = 18;
+		Projectile.aiStyle = ProjAIStyleID.ThrownProjectile;
+		Projectile.friendly = true;
+		Projectile.penetrate = 1;
+    }
+
+    public override void OnKill(int timeLeft) {
+		SoundEngine.PlaySound(SoundID.Item107, Projectile.Center);
+
+		for (int i = 0; i < 15; i++) {
+			Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Glass, 0f, -2f, 0, default, 1.5f);
+		}
+
+		if (Main.netMode == NetmodeID.SinglePlayer) {
+			WorldEliteAbundancySystem.Abundancy = Abundancy;
+		}
+
+		// Cheating slightly
+		// You can't send coloured text via NetworkText, so printing for MP clients regardless of if server actually changed it successfully
+		// Shouldn't have any meaningful gameplay difference
+		if (Main.netMode != NetmodeID.Server) {
+			Color abundancyColor = WorldEliteAbundancySystem.GetColorForAbundancy(Abundancy);
+			string abundancyName = Enum.GetName(Abundancy);
+			string abundancyColored = abundancyName.ApplyColor(abundancyColor.WithMouseTextPulsing());
+
+			Main.NewText(EliteAbundancySwitcher.Announcement.Format(abundancyColored));
+		}
+
+		if (Main.netMode == NetmodeID.Server) {
+			WorldEliteAbundancySystem.Abundancy = Abundancy;
+			NetMessage.SendData(MessageID.WorldData);
+		}
+    }
+
+    public override void SendExtraAI(BinaryWriter writer) {
+		writer.Write7BitEncodedInt((int)Abundancy);
+    }
+
+    public override void ReceiveExtraAI(BinaryReader reader) {
+		Abundancy = (WorldEliteAbundancy)reader.Read7BitEncodedInt();
+    }
+}
+
+/*
 public class BigBookOfElitesItem : ModItem
 {
 	public override void SetDefaults() {
@@ -123,6 +260,8 @@ public class BigBookOfElitesUIState : UIState
 	NineSliceUIPanel _eliteVariationsListPanel;
 	UIScrollbar _eliteVariantsListScrollbar;
 
+	NineSliceUIPanel _eliteInfoPanel;
+
 	NineSliceUIPanel _infoPanel;
 
 	NineSliceUIPanel _settingsPanel;
@@ -138,8 +277,10 @@ public class BigBookOfElitesUIState : UIState
 		_mainPanel = new NineSliceUIPanel(Assets.Textures.NineSliceOutsetBasic, Color.Transparent);
 		_mainPanel.Width = StyleDimension.FromPixels(400f);
 		_mainPanel.Height = StyleDimension.FromPixels(600f);
-		_mainPanel.HAlign = _mainPanel.VAlign = 0.5f;
+		_mainPanel.HAlign = _mainPanel.VAlign = 0.3f;
 		Append(_mainPanel);
+
+		_eliteInfoPanel = new NineSliceUIPanel(Assets.Textures.NineSliceOutsetBasic, Color.Blue);
 
 		_eliteVariationsListPanel = new NineSliceUIPanel(Assets.Textures.NineSliceOutsetBasic, Theming.Title);
 		_eliteVariationsListPanel.Width = StyleDimension.FromPixelsAndPercent(-10, 1f);
@@ -290,7 +431,7 @@ public class BigBookOfElitesUIState : UIState
 
 	private void ChangeEliteAbundancy(int newAbundancy) {
 		if (Main.netMode == NetmodeID.MultiplayerClient && !Main.countsAsHostForGameplay[Main.myPlayer]) {
-			// TODO: localisation 
+			// TODO: localisation
 			Main.NewText("Only the host can change the Elite Abundancy!");
 			return;
 		}
@@ -373,3 +514,4 @@ public class EliteDetailButtonUI : UIElement
 		_mainPanel.Append(_rarityIcon);
 	}
 }
+*/

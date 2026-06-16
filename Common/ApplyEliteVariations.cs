@@ -22,6 +22,7 @@ public class ApplyEliteVariations : ILoadable
 				WorldEliteAbundancy.Scarce => 1,
 				WorldEliteAbundancy.Regular => 3,
 				WorldEliteAbundancy.Plentiful => 6,
+				WorldEliteAbundancy.Ceaseless => 10,
 				_ => 3,
 			};
 		}
@@ -33,6 +34,7 @@ public class ApplyEliteVariations : ILoadable
 				WorldEliteAbundancy.Scarce => 0.05f,
 				WorldEliteAbundancy.Regular => 0.1f,
 				WorldEliteAbundancy.Plentiful => 0.25f,
+				WorldEliteAbundancy.Ceaseless => 0.50f,
 				_ => 0.1f,
 			};
 		}
@@ -57,6 +59,10 @@ public class ApplyEliteVariations : ILoadable
 		}
 
 		int numVariations = Main.rand.NextRecursiveCount(SpawnChance, NumMaxVariations);
+		if (WorldEliteAbundancySystem.Abundancy == WorldEliteAbundancy.Ceaseless) {
+			numVariations = int.Clamp(numVariations, 1, NumMaxVariations);
+		}
+
 		if (numVariations <= 0) {
 			return;
 		}

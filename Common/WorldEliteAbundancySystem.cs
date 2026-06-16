@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -12,7 +13,7 @@ namespace EliteEnemies.Common;
 
 public enum WorldEliteAbundancy
 {
-	Scarce, Regular, Plentiful
+	Scarce, Regular, Plentiful, Ceaseless
 }
 
 public class WorldEliteAbundancySystem : ModSystem
@@ -21,10 +22,19 @@ public class WorldEliteAbundancySystem : ModSystem
 
 	public static WorldEliteAbundancy Abundancy = WorldEliteAbundancy.Regular;
 
+	public static Color GetColorForAbundancy(WorldEliteAbundancy abundancy) {
+		return abundancy switch {
+			WorldEliteAbundancy.Scarce => Color.Pink,
+			WorldEliteAbundancy.Regular => Color.LimeGreen,
+			WorldEliteAbundancy.Plentiful => Color.CornflowerBlue,
+			WorldEliteAbundancy.Ceaseless => Color.OrangeRed,
+			_ => Color.White,
+		};
+	}
+
 	// Saving to header so we can generate a world without having to immediately open it
 	//   for abundancy to save properly
 	public override void SaveWorldHeader(TagCompound tag) {
-		Mod.Logger.Info(Abundancy);
 		tag["WorldEliteAbundancy"] = (byte)Abundancy;
 	}
 
@@ -98,35 +108,42 @@ public class WorldEliteAbundancySystem : ModSystem
 				WorldEliteAbundancy.Scarce,
 				WorldEliteAbundancy.Regular,
 				WorldEliteAbundancy.Plentiful,
+				WorldEliteAbundancy.Ceaseless,
 			];
 
 			LocalizedText[] titles = [
 				GetLang("WorldGen.Titles.Scarce"),
 				GetLang("WorldGen.Titles.Regular"),
 				GetLang("WorldGen.Titles.Plentiful"),
+				GetLang("WorldGen.Titles.Ceaseless"),
 			];
 
 			LocalizedText[] descriptions = [
 				GetLang("WorldGen.Descriptions.Scarce"),
 				GetLang("WorldGen.Descriptions.Regular"),
 				GetLang("WorldGen.Descriptions.Plentiful"),
+				GetLang("WorldGen.Descriptions.Ceaseless"),
 			];
 
 			Color[] colors = [
 				Color.Pink,
 				Color.LimeGreen,
 				Color.CornflowerBlue,
+				Color.OrangeRed,
 			];
 
+			// TODO: Make icons better
 			string[] iconPaths = [
 				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconScarce",
 				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconRegular",
+				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconPlentiful",
 				$"{nameof(EliteEnemies)}/Assets/Textures/EliteIconPlentiful",
 			];
 
 			List<GroupOptionButton<WorldEliteAbundancy>> groupOptionButtons = [];
 
 			for (int i = 0; i < elites.Length; i++) {
+				// TODO: Worldgen buttons are a bit thin compared to difficulty selector
 				GroupOptionButton<WorldEliteAbundancy> button = new(elites[i], titles[i], descriptions[i], colors[i], null, titleAlignmentX: 1f) {
 					Width = StyleDimension.FromPixelsAndPercent(-4 * (elites.Length - 1), 1f / (elites.Length * usableWidthPercent)),
 					Left = StyleDimension.FromPercent(1f - usableWidthPercent),

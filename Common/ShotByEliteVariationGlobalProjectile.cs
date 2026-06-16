@@ -34,11 +34,15 @@ public abstract class ShotByEliteVariationGlobalProjectile<TElite> : GlobalProje
 
 	public override void SendExtraAI(Projectile projectile, BitWriter bitWriter, BinaryWriter binaryWriter) {
 		bitWriter.WriteBit(ApplyEliteChanges);
-		binaryWriter.Write7BitEncodedInt(Parent.whoAmI);
+		if (ApplyEliteChanges) {
+			binaryWriter.Write7BitEncodedInt(Parent.whoAmI);
+		}
 	}
 
 	public override void ReceiveExtraAI(Projectile projectile, BitReader bitReader, BinaryReader binaryReader) {
 		ApplyEliteChanges = bitReader.ReadBit();
-		Parent = Main.npc[binaryReader.Read7BitEncodedInt()];
+		if (ApplyEliteChanges) {
+			Parent = Main.npc[binaryReader.Read7BitEncodedInt()];
+		}
 	}
 }

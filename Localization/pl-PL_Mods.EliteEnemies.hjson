@@ -60,32 +60,41 @@ WorldGen: {
 		// Scarce: Scarce
 		// Regular: Regular
 		// Plentiful: Plentiful
+		// Ceaseless: Ceaseless
 	}
 
 	Descriptions: {
-		// Scarce: Fewer Elites, for laid-back players.
-		// Regular: The standard Elite Enemies experience.
+		// Scarce: Fewer Elites, for laid-back players
+		// Regular: The standard Elite Enemies experience
 		// Plentiful: Many more Elites, not for the faint of heart!
+		// Ceaseless: All the Elites! Give them hell!
 	}
 
 	DescriptionsLong: {
 		/* Scarce:
 			'''
 			{$WorldGen.Descriptions.Scarce}
-			Max variations per NPC: 1.
-			Variation spawn chance: 5%.
+			Max variations per NPC: 1
+			Variation spawn chance: 5%
 			''' */
 		/* Regular:
 			'''
 			{$WorldGen.Descriptions.Regular}
-			Max variations per NPC: 3.
-			Variation spawn chance: 10%.
+			Max variations per NPC: 3
+			Variation spawn chance: 10%
 			''' */
 		/* Plentiful:
 			'''
 			{$WorldGen.Descriptions.Plentiful}
-			Max variations per NPC: 3.
-			Variation spawn chance: 10%.
+			Max variations per NPC: 6
+			Variation spawn chance: 25%
+			''' */
+		/* Ceaseless:
+			'''
+			{$WorldGen.Descriptions.Ceaseless}
+			Max variations per NPC: 10
+			Variation spawn chance: 50%
+			Each enemy is guaranteed to have at least 1 variation.
 			''' */
 	}
 }
@@ -399,6 +408,7 @@ Configs: {
 Projectiles: {
 	// LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile
 	// StinkyCloud.DisplayName: Stinky Cloud
+	// EliteAbundancySwitcherProjectile.DisplayName: Elite Abundancy Switcher Projectile
 }
 
 // NPCs.LeechingEliteLeechProjectile.DisplayName: Leeching Elite Leech Projectile
@@ -416,8 +426,19 @@ Buffs: {
 }
 
 Items: {
-	BigBookOfElitesItem: {
-		// DisplayName: Big Book Of Elites Item
+	EliteAbundancySwitcher: {
 		// Tooltip: ""
+		// DisplayName: Elite Abundancy Globe
+		/* AbundancyTooltip:
+			'''
+			Toss it to change the abundancy of Elite Enemies in this world!
+			Right click to toggle abundancy
+			Currently selected: {0}
+			''' */
+		// ScarceTooltip: "{$WorldGen.DescriptionsLong.Scarce}"
+		// RegularTooltip: "{$WorldGen.DescriptionsLong.Regular}"
+		// PlentifulTooltip: "{$WorldGen.DescriptionsLong.Plentiful}"
+		// CeaselessTooltip: "{$WorldGen.DescriptionsLong.Ceaseless}"
+		// Announcement: Abundancy of Elite Enemies changed to {0}!
 	}
 }
