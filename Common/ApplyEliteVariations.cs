@@ -80,10 +80,24 @@ public class ApplyEliteVariations : ILoadable
 			weightedRandom.Add(variation, _rarityToSpawnWeight[variation.Rarity]);
 		}
 
+		weightedRandom.CalculateTotalWeight();
+
 		int numVariationsToApply = int.Min(numVariations, applicableVariations.Count);
 		for (int i = 0; i < numVariationsToApply; i++) {
+			if (weightedRandom.elements.Count <= 0) {
+				break;
+			}
+
 			EliteVariation variation = weightedRandom.GetAndRemove();
-			variation.ApplyEliteVariation = true;
+
+			// Easiest way to catch mutually exclusive variations without reconstructing the weighted random
+			if (variation.CanApply(npc)) {
+				variation.ApplyEliteVariation = true;
+			} else {
+				numVariationsToApply++;
+			}
+
+			weightedRandom.CalculateTotalWeight();
 		}
 
 		orig(npc, source);

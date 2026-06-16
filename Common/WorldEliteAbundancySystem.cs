@@ -159,7 +159,6 @@ public class WorldEliteAbundancySystem : ModSystem
 					var listeningButton = (GroupOptionButton<WorldEliteAbundancy>)listeningElement;
 					Abundancy = listeningButton.OptionValue;
 					foreach (var button in _eliteOptionsButtons) {
-						ModContent.GetInstance<EliteEnemies>().Logger.Info(button.OptionValue);
 						button.SetCurrentOption(Abundancy);
 					}
 				};
