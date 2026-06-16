@@ -39,3 +39,11 @@
 | Discordant | Teleports around randomly                                                            | Legendary  | Cannot apply to worms; only applies during hardmode              |
 | Molten     | Spawns lava on death                                                                 | Legendary  | Only applies during hardmode and while underground               |
 | Phasic     | Phases in and out of reality periodically                                            | Legendary  | Cannot apply to worms; only applies after killing Skeletron      |
+
+| Name       | Spawn Weight | Value Multiplier | Loot Multiplier |
+| ---------- | ------------ | ---------------- | --------------- |
+| Common     | 20           | 1.5×             | 1.2×            |
+| Uncommon   | 15           | 2×               | 1.4×            |
+| Rare       | 10           | 3.5×             | 1.6×            |
+| Super Rare | 5            | 5×               | 1.8×            |
+| Legendary  | 2            | 8×               | 2×              |
