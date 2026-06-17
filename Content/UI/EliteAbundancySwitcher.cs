@@ -86,7 +86,7 @@ public class EliteAbundancySwitcherGlobalNPC : GlobalNPC
 	}
 
 	public override void ModifyShop(NPCShop shop) {
-		shop.InsertAfter(ItemID.TreeGlobe, ModContent.ItemType<EliteAbundancySwitcher>());
+		shop.InsertAfter(ItemID.MoonGlobe, ModContent.ItemType<EliteAbundancySwitcher>());
 	}
 }
 

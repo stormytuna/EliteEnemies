@@ -114,8 +114,11 @@ public class NPCRenderRedirectSystem : ModSystem
 			Main.spriteBatch.Draw(useStaging2 ? _stagingRT2 : _stagingRT, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), Color.White);
 
 			Main.spriteBatch.End();
+
 		}
 
+		device.SetRenderTarget(null);
+			
 		Ready = true;
 	}
 
