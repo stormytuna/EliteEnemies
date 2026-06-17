@@ -3,7 +3,7 @@ EliteVariations: {
 	// TinyElite: 微小
 	// ImmovableElite: 泰坦
 	// DiscordantElite: 混乱
-	// VolatileElite: 亡语
+	// VolatileElite: 爆裂
 	// JackedElite: 强壮
 	// MedicatedElite: 免疫
 
@@ -23,6 +23,83 @@ EliteVariations: {
 	// IchorElite: 灵液
 	// CursedElite: 诅咒
 	// GlacialElite: 冰霜
+	// ElectricElite: 电弧
+	// MoltenElite: 熔岩
+	// SpikyElite: 棘刺
+	// AdaptiveElite: 适应
+	// LeechingElite: 吸血
+	// DestroyerElite: 破灭
+	// StinkyElite: 毒气
+	// FruityElite: 缤纷
+	// PoliteElite: 礼貌
+	// UnstableElite: 紊乱
+	// PartyElite: 派对
+	// BrainyElite: 幻影
+	// StoicElite: 坚韧
+	// FluxiveElite: 颠倒
+	// ScramblingElite: 扰乱
+	// ArmoredElite: 装甲
+	// NyanElite: 喵喵
+	// PiercingElite: 穿透
+}
+
+Sorries: {
+	// 0: 对不起！
+	// 1: 抱歉啊老弟~
+	// 2: 我的错！
+	// 3: 哎呀！
+	// 4: 哎哟~
+	// 5: 借过！
+	// 6: 怪我！
+	// 7: 失误！
+	// 8: 哎呀呀！
+	// 9: 一不小心...
+	// 10: 对布起(≧▽≦)...
+	// 11: 我的鞋底有些痒了！
+}
+
+WorldGen: {
+	Titles: {
+		// Scarce: 少量
+		// Regular: 标准
+		// Plentiful: 大量
+		// Ceaseless: 无尽
+	}
+
+	Descriptions: {
+		// Scarce: 少量精英怪，适合休闲玩家
+		// Regular: 标准的精英怪体验
+		// Plentiful: 更多精英怪，克苏鲁之眼有些饱了！
+		// Ceaseless: 到处都是精英怪！史莱姆王的脚底有些痒了！
+	}
+
+	DescriptionsLong: {
+		/* Scarce:
+			'''
+			{$WorldGen.Descriptions.Scarce}
+			每个 NPC 最大能力数量：1
+			能力生成几率：5%
+			''' */
+		/* Regular:
+			'''
+			{$WorldGen.Descriptions.Regular}
+			每个 NPC 最大能力数量：3
+			能力生成几率：10%
+			''' */
+		/* Plentiful:
+			'''
+			{$WorldGen.Descriptions.Plentiful}
+			每个 NPC 最大能力数量：6
+			能力生成几率：25%
+			''' */
+		/* Ceaseless:
+			'''
+			{$WorldGen.Descriptions.Ceaseless}
+			每个 NPC 最大能力数量：10
+			能力生成几率：50%
+			每个敌人必定拥有至少 1 个特殊能力。
+			''' */
+	}
 }
 
 Configs: {
@@ -30,216 +107,256 @@ Configs: {
 		// DisplayName: 服务器配置
 
 		Headers: {
-			// SpawnChance: 生成几率
-			// ValueMultiplier: 价值倍率
-			// LootMultiplier: 战利品倍率
 			// Misc: 杂项
-			// Variations: 变种
-		}
-
-		CommonSpawnChance: {
-			// Label: 普通生成几率
-			// Tooltip: "普通精英怪的生成几率"
-		}
-
-		UncommonSpawnChance: {
-			// Label: 稀有生成几率
-			// Tooltip: "稀有精英怪的生成几率"
-		}
-
-		RareSpawnChance: {
-			// Label: 史诗生成几率
-			// Tooltip: "史诗精英怪的生成几率"
-		}
-
-		SuperRareSpawnChance: {
-			// Label: 传说生成几率
-			// Tooltip: "传说精英怪的生成几率"
-		}
-
-		LegendarySpawnChance: {
-			// Label: 神话生成几率
-			// Tooltip: "神话精英怪的生成几率"
-		}
-
-		CommonValueMultiplier: {
-			// Label: 普通价值倍率
-			// Tooltip: "普通精英怪掉落物品的价值倍率"
-		}
-
-		UncommonValueMultiplier: {
-			// Label: 稀有价值倍率
-			// Tooltip: "稀有精英怪掉落物品的价值倍率"
-		}
-
-		RareValueMultiplier: {
-			// Label: 史诗价值倍率
-			// Tooltip: "史诗精英怪掉落物品的价值倍率"
-		}
-
-		SuperRareValueMultiplier: {
-			// Label: 传说价值倍率
-			// Tooltip: "传说精英怪掉落物品的价值倍率"
-		}
-
-		LegendaryValueMultiplier: {
-			// Label: 神话价值倍率
-			// Tooltip: "神话精英怪掉落物品的价值倍率"
-		}
-
-		CommonLootMultiplier: {
-			// Label: 普通战利品倍率
-			// Tooltip: "普通精英怪掉落战利品的数量倍率"
-		}
-
-		UncommonLootMultiplier: {
-			// Label: 稀有战利品倍率
-			// Tooltip: "稀有精英怪掉落战利品的数量倍率"
-		}
-
-		RareLootMultiplier: {
-			// Label: 史诗战利品倍率
-			// Tooltip: "史诗精英怪掉落战利品的数量倍率"
-		}
-
-		SuperRareLootMultiplier: {
-			// Label: 传说战利品倍率
-			// Tooltip: "传说精英怪掉落战利品的数量倍率"
-		}
-
-		LegendaryLootMultiplier: {
-			// Label: 神话战利品倍率
-			// Tooltip: "神话精英怪掉落战利品的数量倍率"
+			// Variations: 能力
 		}
 
 		ApplyToCritters: {
 			// Label: 应用于小动物
-			// Tooltip: "是否将精英怪效果应用于小动物"
+			// Tooltip: ""
 		}
 
 		ApplyToBosses: {
 			// Label: 应用于 Boss
-			// Tooltip: "是否将精英怪效果应用于 Boss"
-		}
-
-		MaxSimultaneousVariations: {
-			// Tooltip: "一个怪物同时可以拥有的最大精英变种数量"
-			// Label: 最大同时变种数
+			// Tooltip: ""
 		}
 
 		EnableBlazing: {
-			// Tooltip: "是否启用「烈焰」精英变种"
+			// Tooltip: 靠近时造成狱火，攻击时造成狱火减益，免疫火系减益
 			// Label: 启用烈焰
 		}
 
 		EnableCursed: {
 			// Label: 启用诅咒
-			// Tooltip: "是否启用「诅咒」精英变种"
+			// Tooltip: 靠近时造成狱火，攻击时造成诅咒狱火减益，免疫火系减益
 		}
 
 		EnableDiscordant: {
 			// Label: 启用混乱
-			// Tooltip: "是否启用「混乱」精英变种"
+			// Tooltip: 随机传送
 		}
 
 		EnableGlacial: {
 			// Label: 启用冰霜
-			// Tooltip: "是否启用「冰霜」精英变种"
+			// Tooltip: 靠近和攻击时造成霜冻减益，免疫霜冻
 		}
 
 		EnableGlowing: {
 			// Label: 启用发光
-			// Tooltip: "是否启用「发光」精英变种"
+			// Tooltip: 发出随机颜色的光
 		}
 
 		EnableHuge: {
 			// Label: 启用巨大
-			// Tooltip: "是否启用「巨大」精英变种"
+			// Tooltip: 增加体型和伤害，减少击退和速度
 		}
 
 		EnableIchor: {
 			// Label: 启用灵液
-			// Tooltip: "是否启用「灵液」精英变种"
+			// Tooltip: 靠近时造成狱火，攻击时造成灵液减益，免疫火系减益
 		}
 
 		EnableImmovable: {
 			// Label: 启用泰坦
-			// Tooltip: "是否启用「泰坦」精英变种"
+			// Tooltip: 免疫击退
 		}
 
 		EnableInspiring: {
 			// Label: 启用鼓舞
-			// Tooltip: "是否启用「鼓舞」精英变种"
+			// Tooltip: 为附近敌人提供伤害加成和伤害减免
 		}
 
 		EnableJacked: {
 			// Label: 启用强壮
-			// Tooltip: "是否启用「强壮」精英变种"
+			// Tooltip: 增加伤害、防御和最大生命值
 		}
 
 		EnableLucky: {
 			// Label: 启用幸运
-			// Tooltip: "是否启用「幸运」精英变种"
+			// Tooltip: 所有对其造成的伤害将取伤害浮动的最低值
 		}
 
 		EnableMedicated: {
 			// Label: 启用免疫
-			// Tooltip: "是否启用「免疫」精英变种"
+			// Tooltip: 免疫除标记之外的所有减益
 		}
 
 		EnableMother: {
 			// Label: 启用分裂
-			// Tooltip: "是否启用「分裂」精英变种"
+			// Tooltip: 死亡时生成 1-3 个更小更弱的子体
 		}
 
 		EnablePhasic: {
 			// Label: 启用相位
-			// Tooltip: "是否启用「相位」精英变种"
+			// Tooltip: 周期性地在现实中消失和出现
 		}
 
 		EnableSneaky: {
 			// Label: 启用隐形
-			// Tooltip: "是否启用「隐形」精英变种"
+			// Tooltip: 远离玩家时隐身
 		}
 
 		EnableSpelunker: {
 			// Label: 启用探险家
-			// Tooltip: "是否启用「探险家」精英变种"
+			// Tooltip: 发出金色光芒并高亮附近宝藏
 		}
 
 		EnableThief: {
 			// Label: 启用小偷
-			// Tooltip: "是否启用「小偷」精英变种"
+			// Tooltip: 偷走地面上的物品
 		}
 
 		EnableTiny: {
 			// Label: 启用微小
-			// Tooltip: "是否启用「微小」精英变种"
+			// Tooltip: 减小体型，增加击退和速度
 		}
 
 		EnableVolatile: {
-			// Label: 启用亡语
-			// Tooltip: "是否启用「亡语」精英变种"
+			// Label: 启用爆裂
+			// Tooltip: 死亡时爆炸
 		}
 
 		ApplyScaleChanges: {
 			// Label: 应用大小变化
-			// Tooltip: "是否应用精英怪的大小变化效果"
+			// Tooltip: ""
 		}
 
 		ApplyVelocityChanges: {
 			// Label: 应用速度变化
-			// Tooltip: "是否应用精英怪的速度变化效果"
-		}
-
-		ApplyToModdedNPCs: {
-			// Label: 应用于模组 NPC
-			// Tooltip: "是否将精英怪效果应用于其他模组添加的 NPC"
+			// Tooltip: ""
 		}
 
 		NPCBlacklist: {
-			// Tooltip: "在此列表中的 NPC 不会成为精英怪，输入 NPC 的内部名称，用逗号分隔"
+			// Tooltip: ""
 			// Label: NPC 黑名单
 		}
+
+		EnableElectric: {
+			// Label: 启用电弧
+			// Tooltip: 用闪电攻击附近玩家并造成带电减益
+		}
+
+		EnableMolten: {
+			// Label: 启用熔岩
+			// Tooltip: 死亡时生成熔岩
+		}
+
+		EnableAdaptive: {
+			// Label: 启用适应
+			// Tooltip: 适应受到的伤害，获得对该伤害类型的抗性
+		}
+
+		EnableSpiky: {
+			// Label: 启用棘刺
+			// Tooltip: 攻击附近攻击它的玩家
+		}
+
+		EnableLeeching: {
+			// Label: 启用吸血
+			// Tooltip: 攻击玩家时恢复生命
+		}
+
+		EnableDestroyer: {
+			// Tooltip: 拥有 10% 暴击率
+			// Label: 启用破灭
+		}
+
+		EnableStinky: {
+			// Label: 启用毒气
+			// Tooltip: 持续释放恶臭毒雾
+		}
+
+		EnableFruity: {
+			// Label: 启用缤纷
+			// Tooltip: 可施加随机减益
+		}
+
+		EnablePolite: {
+			// Label: 启用礼貌
+			// Tooltip: 会为伤害到你而道歉
+		}
+
+		EnableUnstable: {
+			// Tooltip: 持续释放不稳定的能量弹
+			// Label: 启用紊乱
+		}
+
+		EnableParty: {
+			// Tooltip: 爆出五彩纸屑
+			// Label: 启用派对
+		}
+
+		EnableBrainy: {
+			// Tooltip: 制造自身的幻影
+			// Label: 启用幻影
+		}
+
+		EnableStoic: {
+			// Tooltip: 隐藏你对它造成的伤害
+			// Label: 启用坚韧
+		}
+
+		EnableFluxive: {
+			// Label: 启用颠倒
+			// Tooltip: 攻击时翻转你的重力
+		}
+
+		EnableScrambling: {
+			// Label: 启用扰乱
+			// Tooltip: 打乱你的 HUD
+		}
+
+		EnableArmored: {
+			// Label: 启用装甲
+			// Tooltip: ""
+		}
+
+		EnablePiercing: {
+			// Tooltip: 拥有一定的护甲穿透
+			// Label: 启用穿透
+		}
+
+		EnableNyan: {
+			// Tooltip: 喵喵叫
+			// Label: 启用喵喵
+		}
+	}
+}
+
+Projectiles: {
+	// LeechingEliteLeechProjectile.DisplayName: 血蛭弹
+	// StinkyCloud.DisplayName: 恶臭毒雾
+	// EliteAbundancySwitcherProjectile.DisplayName: 调节球
+}
+
+// NPCs.LeechingEliteLeechProjectile.DisplayName: 血蛭弹
+
+Buffs: {
+	FluxiveBuff: {
+		// Description: 你的世界颠倒了！
+		// DisplayName: 颠倒
+	}
+
+	ScrambledBuff: {
+		// DisplayName: 扰乱
+		// Description: 你的 HUD 已被扰乱！
+	}
+}
+
+Items: {
+	EliteAbundancySwitcher: {
+		// Tooltip: ""
+		// DisplayName: 精英怪调节器
+		/* AbundancyTooltip:
+			'''
+			投掷它来改变这个世界中精英怪的数量等级！
+			右键切换数量等级
+			当前选择：{0}
+			''' */
+		// ScarceTooltip: "{$WorldGen.DescriptionsLong.Scarce}"
+		// RegularTooltip: "{$WorldGen.DescriptionsLong.Regular}"
+		// PlentifulTooltip: "{$WorldGen.DescriptionsLong.Plentiful}"
+		// CeaselessTooltip: "{$WorldGen.DescriptionsLong.Ceaseless}"
+		// Announcement: 精英怪数量等级已切换为：{0}！
 	}
 }
