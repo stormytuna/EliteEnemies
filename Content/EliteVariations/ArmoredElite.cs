@@ -13,11 +13,15 @@ public class ArmoredElite : EliteVariation
 	}
 
 	public override void OnApply(NPC npc) {
-		npc.HitSound = SoundID.NPCHit4;
+		if (ApplyEliteVariation) {
+			npc.HitSound = SoundID.NPCHit4;
+		}
 	}
 
 	public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
-		modifiers.DisableCrit();
+		if (ApplyEliteVariation) {
+			modifiers.DisableCrit();
+		}
 	}
 
 	public override void DrawEffects(NPC npc, ref Color drawColor) {

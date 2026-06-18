@@ -15,15 +15,20 @@ public class PiercingElite : EliteVariation
 	}
 
     public override void OnApply(NPC npc) {
-		_armorPenetration = (int)(((npc.damage * 0.2f) + 5f) * Main.rand.NextFloat(0.8f, 1.2f));
+		if (ApplyEliteVariation) {
+			_armorPenetration = (int)(((npc.damage * 0.2f) + 5f) * Main.rand.NextFloat(0.8f, 1.2f));
+		}
     }
 
     public override void ModifyHitPlayer(NPC npc, Player target, ref Player.HurtModifiers modifiers) {
-		modifiers.ArmorPenetration += _armorPenetration;
+		if (ApplyEliteVariation) {
+			modifiers.ArmorPenetration += _armorPenetration;
+		}
     }
 
-    public override void ModifyHitNPC(NPC npc, NPC target, ref NPC.HitModifiers modifiers)
-    {
-		modifiers.ArmorPenetration += _armorPenetration;
+    public override void ModifyHitNPC(NPC npc, NPC target, ref NPC.HitModifiers modifiers) {
+		if (ApplyEliteVariation) {
+			modifiers.ArmorPenetration += _armorPenetration;
+		}
     }
 }

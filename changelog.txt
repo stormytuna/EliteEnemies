@@ -1,3 +1,3 @@
-V2.0.2
+V2.0.3
 
-- Added Simplified Chinese translations, thanks to Mi-Ni-HH!
+- Fixed some elite variations accidentally applying their changes to all enemies

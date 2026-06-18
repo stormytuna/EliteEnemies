@@ -18,7 +18,9 @@ public class NyanElite : EliteVariation
 	}
 
     public override void OnApply(NPC npc) {
-        npc.HitSound = SoundID.Item57;
+		if (ApplyEliteVariation) {
+			npc.HitSound = SoundID.Item57;
+		}
     }
 
 	public override void AI(NPC npc) {
@@ -33,6 +35,10 @@ public class NyanElite : EliteVariation
 	}
 
 	public override bool PreDraw(NPC npc, SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor) {
+		if (!ApplyEliteVariation) {
+			return true;
+		}
+
 		Main.instance.LoadProjectile(ProjectileID.RainbowFront);
 
 		Texture2D rainbowTexture = TextureAssets.Projectile[250].Value;
