@@ -7,7 +7,7 @@ Elite Enemies adds elite variations to enemies and (optionally) bosses! Each var
 - Variations have rarities, which influence how often they appear and how much extra loot they drop
 - Adds a new option at world creation to select how abundant you'd like the elites to be. If you change your mind, purchase an Elite Abundancy Globe from the Zoologist
 - Multiplayer is supported
-- Currently supports English, (partial) Polish and (partial) Spanish, see below if you'd like to contribute another translation
+- Currently supports English, Simplified Chinese, (partial) Polish and (partial) Spanish, see below if you'd like to contribute another translation
 
 [hr][/hr]
 
@@ -32,6 +32,7 @@ There are too many to fit in the Steam Workshop description! You can find a comp
 
 - [url=https://steamcommunity.com/profiles/76561198149920979]Roton[/url] for Polish translations
 - [url=https://github.com/fmartingr]fmartingr[/url] for Spanish translations
+- [url=https://github.com/Mi-Ni-HH]Mi-Ni-HH[/url] for Simplified Chinese translations
 
 [hr][/hr]
 

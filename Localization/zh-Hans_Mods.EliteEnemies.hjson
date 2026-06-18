@@ -1,362 +1,362 @@
 EliteVariations: {
-	// HugeElite: 巨大
-	// TinyElite: 微小
-	// ImmovableElite: 泰坦
-	// DiscordantElite: 混乱
-	// VolatileElite: 爆裂
-	// JackedElite: 强壮
-	// MedicatedElite: 免疫
+	HugeElite: 巨大
+	TinyElite: 微小
+	ImmovableElite: 泰坦
+	DiscordantElite: 混乱
+	VolatileElite: 爆裂
+	JackedElite: 强壮
+	MedicatedElite: 免疫
 
 	ThiefElite: {
-		// $parentVal: Thief
-		// Stolen: "{0} 被偷走了！"
+		$parentVal: Thief
+		Stolen: "{0} 被偷走了！"
 	}
 
-	// LuckyElite: 幸运
-	// InspiringElite: 鼓舞
-	// GlowingElite: 发光
-	// SpelunkerElite: 探险家
-	// SneakyElite: 隐形
-	// PhasicElite: 相位
-	// MotherElite: 分裂
-	// BlazingElite: 烈焰
-	// IchorElite: 灵液
-	// CursedElite: 诅咒
-	// GlacialElite: 冰霜
-	// ElectricElite: 电弧
-	// MoltenElite: 熔岩
-	// SpikyElite: 棘刺
-	// AdaptiveElite: 适应
-	// LeechingElite: 吸血
-	// DestroyerElite: 破灭
-	// StinkyElite: 毒气
-	// FruityElite: 缤纷
-	// PoliteElite: 礼貌
-	// UnstableElite: 紊乱
-	// PartyElite: 派对
-	// BrainyElite: 幻影
-	// StoicElite: 坚韧
-	// FluxiveElite: 颠倒
-	// ScramblingElite: 扰乱
-	// ArmoredElite: 装甲
-	// NyanElite: 喵喵
-	// PiercingElite: 穿透
+	LuckyElite: 幸运
+	InspiringElite: 鼓舞
+	GlowingElite: 发光
+	SpelunkerElite: 探险家
+	SneakyElite: 隐形
+	PhasicElite: 相位
+	MotherElite: 分裂
+	BlazingElite: 烈焰
+	IchorElite: 灵液
+	CursedElite: 诅咒
+	GlacialElite: 冰霜
+	ElectricElite: 电弧
+	MoltenElite: 熔岩
+	SpikyElite: 棘刺
+	AdaptiveElite: 适应
+	LeechingElite: 吸血
+	DestroyerElite: 破灭
+	StinkyElite: 毒气
+	FruityElite: 缤纷
+	PoliteElite: 礼貌
+	UnstableElite: 紊乱
+	PartyElite: 派对
+	BrainyElite: 幻影
+	StoicElite: 坚韧
+	FluxiveElite: 颠倒
+	ScramblingElite: 扰乱
+	ArmoredElite: 装甲
+	NyanElite: 喵喵
+	PiercingElite: 穿透
 }
 
 Sorries: {
-	// 0: 对不起！
-	// 1: 抱歉啊老弟~
-	// 2: 我的错！
-	// 3: 哎呀！
-	// 4: 哎哟~
-	// 5: 借过！
-	// 6: 怪我！
-	// 7: 失误！
-	// 8: 哎呀呀！
-	// 9: 一不小心...
-	// 10: 对布起(≧▽≦)...
-	// 11: 我的鞋底有些痒了！
+	0: 对不起！
+	1: 抱歉啊老弟~
+	2: 我的错！
+	3: 哎呀！
+	4: 哎哟~
+	5: 借过！
+	6: 怪我！
+	7: 失误！
+	8: 哎呀呀！
+	9: 一不小心...
+	10: 对布起(≧▽≦)...
+	11: 我的鞋底有些痒了！
 }
 
 WorldGen: {
 	Titles: {
-		// Scarce: 少量
-		// Regular: 标准
-		// Plentiful: 大量
-		// Ceaseless: 无尽
+		Scarce: 少量
+		Regular: 标准
+		Plentiful: 大量
+		Ceaseless: 无尽
 	}
 
 	Descriptions: {
-		// Scarce: 少量精英怪，适合休闲玩家
-		// Regular: 标准的精英怪体验
-		// Plentiful: 更多精英怪，克苏鲁之眼有些饱了！
-		// Ceaseless: 到处都是精英怪！史莱姆王的脚底有些痒了！
+		Scarce: 少量精英怪，适合休闲玩家
+		Regular: 标准的精英怪体验
+		Plentiful: 更多精英怪，克苏鲁之眼有些饱了！
+		Ceaseless: 到处都是精英怪！史莱姆王的脚底有些痒了！
 	}
 
 	DescriptionsLong: {
-		/* Scarce:
+		Scarce:
 			'''
 			{$WorldGen.Descriptions.Scarce}
 			每个 NPC 最大能力数量：1
 			能力生成几率：5%
-			''' */
-		/* Regular:
+			'''
+		Regular:
 			'''
 			{$WorldGen.Descriptions.Regular}
 			每个 NPC 最大能力数量：3
 			能力生成几率：10%
-			''' */
-		/* Plentiful:
+			'''
+		Plentiful:
 			'''
 			{$WorldGen.Descriptions.Plentiful}
 			每个 NPC 最大能力数量：6
 			能力生成几率：25%
-			''' */
-		/* Ceaseless:
+			'''
+		Ceaseless:
 			'''
 			{$WorldGen.Descriptions.Ceaseless}
 			每个 NPC 最大能力数量：10
 			能力生成几率：50%
 			每个敌人必定拥有至少 1 个特殊能力。
-			''' */
+			'''
 	}
 }
 
 Configs: {
 	ServerConfig: {
-		// DisplayName: 服务器配置
+		DisplayName: 服务器配置
 
 		Headers: {
-			// Misc: 杂项
-			// Variations: 能力
+			Misc: 杂项
+			Variations: 能力
 		}
 
 		ApplyToCritters: {
-			// Label: 应用于小动物
-			// Tooltip: ""
+			Label: 应用于小动物
+			Tooltip: ""
 		}
 
 		ApplyToBosses: {
-			// Label: 应用于 Boss
-			// Tooltip: ""
+			Label: 应用于 Boss
+			Tooltip: ""
 		}
 
 		EnableBlazing: {
-			// Tooltip: 靠近时造成狱火，攻击时造成狱火减益，免疫火系减益
-			// Label: 启用烈焰
+			Tooltip: 靠近时造成狱火，攻击时造成狱火减益，免疫火系减益
+			Label: 启用烈焰
 		}
 
 		EnableCursed: {
-			// Label: 启用诅咒
-			// Tooltip: 靠近时造成狱火，攻击时造成诅咒狱火减益，免疫火系减益
+			Label: 启用诅咒
+			Tooltip: 靠近时造成狱火，攻击时造成诅咒狱火减益，免疫火系减益
 		}
 
 		EnableDiscordant: {
-			// Label: 启用混乱
-			// Tooltip: 随机传送
+			Label: 启用混乱
+			Tooltip: 随机传送
 		}
 
 		EnableGlacial: {
-			// Label: 启用冰霜
-			// Tooltip: 靠近和攻击时造成霜冻减益，免疫霜冻
+			Label: 启用冰霜
+			Tooltip: 靠近和攻击时造成霜冻减益，免疫霜冻
 		}
 
 		EnableGlowing: {
-			// Label: 启用发光
-			// Tooltip: 发出随机颜色的光
+			Label: 启用发光
+			Tooltip: 发出随机颜色的光
 		}
 
 		EnableHuge: {
-			// Label: 启用巨大
-			// Tooltip: 增加体型和伤害，减少击退和速度
+			Label: 启用巨大
+			Tooltip: 增加体型和伤害，减少击退和速度
 		}
 
 		EnableIchor: {
-			// Label: 启用灵液
-			// Tooltip: 靠近时造成狱火，攻击时造成灵液减益，免疫火系减益
+			Label: 启用灵液
+			Tooltip: 靠近时造成狱火，攻击时造成灵液减益，免疫火系减益
 		}
 
 		EnableImmovable: {
-			// Label: 启用泰坦
-			// Tooltip: 免疫击退
+			Label: 启用泰坦
+			Tooltip: 免疫击退
 		}
 
 		EnableInspiring: {
-			// Label: 启用鼓舞
-			// Tooltip: 为附近敌人提供伤害加成和伤害减免
+			Label: 启用鼓舞
+			Tooltip: 为附近敌人提供伤害加成和伤害减免
 		}
 
 		EnableJacked: {
-			// Label: 启用强壮
-			// Tooltip: 增加伤害、防御和最大生命值
+			Label: 启用强壮
+			Tooltip: 增加伤害、防御和最大生命值
 		}
 
 		EnableLucky: {
-			// Label: 启用幸运
-			// Tooltip: 所有对其造成的伤害将取伤害浮动的最低值
+			Label: 启用幸运
+			Tooltip: 所有对其造成的伤害将取伤害浮动的最低值
 		}
 
 		EnableMedicated: {
-			// Label: 启用免疫
-			// Tooltip: 免疫除标记之外的所有减益
+			Label: 启用免疫
+			Tooltip: 免疫除标记之外的所有减益
 		}
 
 		EnableMother: {
-			// Label: 启用分裂
-			// Tooltip: 死亡时生成 1-3 个更小更弱的子体
+			Label: 启用分裂
+			Tooltip: 死亡时生成 1-3 个更小更弱的子体
 		}
 
 		EnablePhasic: {
-			// Label: 启用相位
-			// Tooltip: 周期性地在现实中消失和出现
+			Label: 启用相位
+			Tooltip: 周期性地在现实中消失和出现
 		}
 
 		EnableSneaky: {
-			// Label: 启用隐形
-			// Tooltip: 远离玩家时隐身
+			Label: 启用隐形
+			Tooltip: 远离玩家时隐身
 		}
 
 		EnableSpelunker: {
-			// Label: 启用探险家
-			// Tooltip: 发出金色光芒并高亮附近宝藏
+			Label: 启用探险家
+			Tooltip: 发出金色光芒并高亮附近宝藏
 		}
 
 		EnableThief: {
-			// Label: 启用小偷
-			// Tooltip: 偷走地面上的物品
+			Label: 启用小偷
+			Tooltip: 偷走地面上的物品
 		}
 
 		EnableTiny: {
-			// Label: 启用微小
-			// Tooltip: 减小体型，增加击退和速度
+			Label: 启用微小
+			Tooltip: 减小体型，增加击退和速度
 		}
 
 		EnableVolatile: {
-			// Label: 启用爆裂
-			// Tooltip: 死亡时爆炸
+			Label: 启用爆裂
+			Tooltip: 死亡时爆炸
 		}
 
 		ApplyScaleChanges: {
-			// Label: 应用大小变化
-			// Tooltip: ""
+			Label: 应用大小变化
+			Tooltip: ""
 		}
 
 		ApplyVelocityChanges: {
-			// Label: 应用速度变化
-			// Tooltip: ""
+			Label: 应用速度变化
+			Tooltip: ""
 		}
 
 		NPCBlacklist: {
-			// Tooltip: ""
-			// Label: NPC 黑名单
+			Tooltip: ""
+			Label: NPC 黑名单
 		}
 
 		EnableElectric: {
-			// Label: 启用电弧
-			// Tooltip: 用闪电攻击附近玩家并造成带电减益
+			Label: 启用电弧
+			Tooltip: 用闪电攻击附近玩家并造成带电减益
 		}
 
 		EnableMolten: {
-			// Label: 启用熔岩
-			// Tooltip: 死亡时生成熔岩
+			Label: 启用熔岩
+			Tooltip: 死亡时生成熔岩
 		}
 
 		EnableAdaptive: {
-			// Label: 启用适应
-			// Tooltip: 适应受到的伤害，获得对该伤害类型的抗性
+			Label: 启用适应
+			Tooltip: 适应受到的伤害，获得对该伤害类型的抗性
 		}
 
 		EnableSpiky: {
-			// Label: 启用棘刺
-			// Tooltip: 攻击附近攻击它的玩家
+			Label: 启用棘刺
+			Tooltip: 攻击附近攻击它的玩家
 		}
 
 		EnableLeeching: {
-			// Label: 启用吸血
-			// Tooltip: 攻击玩家时恢复生命
+			Label: 启用吸血
+			Tooltip: 攻击玩家时恢复生命
 		}
 
 		EnableDestroyer: {
-			// Tooltip: 拥有 10% 暴击率
-			// Label: 启用破灭
+			Tooltip: 拥有 10% 暴击率
+			Label: 启用破灭
 		}
 
 		EnableStinky: {
-			// Label: 启用毒气
-			// Tooltip: 持续释放恶臭毒雾
+			Label: 启用毒气
+			Tooltip: 持续释放恶臭毒雾
 		}
 
 		EnableFruity: {
-			// Label: 启用缤纷
-			// Tooltip: 可施加随机减益
+			Label: 启用缤纷
+			Tooltip: 可施加随机减益
 		}
 
 		EnablePolite: {
-			// Label: 启用礼貌
-			// Tooltip: 会为伤害到你而道歉
+			Label: 启用礼貌
+			Tooltip: 会为伤害到你而道歉
 		}
 
 		EnableUnstable: {
-			// Tooltip: 持续释放不稳定的能量弹
-			// Label: 启用紊乱
+			Tooltip: 持续释放不稳定的能量弹
+			Label: 启用紊乱
 		}
 
 		EnableParty: {
-			// Tooltip: 爆出五彩纸屑
-			// Label: 启用派对
+			Tooltip: 爆出五彩纸屑
+			Label: 启用派对
 		}
 
 		EnableBrainy: {
-			// Tooltip: 制造自身的幻影
-			// Label: 启用幻影
+			Tooltip: 制造自身的幻影
+			Label: 启用幻影
 		}
 
 		EnableStoic: {
-			// Tooltip: 隐藏你对它造成的伤害
-			// Label: 启用坚韧
+			Tooltip: 隐藏你对它造成的伤害
+			Label: 启用坚韧
 		}
 
 		EnableFluxive: {
-			// Label: 启用颠倒
-			// Tooltip: 攻击时翻转你的重力
+			Label: 启用颠倒
+			Tooltip: 攻击时翻转你的重力
 		}
 
 		EnableScrambling: {
-			// Label: 启用扰乱
-			// Tooltip: 打乱你的 HUD
+			Label: 启用扰乱
+			Tooltip: 打乱你的 HUD
 		}
 
 		EnableArmored: {
-			// Label: 启用装甲
-			// Tooltip: ""
+			Label: 启用装甲
+			Tooltip: ""
 		}
 
 		EnablePiercing: {
-			// Tooltip: 拥有一定的护甲穿透
-			// Label: 启用穿透
+			Tooltip: 拥有一定的护甲穿透
+			Label: 启用穿透
 		}
 
 		EnableNyan: {
-			// Tooltip: 喵喵叫
-			// Label: 启用喵喵
+			Tooltip: 喵喵叫
+			Label: 启用喵喵
 		}
 	}
 }
 
 Projectiles: {
-	// LeechingEliteLeechProjectile.DisplayName: 血蛭弹
-	// StinkyCloud.DisplayName: 恶臭毒雾
-	// EliteAbundancySwitcherProjectile.DisplayName: 调节球
+	LeechingEliteLeechProjectile.DisplayName: 血蛭弹
+	StinkyCloud.DisplayName: 恶臭毒雾
+	EliteAbundancySwitcherProjectile.DisplayName: 调节球
 }
 
-// NPCs.LeechingEliteLeechProjectile.DisplayName: 血蛭弹
+NPCs.LeechingEliteLeechProjectile.DisplayName: 血蛭弹
 
 Buffs: {
 	FluxiveBuff: {
-		// Description: 你的世界颠倒了！
-		// DisplayName: 颠倒
+		Description: 你的世界颠倒了！
+		DisplayName: 颠倒
 	}
 
 	ScrambledBuff: {
-		// DisplayName: 扰乱
-		// Description: 你的 HUD 已被扰乱！
+		DisplayName: 扰乱
+		Description: 你的 HUD 已被扰乱！
 	}
 }
 
 Items: {
 	EliteAbundancySwitcher: {
-		// Tooltip: ""
-		// DisplayName: 精英怪调节器
-		/* AbundancyTooltip:
+		Tooltip: ""
+		DisplayName: 精英怪调节器
+		AbundancyTooltip:
 			'''
 			投掷它来改变这个世界中精英怪的数量等级！
 			右键切换数量等级
 			当前选择：{0}
-			''' */
-		// ScarceTooltip: "{$WorldGen.DescriptionsLong.Scarce}"
-		// RegularTooltip: "{$WorldGen.DescriptionsLong.Regular}"
-		// PlentifulTooltip: "{$WorldGen.DescriptionsLong.Plentiful}"
-		// CeaselessTooltip: "{$WorldGen.DescriptionsLong.Ceaseless}"
-		// Announcement: 精英怪数量等级已切换为：{0}！
+			'''
+		ScarceTooltip: "{$WorldGen.DescriptionsLong.Scarce}"
+		RegularTooltip: "{$WorldGen.DescriptionsLong.Regular}"
+		PlentifulTooltip: "{$WorldGen.DescriptionsLong.Plentiful}"
+		CeaselessTooltip: "{$WorldGen.DescriptionsLong.Ceaseless}"
+		Announcement: 精英怪数量等级已切换为：{0}！
 	}
 }
